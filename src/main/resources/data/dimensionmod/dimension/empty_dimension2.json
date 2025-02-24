@@ -1,0 +1,64 @@
+{
+  "type": "dimensionmod:empty_dimension2_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": {
+      "name": "dimensionmod:empty_noise",
+      "default_block": {
+        "Name": "minecraft:air"
+      },
+      "default_fluid": {
+        "Name": "minecraft:air"
+      },
+      "sea_level": 0,
+      "disable_mob_generation": true,
+      "aquifers_enabled": false,
+      "ore_veins_enabled": false,
+      "legacy_random_source": false,
+      "noise": {
+        "min_y": 0,
+        "height": 0,
+        "size_horizontal": 1,
+        "size_vertical": 1
+      },
+      "noise_router": {
+        "barrier": "minecraft:end/base_3d_noise",
+        "fluid_level_floodedness": "minecraft:end/base_3d_noise",
+        "fluid_level_spread": "minecraft:end/base_3d_noise",
+        "lava": "minecraft:end/base_3d_noise",
+        "vein_toggle": "minecraft:end/base_3d_noise",
+        "vein_ridged": "minecraft:end/base_3d_noise",
+        "vein_gap": "minecraft:end/base_3d_noise",
+        "temperature": "minecraft:end/base_3d_noise",
+        "vegetation": "minecraft:end/base_3d_noise",
+        "continents": "minecraft:end/base_3d_noise",
+        "erosion": "minecraft:end/base_3d_noise",
+        "depth": "minecraft:end/base_3d_noise",
+        "ridges": "minecraft:end/base_3d_noise",
+        "initial_density_without_jaggedness": "minecraft:end/base_3d_noise",
+        "final_density": "minecraft:end/base_3d_noise"
+      },
+      "spawn_target": [
+        {
+          "temperature": 0,
+          "humidity": 0,
+          "continentalness": 0,
+          "erosion": 0,
+          "weirdness": 0,
+          "depth": 0,
+          "offset": 0
+        }
+      ],
+      "surface_rule": {
+        "type": "minecraft:block",
+        "result_state": {
+          "Name": "minecraft:air"
+        }
+      }
+    },
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "dimensionmod:empty_biome2"
+    }
+  }
+}

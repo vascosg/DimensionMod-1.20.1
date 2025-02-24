@@ -1,7 +1,19 @@
 package net.agentefreitas.dimensionmod;
 
 import com.mojang.logging.LogUtils;
+import net.agentefreitas.dimensionmod.event.TeleportToCustomDimension;
+import net.agentefreitas.dimensionmod.item.ModItems;
+import net.agentefreitas.dimensionmod.worldgen.dimension.ModDimensions;
+import net.minecraft.core.HolderGetter;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.dimension.DimensionType;
+import net.minecraft.world.level.dimension.LevelStem;
+import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -23,8 +35,18 @@ public class DimensionMod {
     public static final String MOD_ID = "dimensionmod";
     public static final Logger LOGGER = LogUtils.getLogger();
 
+    public static HolderGetter<PlacedFeature> PLACED_FEATURES;
+    public static HolderGetter<ConfiguredWorldCarver<?>> CONFIGURED_CARVERS;
+
     public DimensionMod() {
+
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        MinecraftForge.EVENT_BUS.register(TeleportToCustomDimension.class);
+        ModItems.register(modEventBus);
+
+
+        ModDimensions.register();
+
 
         modEventBus.addListener(this::commonSetup);
 
