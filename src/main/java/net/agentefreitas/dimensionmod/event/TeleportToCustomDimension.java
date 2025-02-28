@@ -1,5 +1,6 @@
 package net.agentefreitas.dimensionmod.event;
 
+import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceKey;
@@ -14,8 +15,9 @@ import net.minecraftforge.fml.common.Mod;
 public class TeleportToCustomDimension {
     private static final ResourceKey<Level> CUSTOM_DIMENSION = ResourceKey.create(
             Registries.DIMENSION,
-            new ResourceLocation("dimensionmod", "empty_dimension2")
+            new ResourceLocation("dimensionmod", "empty_dimension")
     );
+
 
     @SubscribeEvent
     public static void onPlayerRightClick(PlayerInteractEvent.RightClickBlock event) {
@@ -24,8 +26,12 @@ public class TeleportToCustomDimension {
             ServerLevel targetDimension = player.getServer().getLevel(CUSTOM_DIMENSION);
 
             if (targetDimension != null) {
-                player.teleportTo(targetDimension, 0, 100, 0, player.getYRot(), player.getXRot());
+                player.teleportTo(targetDimension, 0, 110, 0, player.getYRot(), player.getXRot());
+
+                CommandSourceStack source = player.createCommandSourceStack().withPermission(4);
+                player.getServer().getCommands().performPrefixedCommand(source, "reload");
             }
         }
     }
+
 }

@@ -1,5 +1,5 @@
 {
-  "type": "dimensionmod:empty_dimension2_type",
+  "type": "dimensionmod:empty_dimension_type",
   "generator": {
     "type": "minecraft:noise",
     "settings": {
@@ -58,7 +58,7 @@
     },
     "biome_source": {
       "type": "minecraft:fixed",
-      "biome": "dimensionmod:empty_biome2"
+      "biome": "dimensionmod:empty_biome"
     }
   }
 }

@@ -1,3 +1,4 @@
+/**
 package net.agentefreitas.dimensionmod.worldgen.dimension;
 
 
@@ -95,6 +96,7 @@ public class ModDimensions {
          ))),
          noiseGenSettings.getOrThrow(NoiseGeneratorSettings.AMPLIFIED));
          **/
+         /**
         LevelStem stem = new LevelStem(dimTypes.getOrThrow(ModDimensions.CUSTOM_KEY_DIM_TYPE), wrappedChunkGenerator);
 
         context.register(CUSTOM_KEY, stem);
@@ -103,3 +105,5 @@ public class ModDimensions {
         DimensionMod.LOGGER.info("A registar a dimensão personalizada!");
     }
 }
+
+*/

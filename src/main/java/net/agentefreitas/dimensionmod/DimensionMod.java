@@ -3,7 +3,8 @@ package net.agentefreitas.dimensionmod;
 import com.mojang.logging.LogUtils;
 import net.agentefreitas.dimensionmod.event.TeleportToCustomDimension;
 import net.agentefreitas.dimensionmod.item.ModItems;
-import net.agentefreitas.dimensionmod.worldgen.dimension.ModDimensions;
+import net.agentefreitas.dimensionmod.util.ModDatapackLoader;
+//import net.agentefreitas.dimensionmod.worldgen.dimension.ModDimensions;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
@@ -44,8 +45,8 @@ public class DimensionMod {
         MinecraftForge.EVENT_BUS.register(TeleportToCustomDimension.class);
         ModItems.register(modEventBus);
 
-
-        ModDimensions.register();
+        MinecraftForge.EVENT_BUS.register(ModDatapackLoader.class);
+        //ModDimensions.register();
 
 
         modEventBus.addListener(this::commonSetup);
