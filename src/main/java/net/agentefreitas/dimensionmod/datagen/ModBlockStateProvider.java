@@ -15,7 +15,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        //blockWithItem(ModBlocks."DIRT_BLOCK"); // exemplo
+        blockWithItem(ModBlocks.DIMENSION_DOOR_BLOCK); // exemplo
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

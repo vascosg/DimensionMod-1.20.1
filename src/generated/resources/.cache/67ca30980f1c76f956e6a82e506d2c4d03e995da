@@ -1,1 +1,4 @@
-// 1.20.1	2025-02-22T20:02:46.3952003	Block States: dimensionmod
+// 1.20.1	2025-02-28T20:38:52.0998489	Block States: dimensionmod
+f28d4255333fb0e04a0f6ac989c69f892f839caa assets/dimensionmod/blockstates/dimension_door_block.json
+cdfe4fdf50e580c6d423d843cbd7ab9290c0d08f assets/dimensionmod/models/block/dimension_door_block.json
+ccc565397980270183a33c5ae8e01bd19d57f54b assets/dimensionmod/models/item/dimension_door_block.json

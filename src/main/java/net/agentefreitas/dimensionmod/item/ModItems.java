@@ -11,7 +11,7 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, DimensionMod.MOD_ID);
 
-    public static final RegistryObject<Item> DIMENSION_DOR_KEY = ITEMS.register("dimension_dor_key",
+    public static final RegistryObject<Item> DIMENSION_DOOR_KEY = ITEMS.register("dimension_door_key",
             () -> new Item(new Item.Properties()));
 
     /** exemplo
