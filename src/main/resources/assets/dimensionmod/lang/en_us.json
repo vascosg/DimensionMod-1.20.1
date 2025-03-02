@@ -1,4 +1,9 @@
 {
   "item.dimensionmod.dimension_door_key": "Dimension Door Key",
-  "block.dimensionmod.dimension_door_block": "Dimension Door "
+  "item.dimensionmod.diary_of_a_creator": "Diary of a Creator",
+
+  "block.dimensionmod.dimension_door_block": "Dimension Door ",
+  "block.dimensionmod.dimension_book_lectern": "Dimension Book Lectern",
+
+  "creativetab.dimension_tab": "Dimension Tab"
 }

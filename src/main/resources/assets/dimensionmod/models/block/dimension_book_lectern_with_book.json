@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "dimensionmod:block/dimension_book_lectern_with_book"
+  }
+}

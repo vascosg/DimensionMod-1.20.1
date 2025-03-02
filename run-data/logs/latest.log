@@ -1,31 +1,31 @@
-[28fev.2025 20:38:45.125] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\Freitas\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.0, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, dimensionmod, --all, --output, C:\Users\Freitas\Desktop\Dimension Mod 1.20.1\src\generated\resources, --existing, C:\Users\Freitas\Desktop\Dimension Mod 1.20.1\src\main\resources]
-[28fev.2025 20:38:45.128] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.10 by Oracle Corporation; OS Windows 10 arch amd64 version 10.0
-[28fev.2025 20:38:45.230] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
-[28fev.2025 20:38:45.278] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/Freitas/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
-[28fev.2025 20:38:45.576] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Freitas\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.0\d7ebc62120f202109e300e084ca1a31a7b946a62\javafmllanguage-1.20.1-47.3.0.jar is missing mods.toml file
-[28fev.2025 20:38:45.583] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Freitas\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.0\1bf3e845ea0ce750096da8c71c8364b188ab74d4\lowcodelanguage-1.20.1-47.3.0.jar is missing mods.toml file
-[28fev.2025 20:38:45.590] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Freitas\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.0\6093682e943ddccbabf70539319d7f2fe64db2e7\mclanguage-1.20.1-47.3.0.jar is missing mods.toml file
-[28fev.2025 20:38:45.597] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Freitas\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.0\3b6be96aba3e323f3c918e8ef6a96312d82d76ad\fmlcore-1.20.1-47.3.0.jar is missing mods.toml file
-[28fev.2025 20:38:45.672] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[28fev.2025 20:38:46.872] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\Freitas\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, dimensionmod, --all, --output, C:\Users\Freitas\Desktop\Dimension Mod 1.20.1\src\generated\resources, --existing, C:\Users\Freitas\Desktop\Dimension Mod 1.20.1\src\main\resources]
-[28fev.2025 20:38:47.186] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [dimensionmod]
-[28fev.2025 20:38:51.221] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.0, for MC 1.20.1 with MCP 20230612.114412
-[28fev.2025 20:38:51.223] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.0 Initialized
-[28fev.2025 20:38:51.750] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Freitas/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.0_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.0_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
-[28fev.2025 20:38:51.751] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Freitas/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.0_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.0_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
-[28fev.2025 20:38:51.911] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
-[28fev.2025 20:38:51.917] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 5 ms
-[28fev.2025 20:38:51.918] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
-[28fev.2025 20:38:51.968] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 51 ms
-[28fev.2025 20:38:51.969] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: dimensionmod
-[28fev.2025 20:38:52.088] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: dimensionmod finished after 119 ms
-[28fev.2025 20:38:52.088] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: dimensionmod
-[28fev.2025 20:38:52.091] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: dimensionmod finished after 2 ms
-[28fev.2025 20:38:52.091] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id dimensionmod
-[28fev.2025 20:38:52.094] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id dimensionmod finished after 3 ms
-[28fev.2025 20:38:52.094] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id dimensionmod
-[28fev.2025 20:38:52.095] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id dimensionmod finished after 0 ms
-[28fev.2025 20:38:52.095] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
-[28fev.2025 20:38:52.098] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 3 ms
-[28fev.2025 20:38:52.098] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 187 ms
-[28fev.2025 20:38:52.110] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 6, old count: 1, new count: 6, removed stale: 1, written: 5
+[02mar.2025 14:34:19.303] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgedatauserdev, --assetIndex, 5, --assetsDir, C:\Users\Freitas\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.0, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mod, dimensionmod, --all, --output, C:\Users\Freitas\Desktop\Dimension Mod 1.20.1\src\generated\resources, --existing, C:\Users\Freitas\Desktop\Dimension Mod 1.20.1\src\main\resources]
+[02mar.2025 14:34:19.309] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.10 by Oracle Corporation; OS Windows 10 arch amd64 version 10.0
+[02mar.2025 14:34:19.413] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: ImmediateWindowProvider not loading because launch target is forgedatauserdev
+[02mar.2025 14:34:19.466] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/Freitas/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[02mar.2025 14:34:19.785] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Freitas\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.0\d7ebc62120f202109e300e084ca1a31a7b946a62\javafmllanguage-1.20.1-47.3.0.jar is missing mods.toml file
+[02mar.2025 14:34:19.792] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Freitas\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.0\1bf3e845ea0ce750096da8c71c8364b188ab74d4\lowcodelanguage-1.20.1-47.3.0.jar is missing mods.toml file
+[02mar.2025 14:34:19.799] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Freitas\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.0\6093682e943ddccbabf70539319d7f2fe64db2e7\mclanguage-1.20.1-47.3.0.jar is missing mods.toml file
+[02mar.2025 14:34:19.807] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\Freitas\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.0\3b6be96aba3e323f3c918e8ef6a96312d82d76ad\fmlcore-1.20.1-47.3.0.jar is missing mods.toml file
+[02mar.2025 14:34:19.875] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[02mar.2025 14:34:21.082] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgedatauserdev' with arguments [--gameDir, ., --assetsDir, C:\Users\Freitas\.gradle\caches\forge_gradle\assets, --assetIndex, 5, --mod, dimensionmod, --all, --output, C:\Users\Freitas\Desktop\Dimension Mod 1.20.1\src\generated\resources, --existing, C:\Users\Freitas\Desktop\Dimension Mod 1.20.1\src\main\resources]
+[02mar.2025 14:34:21.429] [main/INFO] [net.minecraftforge.data.loading.DatagenModLoader/]: Initializing Data Gatherer for mods [dimensionmod]
+[02mar.2025 14:34:25.770] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.0, for MC 1.20.1 with MCP 20230612.114412
+[02mar.2025 14:34:25.770] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.0 Initialized
+[02mar.2025 14:34:26.224] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Freitas/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.0_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.0_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[02mar.2025 14:34:26.224] [main/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/Freitas/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.0_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.0_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[02mar.2025 14:34:26.374] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Recipes
+[02mar.2025 14:34:26.376] [main/INFO] [net.minecraft.data.DataGenerator/]: Recipes finished after 1 ms
+[02mar.2025 14:34:26.377] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Loot Tables
+[02mar.2025 14:34:26.416] [main/INFO] [net.minecraft.data.DataGenerator/]: Loot Tables finished after 39 ms
+[02mar.2025 14:34:26.416] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Block States: dimensionmod
+[02mar.2025 14:34:26.570] [main/INFO] [net.minecraft.data.DataGenerator/]: Block States: dimensionmod finished after 153 ms
+[02mar.2025 14:34:26.570] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Item Models: dimensionmod
+[02mar.2025 14:34:26.573] [main/INFO] [net.minecraft.data.DataGenerator/]: Item Models: dimensionmod finished after 2 ms
+[02mar.2025 14:34:26.573] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:block mod id dimensionmod
+[02mar.2025 14:34:26.581] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:block mod id dimensionmod finished after 7 ms
+[02mar.2025 14:34:26.581] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Tags for minecraft:item mod id dimensionmod
+[02mar.2025 14:34:26.583] [main/INFO] [net.minecraft.data.DataGenerator/]: Tags for minecraft:item mod id dimensionmod finished after 1 ms
+[02mar.2025 14:34:26.583] [main/INFO] [net.minecraft.data.DataGenerator/]: Starting provider: Registries
+[02mar.2025 14:34:26.587] [main/INFO] [net.minecraft.data.DataGenerator/]: Registries finished after 3 ms
+[02mar.2025 14:34:26.587] [main/INFO] [net.minecraft.data.DataGenerator/]: All providers took: 213 ms
+[02mar.2025 14:34:26.595] [main/INFO] [net.minecraft.data.HashCache/]: Caching: total files: 6, old count: 6, new count: 7, removed stale: 0, written: 0

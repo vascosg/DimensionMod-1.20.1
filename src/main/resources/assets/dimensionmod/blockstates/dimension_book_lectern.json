@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "has_book=false": {
+      "model": "dimensionmod:block/dimension_book_lectern_empty"
+    },
+    "has_book=true": {
+      "model": "dimensionmod:block/dimension_book_lectern_with_book"
+    }
+  }
+}

@@ -1,10 +1,12 @@
 package net.agentefreitas.dimensionmod;
 
 import com.mojang.logging.LogUtils;
+import net.agentefreitas.dimensionmod.block.ModBlockEntities;
 import net.agentefreitas.dimensionmod.block.ModBlocks;
 import net.agentefreitas.dimensionmod.event.BlockPlaceRestriction;
 import net.agentefreitas.dimensionmod.event.NoClouds;
 import net.agentefreitas.dimensionmod.event.TeleportToCustomDimension;
+import net.agentefreitas.dimensionmod.item.ModCreativeModTabs;
 import net.agentefreitas.dimensionmod.item.ModItems;
 import net.agentefreitas.dimensionmod.util.ModDatapackLoader;
 //import net.agentefreitas.dimensionmod.worldgen.dimension.ModDimensions;
@@ -48,8 +50,10 @@ public class DimensionMod {
         MinecraftForge.EVENT_BUS.register(TeleportToCustomDimension.class);
         MinecraftForge.EVENT_BUS.register(BlockPlaceRestriction.class);
         MinecraftForge.EVENT_BUS.register(NoClouds.class);
+        ModCreativeModTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(ModDatapackLoader.class);
         //ModDimensions.register();
