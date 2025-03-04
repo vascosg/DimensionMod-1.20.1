@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "book_state=empty": { "model": "dimensionmod:block/lectern_white" },
+    "book_state=black": { "model": "dimensionmod:block/lectern_black" },
+    "book_state=blue": { "model": "dimensionmod:block/lectern_blue" },
+    "book_state=green": { "model": "dimensionmod:block/lectern_green" },
+    "book_state=orange": { "model": "dimensionmod:block/lectern_orange" },
+    "book_state=purple": { "model": "dimensionmod:block/lectern_purple" },
+    "book_state=red": { "model": "dimensionmod:block/lectern_red" },
+    "book_state=yellow": { "model": "dimensionmod:block/lectern_yellow" }
+  }
+}

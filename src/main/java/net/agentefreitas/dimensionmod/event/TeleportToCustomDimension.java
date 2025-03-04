@@ -54,7 +54,7 @@ public class TeleportToCustomDimension {
 
                     if(isOverworld) {
 
-                        player.sendSystemMessage(Component.literal("Going to dimension!"));
+                        //player.sendSystemMessage(Component.literal("Going to dimension!"));
 
                         savePlayerPosition(player);
 
@@ -67,17 +67,17 @@ public class TeleportToCustomDimension {
                             // Espera 1 segundo para dar efeito
                             sleep(1000);
 
-                            player.teleportTo(targetDimension, 0.5, 55, 0.5, player.getYRot(), player.getXRot());
-
                             CommandSourceStack source = player.createCommandSourceStack().withPermission(4);
                             player.getServer().getCommands().performPrefixedCommand(source, "reload");
+                            sleep(1000);
 
+                            player.teleportTo(targetDimension, 0.5, 55, 0.5, player.getYRot(), player.getXRot());
                         }
 
 
                    } else {
 
-                        player.sendSystemMessage(Component.literal("Going to OVERWORLD!"));
+                        //player.sendSystemMessage(Component.literal("Going to OVERWORLD!"));
 
                         ServerLevel overworld = player.getServer().getLevel(Level.OVERWORLD);
                         if (overworld != null) {

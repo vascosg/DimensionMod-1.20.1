@@ -19,7 +19,15 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
 
         simpleItem(ModItems.DIMENSION_DOOR_KEY);
+
         simpleItem(ModItems.DIARY_OF_A_CREATOR);
+        simpleItem(ModItems.BLUE_BOOK);
+        simpleItem(ModItems.GREEN_BOOK);
+        simpleItem(ModItems.ORANGE_BOOK);
+        simpleItem(ModItems.PURPLE_BOOK);
+        simpleItem(ModItems.RED_BOOK);
+        simpleItem(ModItems.YELLOW_BOOK);
+
         /** exemplo
         simpleItem(ModItems.SAPPHIRE);
         simpleItem(ModItems.RAW_SAPPHIRE);

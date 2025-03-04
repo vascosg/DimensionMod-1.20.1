@@ -22,6 +22,12 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.DIMENSION_DOOR_KEY.get());
                         pOutput.accept(ModBlocks.DIMENSION_DOOR_BLOCK.get());
                         pOutput.accept(ModItems.DIARY_OF_A_CREATOR.get());
+                        pOutput.accept(ModItems.BLUE_BOOK.get());
+                        pOutput.accept(ModItems.GREEN_BOOK.get());
+                        pOutput.accept(ModItems.ORANGE_BOOK.get());
+                        pOutput.accept(ModItems.PURPLE_BOOK.get());
+                        pOutput.accept(ModItems.RED_BOOK.get());
+                        pOutput.accept(ModItems.YELLOW_BOOK.get());
                         pOutput.accept(ModBlocks.DIMENSION_BOOK_LECTERN.get());
 
                     })

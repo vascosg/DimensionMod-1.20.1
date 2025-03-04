@@ -28,6 +28,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
 
         this.dropSelf(ModBlocks.DIMENSION_DOOR_BLOCK.get());
+        this.dropSelf(ModBlocks.DIMENSION_BOOK_LECTERN.get());
         /** exemplo
         this.dropSelf(ModBlocks.RAW_SAPPHIRE_BLOCK.get());
         this.dropSelf(ModBlocks.SOUND_BLOCK.get());

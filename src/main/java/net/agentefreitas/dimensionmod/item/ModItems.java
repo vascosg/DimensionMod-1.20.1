@@ -16,7 +16,20 @@ public class ModItems {
 
     public static final RegistryObject<Item> DIMENSION_DOOR_KEY = ITEMS.register("dimension_door_key",
             () -> new Item(new Item.Properties()));
+    //Books
     public static final RegistryObject<Item> DIARY_OF_A_CREATOR = ITEMS.register("diary_of_a_creator",
+            () -> new DimensionBookItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> BLUE_BOOK = ITEMS.register("blue_book",
+            () -> new DimensionBookItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> GREEN_BOOK = ITEMS.register("green_book",
+            () -> new DimensionBookItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> ORANGE_BOOK = ITEMS.register("orange_book",
+            () -> new DimensionBookItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> PURPLE_BOOK = ITEMS.register("purple_book",
+            () -> new DimensionBookItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> RED_BOOK = ITEMS.register("red_book",
+            () -> new DimensionBookItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> YELLOW_BOOK = ITEMS.register("yellow_book",
             () -> new DimensionBookItem(new Item.Properties().stacksTo(1)));
 
 

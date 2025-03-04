@@ -18,7 +18,7 @@ public class DimensionBookItem extends WritableBookItem {
         super(pProperties);
     }
 
-
+    /**
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
         if (pLevel.isClientSide) {
@@ -28,7 +28,7 @@ public class DimensionBookItem extends WritableBookItem {
             Minecraft.getInstance().setScreen(new BookScreen(pPlayer,stack,pHand));
         }
         return InteractionResultHolder.success(pPlayer.getItemInHand(pHand));
-    }
+    }**/
 
     @Override
     public boolean canBeDepleted() {

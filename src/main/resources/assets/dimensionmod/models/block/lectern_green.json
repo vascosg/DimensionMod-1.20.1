@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "dimensionmod:block/dimension_book_lectern_empty"
+    "all": "dimensionmod:block/lectern_green"
   }
 }

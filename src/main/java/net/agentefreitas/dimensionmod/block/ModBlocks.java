@@ -26,7 +26,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> DIMENSION_DOOR_BLOCK = registerBlock("dimension_door_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).sound(SoundType.WOOD)));
 
-    public static final RegistryObject<Block> DIMENSION_BOOK_LECTERN = registerBlock("dimension_book_lectern",
+    public static final RegistryObject<Block> DIMENSION_BOOK_LECTERN = registerBlock("lectern_white",
             () -> new DimensionBookLectern(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).sound(SoundType.WOOD)));
 
     /** exemplo
