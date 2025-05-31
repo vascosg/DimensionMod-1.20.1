@@ -21,7 +21,6 @@ public class ChatListener {
         ServerPlayer player = event.getPlayer();
         String message = event.getMessage().getString();
         BlockPos playerPos = player.blockPosition();
-        System.out.println("Posição do jogador: " + playerPos);
         // Raio de 3 blocos
         int range = 10;
 
@@ -32,11 +31,10 @@ public class ChatListener {
 
                     Block block = player.level().getBlockState(blockPos).getBlock();
                     if (block instanceof DimensionBookLectern) {
-                        System.out.println("É o bloco correto!");
                         BlockEntity entity = ((DimensionBookLectern) block).getDimensionBlockEntity();
 
                         if (entity instanceof DimensionBookLecternBlockEntity lectern) {
-                            lectern.noTick(message);
+                            lectern.messageReceiver(message, player);
                             System.out.println("Bloco ouviu: " + message);
                         }
                     }
