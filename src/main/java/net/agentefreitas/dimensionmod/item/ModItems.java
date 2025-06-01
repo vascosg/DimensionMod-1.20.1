@@ -2,6 +2,7 @@ package net.agentefreitas.dimensionmod.item;
 
 import net.agentefreitas.dimensionmod.DimensionMod;
 import net.agentefreitas.dimensionmod.block.ModBlocks;
+import net.agentefreitas.dimensionmod.item.custom.BlackWordlessBook;
 import net.agentefreitas.dimensionmod.item.custom.DimensionBookItem;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -18,7 +19,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     //Books
     public static final RegistryObject<Item> DIARY_OF_A_CREATOR = ITEMS.register("diary_of_a_creator",
-            () -> new DimensionBookItem(new Item.Properties().stacksTo(1)));
+            () -> new BlackWordlessBook(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> BLUE_BOOK = ITEMS.register("blue_book",
             () -> new DimensionBookItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> GREEN_BOOK = ITEMS.register("green_book",
@@ -31,6 +32,21 @@ public class ModItems {
             () -> new DimensionBookItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> YELLOW_BOOK = ITEMS.register("yellow_book",
             () -> new DimensionBookItem(new Item.Properties().stacksTo(1)));
+
+    //Treasures
+    public static final RegistryObject<Item> FIRE_TREASURE = ITEMS.register("fire_treasure",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> WATER_TREASURE = ITEMS.register("water_treasure",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> WOOD_TREASURE = ITEMS.register("wood_treasure",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> EARTH_TREASURE = ITEMS.register("earth_treasure",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> GOLD_TREASURE = ITEMS.register("gold_treasure",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> FIVE_ELEMENT_INDESTRUCTIBLE_SWORD = ITEMS.register("five_element_indestructible_sword",
+            () -> new SwordItem(ModToolTiers.FIVE_ELEMENT_TIER, 1,-1f, new Item.Properties().fireResistant()));
 
 
     /** exemplo

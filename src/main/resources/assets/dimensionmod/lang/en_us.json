@@ -8,6 +8,13 @@
   "item.dimensionmod.yellow_book": "Yellow Book",
   "item.dimensionmod.diary_of_a_creator": "Diary of a Creator",
 
+  "item.dimensionmod.fire_treasure": "Fire Treasure",
+  "item.dimensionmod.water_treasure": "Water Treasure",
+  "item.dimensionmod.wood_treasure": "Wood Treasure",
+  "item.dimensionmod.earth_treasure": "Earth Treasure",
+  "item.dimensionmod.gold_treasure": "Gold Treasure",
+  "item.dimensionmod.five_element_indestructible_sword": "Five Element Indestructible sword",
+
   "block.dimensionmod.dimension_door_block": "Dimension Door ",
   "block.dimensionmod.lectern_white": "Dimension Book Lectern",
 

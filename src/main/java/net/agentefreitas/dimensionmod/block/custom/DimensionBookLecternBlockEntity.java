@@ -1,6 +1,7 @@
 package net.agentefreitas.dimensionmod.block.custom;
 
 import net.agentefreitas.dimensionmod.block.ModBlockEntities;
+import net.agentefreitas.dimensionmod.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.commands.CommandSource;
 import net.minecraft.commands.CommandSourceStack;
@@ -19,6 +20,8 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -102,26 +105,31 @@ public class DimensionBookLecternBlockEntity extends BlockEntity {
                 blueState(message,player);
             } else if (bookState == DimensionBookLectern.BookState.GREEN) {
                 greenState(message,player);
+            } else if (bookState == DimensionBookLectern.BookState.BLACK) {
+                blackState(message,player);
+            } else if (bookState == DimensionBookLectern.BookState.ORANGE) {
+                orangeState(message,player);
             }
         }
     }
 
     private void yellowState(ServerPlayer player,String message ,DimensionBookLectern.BookState bookState){
 
-        if (message.equalsIgnoreCase("levitate")) {
-            if (!player.getAbilities().mayfly) {
-                player.getAbilities().mayfly = true;
-                player.onUpdateAbilities();
-                player.sendSystemMessage(Component.literal("**LEVITATE! Agora podes voar! 🔥**"));
-                System.out.println(player.getName().getString() + " agora pode voar!");
-                while(bookState == DimensionBookLectern.BookState.YELLOW) {
-                    BlockState state = this.getBlockState();
-                    bookState = state.getValue(DimensionBookLectern.BOOK_STATE);
-                }
-                player.getAbilities().mayfly = false;
-                player.onUpdateAbilities();
+        if (!message.equalsIgnoreCase("levitate")) return;
+
+        if (!player.getAbilities().mayfly) {
+            player.getAbilities().mayfly = true;
+            player.onUpdateAbilities();
+            player.sendSystemMessage(Component.literal("**LEVITATE! Agora podes voar! 🔥**"));
+            System.out.println(player.getName().getString() + " agora pode voar!");
+            while(bookState == DimensionBookLectern.BookState.YELLOW) {
+                BlockState state = this.getBlockState();
+                bookState = state.getValue(DimensionBookLectern.BOOK_STATE);
             }
+            player.getAbilities().mayfly = false;
+            player.onUpdateAbilities();
         }
+
     }
 
     private void redState (ServerPlayer player,String message ,DimensionBookLectern.BookState bookState) {
@@ -193,6 +201,62 @@ public class DimensionBookLecternBlockEntity extends BlockEntity {
                 accelerateTicks = false;
                 System.out.println("SlowTicks set to false after 1 minute");
             }, 1, TimeUnit.MINUTES);
+        }
+    }
+
+    private void blackState (String message, Player player) {
+
+        //TODO does nothing as the black state shouldnt need the lectern
+    }
+
+    private void orangeState (String message, Player player) {
+
+        if (!message.equalsIgnoreCase("5 element edge")) return;
+
+        // Itens que você quer checar
+        ItemStack fire = new ItemStack(ModItems.FIRE_TREASURE.get());
+        ItemStack water = new ItemStack(ModItems.WATER_TREASURE.get());
+        ItemStack wood = new ItemStack(ModItems.WOOD_TREASURE.get());
+        ItemStack earth = new ItemStack(ModItems.EARTH_TREASURE.get());
+        ItemStack gold = new ItemStack(ModItems.GOLD_TREASURE.get());
+
+        // Verifica se tem pelo menos 1 de cada
+        if (hasItem(player, fire) &&
+                hasItem(player, water) &&
+                hasItem(player, wood) &&
+                hasItem(player, earth) &&
+                hasItem(player, gold)) {
+
+            // Remove 1 de cada item
+            removeOneItem(player, fire.getItem());
+            removeOneItem(player, water.getItem());
+            removeOneItem(player, wood.getItem());
+            removeOneItem(player, earth.getItem());
+            removeOneItem(player, gold.getItem());
+
+            // Adiciona a espada no inventário
+            ItemStack sword = new ItemStack(ModItems.FIVE_ELEMENT_INDESTRUCTIBLE_SWORD.get());
+            if (!player.getInventory().add(sword)) {
+                player.drop(sword, false); // Se o inventário estiver cheio, joga no chão
+            }
+        }
+        
+    }
+
+    private boolean hasItem(Player player, ItemStack item) {
+        return player.getInventory().contains(item);
+    }
+
+    private void removeOneItem(Player player, Item item) {
+        for (int i = 0; i < player.getInventory().getContainerSize(); i++) {
+            ItemStack stack = player.getInventory().getItem(i);
+            if (!stack.isEmpty() && stack.getItem().equals(item)) {
+                stack.shrink(1);
+                if (stack.isEmpty()) {
+                    player.getInventory().setItem(i, ItemStack.EMPTY);
+                }
+                return;
+            }
         }
     }
 

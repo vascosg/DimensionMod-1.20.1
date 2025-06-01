@@ -21,6 +21,7 @@ public class ModCreativeModTabs {
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.DIMENSION_DOOR_KEY.get());
                         pOutput.accept(ModBlocks.DIMENSION_DOOR_BLOCK.get());
+
                         pOutput.accept(ModItems.DIARY_OF_A_CREATOR.get());
                         pOutput.accept(ModItems.BLUE_BOOK.get());
                         pOutput.accept(ModItems.GREEN_BOOK.get());
@@ -29,6 +30,14 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.RED_BOOK.get());
                         pOutput.accept(ModItems.YELLOW_BOOK.get());
                         pOutput.accept(ModBlocks.DIMENSION_BOOK_LECTERN.get());
+
+                        pOutput.accept(ModItems.FIRE_TREASURE.get());
+                        pOutput.accept(ModItems.WATER_TREASURE.get());
+                        pOutput.accept(ModItems.WOOD_TREASURE.get());
+                        pOutput.accept(ModItems.EARTH_TREASURE.get());
+                        pOutput.accept(ModItems.GOLD_TREASURE.get());
+
+                        pOutput.accept(ModItems.FIVE_ELEMENT_INDESTRUCTIBLE_SWORD.get());
 
                     })
                     .build());
