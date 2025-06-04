@@ -5,13 +5,13 @@
       "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "dimensionmod:spawn_area_struct",
+        "location": "dimensionmod:huohui_sect",
         "projection": "rigid",
         "processors": "minecraft:empty"
       }
     },
     {
-      "weight": 90,
+      "weight": 20,
       "element": {
         "element_type": "minecraft:empty_pool_element"
       }

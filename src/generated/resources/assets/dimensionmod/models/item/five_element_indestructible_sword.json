@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "dimensionmod:item/five_element_indestructible_sword"
+  }
+}
