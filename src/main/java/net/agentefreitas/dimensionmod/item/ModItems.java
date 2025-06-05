@@ -2,9 +2,11 @@ package net.agentefreitas.dimensionmod.item;
 
 import net.agentefreitas.dimensionmod.DimensionMod;
 import net.agentefreitas.dimensionmod.block.ModBlocks;
+import net.agentefreitas.dimensionmod.entity.ModEntities;
 import net.agentefreitas.dimensionmod.item.custom.BlackWordlessBook;
 import net.agentefreitas.dimensionmod.item.custom.DimensionBookItem;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -47,6 +49,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> FIVE_ELEMENT_INDESTRUCTIBLE_SWORD = ITEMS.register("five_element_indestructible_sword",
             () -> new SwordItem(ModToolTiers.FIVE_ELEMENT_TIER, 1,-1f, new Item.Properties().fireResistant()));
+
+    public static final RegistryObject<Item> DISCIPLE_SPANW_EGG = ITEMS.register("disciple_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.DISCIPLE, 0xf2f2f2, 0x990000, new Item.Properties()));
 
 
     /** exemplo

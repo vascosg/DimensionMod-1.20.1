@@ -3,6 +3,8 @@ package net.agentefreitas.dimensionmod;
 import com.mojang.logging.LogUtils;
 import net.agentefreitas.dimensionmod.block.ModBlockEntities;
 import net.agentefreitas.dimensionmod.block.ModBlocks;
+import net.agentefreitas.dimensionmod.entity.ModEntities;
+import net.agentefreitas.dimensionmod.entity.client.DiscipleRenderer;
 import net.agentefreitas.dimensionmod.event.BlockPlaceRestriction;
 import net.agentefreitas.dimensionmod.event.ChatListener;
 import net.agentefreitas.dimensionmod.event.NoClouds;
@@ -11,6 +13,7 @@ import net.agentefreitas.dimensionmod.item.ModCreativeModTabs;
 import net.agentefreitas.dimensionmod.item.ModItems;
 import net.agentefreitas.dimensionmod.util.ModDatapackLoader;
 //import net.agentefreitas.dimensionmod.worldgen.dimension.ModDimensions;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
@@ -56,6 +59,7 @@ public class DimensionMod {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
+        ModEntities.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(ModDatapackLoader.class);
         //ModDimensions.register();
@@ -88,7 +92,7 @@ public class DimensionMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            EntityRenderers.register(ModEntities.DISCIPLE.get(), DiscipleRenderer::new);
         }
     }
 }
