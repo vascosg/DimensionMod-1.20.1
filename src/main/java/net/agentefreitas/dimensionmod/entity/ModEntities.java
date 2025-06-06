@@ -15,8 +15,8 @@ public class ModEntities {
 
 
     public static final RegistryObject<EntityType<DiscipleEntity>> DISCIPLE =
-            ENTITY_TYPES.register("disciple", () -> EntityType.Builder.of(DiscipleEntity::new, MobCategory.MONSTER)
-                    .sized(0.6f, 1.8f).build("disciple"));
+            ENTITY_TYPES.register("disciple", () -> EntityType.Builder.of(DiscipleEntity::new, MobCategory.AMBIENT)
+                    .sized(0.6f, 2.1f).build("disciple"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

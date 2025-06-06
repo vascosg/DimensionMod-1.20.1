@@ -1,4 +1,5 @@
 package net.agentefreitas.dimensionmod.mixin;
+/**
 
 import it.unimi.dsi.fastutil.longs.Long2ObjectLinkedOpenHashMap;
 import net.minecraft.server.level.ChunkHolder;
@@ -12,3 +13,4 @@ public interface ChunkMapAccessor {
     @Accessor("visibleChunkMap")
     Long2ObjectLinkedOpenHashMap<ChunkHolder> getVisibleChunkMap();
 }
+**/

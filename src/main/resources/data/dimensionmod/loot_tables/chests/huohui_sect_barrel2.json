@@ -1,0 +1,51 @@
+{
+  "type": "chest",
+  "pools": [
+    {
+      "rolls": 10,
+      "bonus_rolls": 10,
+      "functions" : [
+        {
+          "function": "set_count",
+          "count": {
+            "type": "uniform",
+            "min": 1,
+            "max": 5
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "item",
+          "name": "moss_block",
+          "weight": 6
+        },
+        {
+          "type": "item",
+          "name": "cobweb",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "name": "bone",
+          "weight": 4
+        },
+        {
+          "type": "item",
+          "name": "raw_gold_block",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "coal_block",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "salmon",
+          "weight": 5
+        }
+      ]
+    }
+  ]
+}

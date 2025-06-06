@@ -3,6 +3,7 @@ package net.agentefreitas.dimensionmod;
 import com.mojang.logging.LogUtils;
 import net.agentefreitas.dimensionmod.block.ModBlockEntities;
 import net.agentefreitas.dimensionmod.block.ModBlocks;
+import net.agentefreitas.dimensionmod.entity.MobEntitySpawnPlacements;
 import net.agentefreitas.dimensionmod.entity.ModEntities;
 import net.agentefreitas.dimensionmod.entity.client.DiscipleRenderer;
 import net.agentefreitas.dimensionmod.event.BlockPlaceRestriction;
@@ -73,7 +74,6 @@ public class DimensionMod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
     }
 
     // Add the example block item to the building blocks tab

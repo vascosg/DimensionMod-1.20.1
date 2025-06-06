@@ -1,0 +1,61 @@
+{
+  "type": "chest",
+  "pools": [
+    {
+      "rolls": 10,
+      "bonus_rolls": 5,
+      "functions" : [
+        {
+          "function": "set_count",
+          "count": {
+            "type": "uniform",
+            "min": 1,
+            "max": 9
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "item",
+          "name": "iron_ingot",
+          "weight": 3
+        },
+        {
+          "type": "item",
+          "name": "book",
+          "weight": 4
+        },
+        {
+          "type": "item",
+          "name": "mangrove_log",
+          "weight": 6
+        },
+        {
+          "type": "item",
+          "name": "red_nether_bricks",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "name": "beetroot_soup",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "redstone",
+          "weight": 4
+        },
+        {
+          "type": "item",
+          "name": "red_candle",
+          "weight": 4
+        },
+        {
+          "type": "item",
+          "name": "raw_gold",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}
