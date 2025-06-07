@@ -1,21 +1,22 @@
 package net.agentefreitas.dimensionmod.entity.goal;
 
+import net.agentefreitas.dimensionmod.entity.custom.BaiYuEntity;
 import net.agentefreitas.dimensionmod.entity.custom.DiscipleEntity;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 
-public class DiscipleAttackGoal extends MeleeAttackGoal {
-    private final DiscipleEntity entity;
+public class BaiYuAttackGoal extends MeleeAttackGoal {
+    private final BaiYuEntity entity;
 
     private int attackDelay = 5;
     private int ticksUntilNextAttack = 5;
     private boolean shouldCountTillNextAttack = false;
 
-    public DiscipleAttackGoal(PathfinderMob pMob, double pSpeedModifier, boolean pFollowingTargetEvenIfNotSeen) {
+    public BaiYuAttackGoal(PathfinderMob pMob, double pSpeedModifier, boolean pFollowingTargetEvenIfNotSeen) {
         super(pMob, pSpeedModifier, pFollowingTargetEvenIfNotSeen);
-        entity = ((DiscipleEntity) pMob);
+        entity = ((BaiYuEntity) pMob);
     }
 
     @Override

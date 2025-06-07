@@ -28,4 +28,14 @@ public class MobEntitySpawnPlacements {
         BlockState below = world.getBlockState(pos.below());
         return below.isSolid();
     }
+
+    public static boolean checkLittlePrupleSpawnRules(EntityType<? extends PathfinderMob> entityType,
+                                                  ServerLevelAccessor world,
+                                                  MobSpawnType spawnReason,
+                                                  BlockPos pos,
+                                                  RandomSource random) {
+
+        BlockState below = world.getBlockState(pos.below());
+        return below.isSolid();
+    }
 }

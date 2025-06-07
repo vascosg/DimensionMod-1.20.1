@@ -38,6 +38,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.FIVE_ELEMENT_INDESTRUCTIBLE_SWORD);
 
         withExistingParent(ModItems.DISCIPLE_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.LITTLE_PURPLE_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.BAI_YU_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
 
         /** exemplo

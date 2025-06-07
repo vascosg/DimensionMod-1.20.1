@@ -50,8 +50,16 @@ public class ModItems {
     public static final RegistryObject<Item> FIVE_ELEMENT_INDESTRUCTIBLE_SWORD = ITEMS.register("five_element_indestructible_sword",
             () -> new SwordItem(ModToolTiers.FIVE_ELEMENT_TIER, 1,-1f, new Item.Properties().fireResistant()));
 
+
+    //Entities
     public static final RegistryObject<Item> DISCIPLE_SPANW_EGG = ITEMS.register("disciple_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.DISCIPLE, 0xf2f2f2, 0x990000, new Item.Properties()));
+
+    public static final RegistryObject<Item> LITTLE_PURPLE_SPANW_EGG = ITEMS.register("little_purple_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.LITTLE_PURPLE, 0xf2f2f2, 0x8b4eb4, new Item.Properties()));
+
+    public static final RegistryObject<Item> BAI_YU_SPANW_EGG = ITEMS.register("bai_yu_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.BAI_YU, 0xf2f2f2, 0x7db473, new Item.Properties()));
 
 
     /** exemplo

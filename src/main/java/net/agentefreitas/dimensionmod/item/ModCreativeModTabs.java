@@ -40,6 +40,8 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.FIVE_ELEMENT_INDESTRUCTIBLE_SWORD.get());
 
                         pOutput.accept(ModItems.DISCIPLE_SPANW_EGG.get());
+                        pOutput.accept(ModItems.LITTLE_PURPLE_SPANW_EGG.get());
+                        pOutput.accept(ModItems.BAI_YU_SPANW_EGG.get());
 
                     })
                     .build());
