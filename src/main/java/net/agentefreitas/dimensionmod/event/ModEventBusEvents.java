@@ -4,6 +4,7 @@ import net.agentefreitas.dimensionmod.DimensionMod;
 import net.agentefreitas.dimensionmod.entity.ModEntities;
 import net.agentefreitas.dimensionmod.entity.custom.BaiYuEntity;
 import net.agentefreitas.dimensionmod.entity.custom.DiscipleEntity;
+import net.agentefreitas.dimensionmod.entity.custom.GaoYuEntity;
 import net.agentefreitas.dimensionmod.entity.custom.LittlePurpleEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacements;
@@ -25,6 +26,7 @@ public class ModEventBusEvents {
         event.put(ModEntities.DISCIPLE.get(), DiscipleEntity.createAttributes().build());
         event.put(ModEntities.LITTLE_PURPLE.get(), LittlePurpleEntity.createAttributes().build());
         event.put(ModEntities.BAI_YU.get(), BaiYuEntity.createAttributes().build());
+        event.put(ModEntities.GAO_YU.get(), GaoYuEntity.createAttributes().build());
     }
 
 
@@ -38,6 +40,9 @@ public class ModEventBusEvents {
                 MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 
         event.register(ModEntities.BAI_YU.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+
+        event.register(ModEntities.GAO_YU.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
     }
 

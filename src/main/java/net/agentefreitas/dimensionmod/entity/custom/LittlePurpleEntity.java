@@ -23,6 +23,7 @@ public class LittlePurpleEntity extends PathfinderMob {
     public LittlePurpleEntity(EntityType<? extends PathfinderMob> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
 
+        this.setPersistenceRequired();
         this.setCustomName(Component.literal("Little Purple").withStyle(style -> style.withColor(0x8a4bb5)));
         this.setCustomNameVisible(false);
     }

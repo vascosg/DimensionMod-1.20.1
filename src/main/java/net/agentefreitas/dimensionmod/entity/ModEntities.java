@@ -3,6 +3,7 @@ package net.agentefreitas.dimensionmod.entity;
 import net.agentefreitas.dimensionmod.DimensionMod;
 import net.agentefreitas.dimensionmod.entity.custom.BaiYuEntity;
 import net.agentefreitas.dimensionmod.entity.custom.DiscipleEntity;
+import net.agentefreitas.dimensionmod.entity.custom.GaoYuEntity;
 import net.agentefreitas.dimensionmod.entity.custom.LittlePurpleEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -26,7 +27,12 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<BaiYuEntity>> BAI_YU =
             ENTITY_TYPES.register("bai_yu", () -> EntityType.Builder.of(BaiYuEntity::new, MobCategory.AMBIENT)
-                    .sized(0.6f, 2.0f).build("bai_yu"));
+                    .sized(0.6f, 1.9f).build("bai_yu"));
+
+    public static final RegistryObject<EntityType<GaoYuEntity>> GAO_YU =
+            ENTITY_TYPES.register("gao_yu", () -> EntityType.Builder.of(GaoYuEntity::new, MobCategory.AMBIENT)
+                    .sized(0.5f, 1.8f).build("gao_yu"));
+
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

@@ -7,19 +7,20 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.Level;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(value = Dist.CLIENT)
 public class NoClouds {
 
     // Defina a chave da sua dimensão personalizada
     private static final ResourceKey<Level> EMPTY_DIMENSION = ResourceKey.create(Registries.DIMENSION, new ResourceLocation("dimensionmod", "empty_dimension"));
 
     @SubscribeEvent
-    public static void onServerTick(TickEvent.ServerTickEvent event) {
+    public static void onClientTick(TickEvent.ClientTickEvent  event) {
         // Garantir que o código seja executado somente no lado do cliente
         if (event.phase == TickEvent.Phase.END) {
             ClientLevel clientLevel = Minecraft.getInstance().level;

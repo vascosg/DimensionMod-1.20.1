@@ -1,4 +1,4 @@
-// 1.20.1	2025-06-07T18:25:40.9183018	Item Models: dimensionmod
+// 1.20.1	2025-06-08T12:05:08.5319825	Item Models: dimensionmod
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dimensionmod/models/item/bai_yu_spawn_egg.json
 68f0aad47c4ad60c583a539ff04d3e50953821fd assets/dimensionmod/models/item/blue_book.json
 a3ad780828e8b6e246ca573c9674bb9c83c62608 assets/dimensionmod/models/item/diary_of_a_creator.json
@@ -7,6 +7,7 @@ a3ad780828e8b6e246ca573c9674bb9c83c62608 assets/dimensionmod/models/item/diary_o
 da814aa0217be7599322c4bb80cb510b3a002901 assets/dimensionmod/models/item/earth_treasure.json
 e4b3361baee671c3473d0ab74986b145b4b17ff3 assets/dimensionmod/models/item/fire_treasure.json
 df4778cad5525a1a1b0ddc188b43ae398511b673 assets/dimensionmod/models/item/five_element_indestructible_sword.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dimensionmod/models/item/gao_yu_spawn_egg.json
 0424af27c0f98e2ef3f24ba2ce24cfb9e00f3e02 assets/dimensionmod/models/item/gold_treasure.json
 1dbffec953ca158e8fc05cc99dd0bed9e80d2462 assets/dimensionmod/models/item/green_book.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dimensionmod/models/item/little_purple_spawn_egg.json

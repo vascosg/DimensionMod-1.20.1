@@ -13,4 +13,7 @@ public class ModModelLayers {
 
     public static  final ModelLayerLocation BAI_YU_LAYER = new ModelLayerLocation(
             new ResourceLocation(DimensionMod.MOD_ID, "bai_yu_layer"), "main");
+
+    public static  final ModelLayerLocation GAO_YU_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DimensionMod.MOD_ID, "gao_yu_layer"), "main");
 }
