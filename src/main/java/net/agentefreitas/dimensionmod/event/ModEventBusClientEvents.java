@@ -15,5 +15,6 @@ public class ModEventBusClientEvents {
         event.registerLayerDefinition(ModModelLayers.LITTLE_PURPLE_LAYER, LittlePurpleModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.BAI_YU_LAYER, BaiYuModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.GAO_YU_LAYER, GaoYuModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.DEMI_CAT_LAYER, DemiCatModel::createBodyLayer);
     }
 }

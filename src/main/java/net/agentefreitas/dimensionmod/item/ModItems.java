@@ -64,6 +64,9 @@ public class ModItems {
     public static final RegistryObject<Item> GAO_YU_SPANW_EGG = ITEMS.register("gao_yu_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.GAO_YU, 0xf2f2f2, 0x7a1d1d, new Item.Properties()));
 
+    public static final RegistryObject<Item> DEMI_CAT_SPANW_EGG = ITEMS.register("demi_cat_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.DEMI_CAT, 0xf2f2f2, 0x27273a, new Item.Properties()));
+
 
     /** exemplo
     public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",

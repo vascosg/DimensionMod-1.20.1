@@ -5,10 +5,7 @@ import net.agentefreitas.dimensionmod.block.ModBlockEntities;
 import net.agentefreitas.dimensionmod.block.ModBlocks;
 import net.agentefreitas.dimensionmod.entity.MobEntitySpawnPlacements;
 import net.agentefreitas.dimensionmod.entity.ModEntities;
-import net.agentefreitas.dimensionmod.entity.client.BaiYuRenderer;
-import net.agentefreitas.dimensionmod.entity.client.DiscipleRenderer;
-import net.agentefreitas.dimensionmod.entity.client.GaoYuRenderer;
-import net.agentefreitas.dimensionmod.entity.client.LittlePurpleRenderer;
+import net.agentefreitas.dimensionmod.entity.client.*;
 import net.agentefreitas.dimensionmod.event.BlockPlaceRestriction;
 import net.agentefreitas.dimensionmod.event.ChatListener;
 import net.agentefreitas.dimensionmod.event.NoClouds;
@@ -99,7 +96,7 @@ public class DimensionMod {
             EntityRenderers.register(ModEntities.LITTLE_PURPLE.get(), LittlePurpleRenderer::new);
             EntityRenderers.register(ModEntities.BAI_YU.get(), BaiYuRenderer::new);
             EntityRenderers.register(ModEntities.GAO_YU.get(), GaoYuRenderer::new);
-
+            EntityRenderers.register(ModEntities.DEMI_CAT.get(), DemiCatRenderer::new);
         }
     }
 }

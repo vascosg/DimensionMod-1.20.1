@@ -43,6 +43,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.LITTLE_PURPLE_SPANW_EGG.get());
                         pOutput.accept(ModItems.BAI_YU_SPANW_EGG.get());
                         pOutput.accept(ModItems.GAO_YU_SPANW_EGG.get());
+                        pOutput.accept(ModItems.DEMI_CAT_SPANW_EGG.get());
 
                     })
                     .build());

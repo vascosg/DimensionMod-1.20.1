@@ -2,10 +2,7 @@ package net.agentefreitas.dimensionmod.event;
 
 import net.agentefreitas.dimensionmod.DimensionMod;
 import net.agentefreitas.dimensionmod.entity.ModEntities;
-import net.agentefreitas.dimensionmod.entity.custom.BaiYuEntity;
-import net.agentefreitas.dimensionmod.entity.custom.DiscipleEntity;
-import net.agentefreitas.dimensionmod.entity.custom.GaoYuEntity;
-import net.agentefreitas.dimensionmod.entity.custom.LittlePurpleEntity;
+import net.agentefreitas.dimensionmod.entity.custom.*;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.animal.Animal;
@@ -27,12 +24,12 @@ public class ModEventBusEvents {
         event.put(ModEntities.LITTLE_PURPLE.get(), LittlePurpleEntity.createAttributes().build());
         event.put(ModEntities.BAI_YU.get(), BaiYuEntity.createAttributes().build());
         event.put(ModEntities.GAO_YU.get(), GaoYuEntity.createAttributes().build());
+        event.put(ModEntities.DEMI_CAT.get(), DemiCatEntity.createAttributes().build());
     }
 
 
     @SubscribeEvent
     public static void registerSpawnPlacements(SpawnPlacementRegisterEvent event) {
-        System.out.println("Disciple spawn register called!");
         event.register(ModEntities.DISCIPLE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 MobEntitySpawnPlacements::checkDiscipleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 
@@ -43,6 +40,9 @@ public class ModEventBusEvents {
                 MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 
         event.register(ModEntities.GAO_YU.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+
+        event.register(ModEntities.DEMI_CAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
     }
 

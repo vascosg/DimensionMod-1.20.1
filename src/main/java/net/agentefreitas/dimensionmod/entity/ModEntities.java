@@ -1,10 +1,7 @@
 package net.agentefreitas.dimensionmod.entity;
 
 import net.agentefreitas.dimensionmod.DimensionMod;
-import net.agentefreitas.dimensionmod.entity.custom.BaiYuEntity;
-import net.agentefreitas.dimensionmod.entity.custom.DiscipleEntity;
-import net.agentefreitas.dimensionmod.entity.custom.GaoYuEntity;
-import net.agentefreitas.dimensionmod.entity.custom.LittlePurpleEntity;
+import net.agentefreitas.dimensionmod.entity.custom.*;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -32,6 +29,10 @@ public class ModEntities {
     public static final RegistryObject<EntityType<GaoYuEntity>> GAO_YU =
             ENTITY_TYPES.register("gao_yu", () -> EntityType.Builder.of(GaoYuEntity::new, MobCategory.AMBIENT)
                     .sized(0.5f, 1.8f).build("gao_yu"));
+
+    public static final RegistryObject<EntityType<DemiCatEntity>> DEMI_CAT =
+            ENTITY_TYPES.register("demi_cat", () -> EntityType.Builder.of(DemiCatEntity::new, MobCategory.AMBIENT)
+                    .sized(0.6f, 1.9f).build("demi_cat"));
 
 
     public static void register(IEventBus eventBus) {
