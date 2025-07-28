@@ -40,8 +40,8 @@ public class DiscipleEntity extends PathfinderMob {
     public DiscipleEntity(EntityType<? extends PathfinderMob> pEntityType, Level pLevel) {
 
         super(pEntityType, pLevel);
-        DiscipleVariant variant = Util.getRandom(DiscipleVariant.values(), this.random);
-        this.setVariant(variant);
+        //DiscipleVariant variant = Util.getRandom(DiscipleVariant.values(), this.random);
+        //this.setVariant(variant);
 
     }
 
@@ -165,6 +165,14 @@ public class DiscipleEntity extends PathfinderMob {
     public void readAdditionalSaveData(CompoundTag pCompound) {
         super.readAdditionalSaveData(pCompound);
         this.entityData.set(VARIANT, pCompound.getInt("Variant"));
+    }
+
+    @Override
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor level, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData spawnData, @Nullable CompoundTag dataTag) {
+        if (this.getTypeVariant() == 0) {
+            this.setVariant(Util.getRandom(DiscipleVariant.values(), this.random));
+        }
+        return super.finalizeSpawn(level, difficulty, reason, spawnData, dataTag);
     }
 
 }

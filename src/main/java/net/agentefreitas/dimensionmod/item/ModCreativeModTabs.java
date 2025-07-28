@@ -38,6 +38,8 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.GOLD_TREASURE.get());
 
                         pOutput.accept(ModItems.FIVE_ELEMENT_INDESTRUCTIBLE_SWORD.get());
+                        pOutput.accept(ModItems.SUN_SWORD.get());
+                        pOutput.accept(ModItems.MOON_BOW.get());
 
                         pOutput.accept(ModItems.DISCIPLE_SPANW_EGG.get());
                         pOutput.accept(ModItems.LITTLE_PURPLE_SPANW_EGG.get());

@@ -1,0 +1,6 @@
+{
+  "parent": "dimensionmod:item/moon_bow",
+  "textures": {
+    "layer0": "dimensionmod:item/moon_bow_pulling_1"
+  }
+}

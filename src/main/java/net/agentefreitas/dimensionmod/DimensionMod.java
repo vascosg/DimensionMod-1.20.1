@@ -14,6 +14,7 @@ import net.agentefreitas.dimensionmod.item.ModCreativeModTabs;
 import net.agentefreitas.dimensionmod.item.ModItems;
 import net.agentefreitas.dimensionmod.util.ModDatapackLoader;
 //import net.agentefreitas.dimensionmod.worldgen.dimension.ModDimensions;
+import net.agentefreitas.dimensionmod.util.ModItemProperties;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.Registry;
@@ -97,6 +98,7 @@ public class DimensionMod {
             EntityRenderers.register(ModEntities.BAI_YU.get(), BaiYuRenderer::new);
             EntityRenderers.register(ModEntities.GAO_YU.get(), GaoYuRenderer::new);
             EntityRenderers.register(ModEntities.DEMI_CAT.get(), DemiCatRenderer::new);
+            ModItemProperties.addCustomItemProperties();
         }
     }
 }

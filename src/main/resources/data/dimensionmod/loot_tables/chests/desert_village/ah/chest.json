@@ -1,0 +1,51 @@
+{
+  "type": "chest",
+  "pools": [
+    {
+      "rolls": 10,
+      "bonus_rolls": 10,
+      "functions" : [
+        {
+          "function": "set_count",
+          "count": {
+            "type": "uniform",
+            "min": 1,
+            "max": 5
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "item",
+          "name": "cooked_cod",
+          "weight": 6
+        },
+        {
+          "type": "item",
+          "name": "milk_bucket",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "gold_ingot",
+          "weight": 4
+        },
+        {
+          "type": "item",
+          "name": "cactus",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "sandstone",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "cooked_salmon",
+          "weight": 5
+        }
+      ]
+    }
+  ]
+}

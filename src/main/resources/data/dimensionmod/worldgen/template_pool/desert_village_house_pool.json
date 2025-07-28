@@ -2,7 +2,7 @@
   "fallback": "minecraft:empty",
   "elements": [
     {
-      "weight": 10,
+      "weight": 15,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "dimensionmod:desert_village_parts/houses/desert_village_ahblack",
@@ -11,7 +11,7 @@
       }
     },
     {
-      "weight": 10,
+      "weight": 15,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "dimensionmod:desert_village_parts/houses/desert_village_ahblue",
@@ -20,7 +20,7 @@
       }
     },
     {
-      "weight": 10,
+      "weight": 15,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "dimensionmod:desert_village_parts/houses/desert_village_ahgreen",
@@ -29,7 +29,7 @@
       }
     },
     {
-      "weight": 10,
+      "weight": 15,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "dimensionmod:desert_village_parts/houses/desert_village_ahlightblue",
@@ -38,7 +38,7 @@
       }
     },
     {
-      "weight": 10,
+      "weight": 15,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "dimensionmod:desert_village_parts/houses/desert_village_ahlime",
@@ -47,7 +47,7 @@
       }
     },
     {
-      "weight": 10,
+      "weight": 15,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "dimensionmod:desert_village_parts/houses/desert_village_ahmagenta",
@@ -56,7 +56,7 @@
       }
     },
     {
-      "weight": 10,
+      "weight": 15,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "dimensionmod:desert_village_parts/houses/desert_village_ahorange",
@@ -65,7 +65,7 @@
       }
     },
     {
-      "weight": 10,
+      "weight": 15,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "dimensionmod:desert_village_parts/houses/desert_village_ahpink",
@@ -74,7 +74,7 @@
       }
     },
     {
-      "weight": 10,
+      "weight": 15,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "dimensionmod:desert_village_parts/houses/desert_village_ahpurple",
@@ -83,7 +83,7 @@
       }
     },
     {
-      "weight": 10,
+      "weight": 15,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "dimensionmod:desert_village_parts/houses/desert_village_ahred",
@@ -92,7 +92,7 @@
       }
     },
     {
-      "weight": 10,
+      "weight": 15,
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "dimensionmod:desert_village_parts/houses/desert_village_ahyellow",
@@ -492,6 +492,105 @@
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "dimensionmod:desert_village_parts/houses/desert_village_tyellow",
+        "projection": "rigid",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "dimensionmod:desert_village_parts/houses/desert_village_bridge_roadblack",
+        "projection": "rigid",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "dimensionmod:desert_village_parts/houses/desert_village_bridge_roadblue",
+        "projection": "rigid",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "dimensionmod:desert_village_parts/houses/desert_village_bridge_roadgreen",
+        "projection": "rigid",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "dimensionmod:desert_village_parts/houses/desert_village_bridge_roadlightblue",
+        "projection": "rigid",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "dimensionmod:desert_village_parts/houses/desert_village_bridge_roadblime",
+        "projection": "rigid",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "dimensionmod:desert_village_parts/houses/desert_village_bridge_roadmagenta",
+        "projection": "rigid",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "dimensionmod:desert_village_parts/houses/desert_village_bridge_roadorange",
+        "projection": "rigid",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "dimensionmod:desert_village_parts/houses/desert_village_bridge_roadpink",
+        "projection": "rigid",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "dimensionmod:desert_village_parts/houses/desert_village_bridge_roadpurple",
+        "projection": "rigid",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "dimensionmod:desert_village_parts/houses/desert_village_bridge_roadred",
+        "projection": "rigid",
+        "processors": "minecraft:empty"
+      }
+    },
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "dimensionmod:desert_village_parts/houses/desert_village_bridge_roadyellow",
         "projection": "rigid",
         "processors": "minecraft:empty"
       }

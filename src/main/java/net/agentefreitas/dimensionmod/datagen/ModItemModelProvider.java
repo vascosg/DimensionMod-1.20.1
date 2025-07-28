@@ -36,6 +36,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.GOLD_TREASURE);
 
         handheldItem(ModItems.FIVE_ELEMENT_INDESTRUCTIBLE_SWORD);
+        handheldItem(ModItems.SUN_SWORD);
 
         withExistingParent(ModItems.DISCIPLE_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.LITTLE_PURPLE_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));

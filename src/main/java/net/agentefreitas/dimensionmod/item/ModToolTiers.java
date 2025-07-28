@@ -21,4 +21,19 @@ public class ModToolTiers {
         public Ingredient getRepairIngredient() { return Ingredient.EMPTY; }
     };
 
+    public static final Tier SUN_STONE_TIER = new Tier() {
+        @Override
+        public int getUses() { return 3500 ; }
+        @Override
+        public float getSpeed() { return 4.0F; }
+        @Override
+        public float getAttackDamageBonus() { return 6.0F; }
+        @Override
+        public int getLevel() { return 4; }
+        @Override
+        public int getEnchantmentValue() { return 14; }
+        @Override
+        public Ingredient getRepairIngredient() { return Ingredient.EMPTY; }
+    };
+
 }

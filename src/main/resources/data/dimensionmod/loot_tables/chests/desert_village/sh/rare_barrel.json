@@ -1,0 +1,41 @@
+{
+  "type": "chest",
+  "pools": [
+    {
+      "rolls": 6,
+      "bonus_rolls": 15,
+      "functions" : [
+        {
+          "function": "set_count",
+          "count": {
+            "type": "uniform",
+            "min": 1,
+            "max": 4
+          }
+        }
+      ],
+      "entries": [
+        {
+          "type": "item",
+          "name": "diamond",
+          "weight": 3
+        },
+        {
+          "type": "item",
+          "name": "iron_block",
+          "weight": 4
+        },
+        {
+          "type": "item",
+          "name": "netherite_ingot",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "ender_pearl",
+          "weight": 6
+        }
+      ]
+    }
+  ]
+}

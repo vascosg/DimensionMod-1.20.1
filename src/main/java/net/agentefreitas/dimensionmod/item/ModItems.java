@@ -5,6 +5,8 @@ import net.agentefreitas.dimensionmod.block.ModBlocks;
 import net.agentefreitas.dimensionmod.entity.ModEntities;
 import net.agentefreitas.dimensionmod.item.custom.BlackWordlessBook;
 import net.agentefreitas.dimensionmod.item.custom.DimensionBookItem;
+import net.agentefreitas.dimensionmod.item.custom.MoonBowItem;
+import net.agentefreitas.dimensionmod.item.custom.SunSwordItem;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -50,6 +52,11 @@ public class ModItems {
     public static final RegistryObject<Item> FIVE_ELEMENT_INDESTRUCTIBLE_SWORD = ITEMS.register("five_element_indestructible_sword",
             () -> new SwordItem(ModToolTiers.FIVE_ELEMENT_TIER, 1,-1f, new Item.Properties().fireResistant()));
 
+    public static final RegistryObject<Item> SUN_SWORD = ITEMS.register("sun_sword",
+            ()-> new SunSwordItem(ModToolTiers.SUN_STONE_TIER, 3, -2.4F, new Item.Properties().fireResistant()));
+
+    public static final RegistryObject<Item> MOON_BOW = ITEMS.register("moon_bow",
+            ()-> new MoonBowItem(new Item.Properties().durability(1500)));
 
     //Entities
     public static final RegistryObject<Item> DISCIPLE_SPANW_EGG = ITEMS.register("disciple_spawn_egg",
