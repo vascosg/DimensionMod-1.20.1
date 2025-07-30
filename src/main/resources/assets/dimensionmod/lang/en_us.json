@@ -18,6 +18,8 @@
 
   "block.dimensionmod.dimension_door_block": "Dimension Door ",
   "block.dimensionmod.lectern_white": "Dimension Book Lectern",
+  "block.dimensionmod.guardian_block": "Guardian Block",
+  "block.dimensionmod.guardian_door_closed": "Guardian Door Block",
 
 
   "creativetab.dimension_tab": "Dimension Tab"

@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "open=true": { "model": "dimensionmod:block/guardian_door_open" },
+    "open=false": { "model": "dimensionmod:block/guardian_door_closed" }
+  }
+}

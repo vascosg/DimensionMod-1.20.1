@@ -2,6 +2,8 @@ package net.agentefreitas.dimensionmod.block;
 
 import net.agentefreitas.dimensionmod.DimensionMod;
 import net.agentefreitas.dimensionmod.block.custom.DimensionBookLectern;
+import net.agentefreitas.dimensionmod.block.custom.GuardianBlock;
+import net.agentefreitas.dimensionmod.block.custom.GuardianDoorBlock;
 import net.agentefreitas.dimensionmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -28,6 +30,12 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> DIMENSION_BOOK_LECTERN = registerBlock("lectern_white",
             () -> new DimensionBookLectern(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR).sound(SoundType.WOOD)));
+
+    public static final RegistryObject<Block> GUARDIAN_BLOCK = registerBlock("guardian_block",
+            ()-> new GuardianBlock(BlockBehaviour.Properties.copy((Blocks.BEDROCK))));
+
+    public static final RegistryObject<Block> GUARDIAN_DOOR_BLOCK = registerBlock("guardian_door_block",
+            ()-> new GuardianDoorBlock(BlockBehaviour.Properties.copy((Blocks.BEDROCK))));
 
     /** exemplo
     public static final RegistryObject<Block> RAW_SAPPHIRE_BLOCK = registerBlock("raw_sapphire_block",

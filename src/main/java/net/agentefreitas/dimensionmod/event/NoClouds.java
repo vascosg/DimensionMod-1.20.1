@@ -18,6 +18,7 @@ public class NoClouds {
 
     // Defina a chave da sua dimensão personalizada
     private static final ResourceKey<Level> EMPTY_DIMENSION = ResourceKey.create(Registries.DIMENSION, new ResourceLocation("dimensionmod", "empty_dimension"));
+    private static final ResourceKey<Level> AQUA_DIMENSION = ResourceKey.create(Registries.DIMENSION, new ResourceLocation("dimensionmod", "aqua_dimension"));
 
     @SubscribeEvent
     public static void onClientTick(TickEvent.ClientTickEvent  event) {
@@ -26,7 +27,7 @@ public class NoClouds {
             ClientLevel clientLevel = Minecraft.getInstance().level;
 
             // Verifique se o nível atual é a dimensão vazia
-            if (clientLevel != null && clientLevel.dimension() == EMPTY_DIMENSION) {
+            if (clientLevel != null && (clientLevel.dimension() == EMPTY_DIMENSION ||clientLevel.dimension() == AQUA_DIMENSION) ) {
                 // Remover as nuvens somente na dimensão vazia
                 Minecraft.getInstance().options.cloudStatus().set(CloudStatus.OFF);
             }

@@ -30,6 +30,8 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.RED_BOOK.get());
                         pOutput.accept(ModItems.YELLOW_BOOK.get());
                         pOutput.accept(ModBlocks.DIMENSION_BOOK_LECTERN.get());
+                        pOutput.accept(ModBlocks.GUARDIAN_BLOCK.get());
+                        pOutput.accept(ModBlocks.GUARDIAN_DOOR_BLOCK.get());
 
                         pOutput.accept(ModItems.FIRE_TREASURE.get());
                         pOutput.accept(ModItems.WATER_TREASURE.get());

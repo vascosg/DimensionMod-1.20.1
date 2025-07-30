@@ -1,0 +1,64 @@
+{
+  "type": "dimensionmod:aqua_dimension_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": {
+      "name": "dimensionmod:aqua_noise",
+      "default_block": {
+        "Name": "minecraft:water"
+      },
+      "default_fluid": {
+        "Name": "minecraft:water"
+      },
+      "sea_level": 384,
+      "disable_mob_generation": true,
+      "aquifers_enabled": false,
+      "ore_veins_enabled": false,
+      "legacy_random_source": false,
+      "noise": {
+        "min_y": -32,
+        "height": 384,
+        "size_horizontal": 1,
+        "size_vertical": 1
+      },
+      "noise_router": {
+        "barrier": "minecraft:zero",
+        "fluid_level_floodedness": "minecraft:zero",
+        "fluid_level_spread": "minecraft:zero",
+        "lava": "minecraft:zero",
+        "vein_toggle": "minecraft:zero",
+        "vein_ridged": "minecraft:zero",
+        "vein_gap": "minecraft:zero",
+        "temperature": "minecraft:zero",
+        "vegetation": "minecraft:zero",
+        "continents": "minecraft:zero",
+        "erosion": "minecraft:zero",
+        "depth": "minecraft:zero",
+        "ridges": "minecraft:zero",
+        "initial_density_without_jaggedness": "minecraft:zero",
+        "final_density": "minecraft:zero"
+      },
+      "spawn_target": [
+        {
+          "temperature": 0,
+          "humidity": 0,
+          "continentalness": 0,
+          "erosion": 0,
+          "weirdness": 0,
+          "depth": 0,
+          "offset": 0
+        }
+      ],
+      "surface_rule": {
+        "type": "minecraft:block",
+        "result_state": {
+          "Name": "minecraft:air"
+        }
+      }
+    },
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "dimensionmod:aqua_biome"
+    }
+  }
+}
