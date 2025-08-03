@@ -1,4 +1,5 @@
-// 1.20.1	2025-07-29T11:51:48.5538317	Loot Tables
+// 1.20.1	2025-07-30T20:24:51.6323461	Loot Tables
 655d2211d67e59ec73eac606c7c8b158b8acef96 data/dimensionmod/loot_tables/blocks/dimension_door_block.json
 985331b3472d5711ff8132f071964a8355ee603e data/dimensionmod/loot_tables/blocks/guardian_block.json
+d622d6dc51b755c7b35e56266a0863b998e39632 data/dimensionmod/loot_tables/blocks/guardian_door_block.json
 46e5be63167e4e2c3cd3fa41f792d1cc258c7269 data/dimensionmod/loot_tables/blocks/lectern_white.json

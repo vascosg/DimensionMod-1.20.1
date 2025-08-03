@@ -49,6 +49,12 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.GAO_YU_SPANW_EGG.get());
                         pOutput.accept(ModItems.DEMI_CAT_SPANW_EGG.get());
 
+                        pOutput.accept(ModItems.COLDEST_ICE.get());
+                        pOutput.accept(ModItems.COLDEST_ICE_HELMET.get());
+                        pOutput.accept(ModItems.COLDEST_ICE_CHESTPLATE.get());
+                        pOutput.accept(ModItems.COLDEST_ICE_LEGGINGS.get());
+                        pOutput.accept(ModItems.COLDEST_ICE_BOOTS.get());
+
                     })
                     .build());
 

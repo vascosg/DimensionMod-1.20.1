@@ -49,6 +49,8 @@ public class ModItems {
     public static final RegistryObject<Item> GOLD_TREASURE = ITEMS.register("gold_treasure",
             () -> new Item(new Item.Properties().stacksTo(1)));
 
+
+    //weapon
     public static final RegistryObject<Item> FIVE_ELEMENT_INDESTRUCTIBLE_SWORD = ITEMS.register("five_element_indestructible_sword",
             () -> new SwordItem(ModToolTiers.FIVE_ELEMENT_TIER, 1,-1f, new Item.Properties().fireResistant()));
 
@@ -73,6 +75,21 @@ public class ModItems {
 
     public static final RegistryObject<Item> DEMI_CAT_SPANW_EGG = ITEMS.register("demi_cat_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.DEMI_CAT, 0xf2f2f2, 0x27273a, new Item.Properties()));
+
+    //armor
+    public static final RegistryObject<Item> COLDEST_ICE = ITEMS.register("coldest_ice",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> COLDEST_ICE_HELMET = ITEMS.register("coldest_ice_helmet",
+            () -> new ArmorItem(ModArmorMaterials.COLDEST_ICE, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> COLDEST_ICE_CHESTPLATE = ITEMS.register("coldest_ice_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.COLDEST_ICE, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> COLDEST_ICE_LEGGINGS = ITEMS.register("coldest_ice_leggings",
+            () -> new ArmorItem(ModArmorMaterials.COLDEST_ICE, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> COLDEST_ICE_BOOTS = ITEMS.register("coldest_ice_boots",
+            () -> new ArmorItem(ModArmorMaterials.COLDEST_ICE, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+
 
 
     /** exemplo

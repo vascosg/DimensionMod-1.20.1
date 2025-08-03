@@ -13,6 +13,13 @@
   "item.dimensionmod.wood_treasure": "Wood Treasure",
   "item.dimensionmod.earth_treasure": "Earth Treasure",
   "item.dimensionmod.gold_treasure": "Gold Treasure",
+
+  "item.dimensionmod.coldest_ice": "Coldest Ice",
+  "item.dimensionmod.coldest_ice_helmet": "Coldest Helmet",
+  "item.dimensionmod.coldest_ice_chestplate": "Coldest Chestplate",
+  "item.dimensionmod.coldest_ice_leggings": "Coldest Leggings",
+  "item.dimensionmod.coldest_ice_boots": "Coldest Boots",
+
   "item.dimensionmod.five_element_indestructible_sword": "Five Element Indestructible sword",
   "item.dimensionmod.moon_bow": "Moon Bow",
 
