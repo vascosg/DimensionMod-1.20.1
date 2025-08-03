@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "dimensionmod:item/coldest_ice_chestplate",
+    "layer1": "minecraft:trims/items/chestplate_trim_lapis"
+  }
+}
