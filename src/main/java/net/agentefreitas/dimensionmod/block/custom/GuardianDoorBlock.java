@@ -3,6 +3,7 @@ package net.agentefreitas.dimensionmod.block.custom;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -68,8 +69,12 @@ public class GuardianDoorBlock extends Block implements EntityBlock {
                 }
             }
             return InteractionResult.SUCCESS;
+        } else {
+            if (player instanceof ServerPlayer serverPlayer) {
+                serverPlayer.sendSystemMessage(Component.literal("Guardians don't survive without water"));
+            }
+            return InteractionResult.SUCCESS;
         }
-        return InteractionResult.PASS;
     }
 
 

@@ -20,6 +20,9 @@
   "item.dimensionmod.coldest_ice_leggings": "Coldest Leggings",
   "item.dimensionmod.coldest_ice_boots": "Coldest Boots",
 
+  "item.dimensionmod.icy_seeds": "Icy Seeds",
+  "item.dimensionmod.icy_crystal": "Icy Crystal",
+
   "item.dimensionmod.five_element_indestructible_sword": "Five Element Indestructible sword",
   "item.dimensionmod.moon_bow": "Moon Bow",
 
@@ -27,6 +30,7 @@
   "block.dimensionmod.lectern_white": "Dimension Book Lectern",
   "block.dimensionmod.guardian_block": "Guardian Block",
   "block.dimensionmod.guardian_door_closed": "Guardian Door Block",
+  "block.dimensionmod.guardian_door_block": "Guardian Door Block",
 
 
   "creativetab.dimension_tab": "Dimension Tab"

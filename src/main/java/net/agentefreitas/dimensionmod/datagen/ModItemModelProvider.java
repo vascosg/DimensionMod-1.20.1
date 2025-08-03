@@ -73,6 +73,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.COLDEST_ICE_LEGGINGS);
         trimmedArmorItem(ModItems.COLDEST_ICE_BOOTS);
 
+        simpleItem(ModItems.ICY_SEEDS);
+        simpleItem(ModItems.ICY_CRYSTAL);
+
 
         /** exemplo
         simpleItem(ModItems.SAPPHIRE);

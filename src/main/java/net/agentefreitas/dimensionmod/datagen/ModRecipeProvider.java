@@ -5,14 +5,19 @@ import net.agentefreitas.dimensionmod.block.ModBlocks;
 import net.agentefreitas.dimensionmod.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
 import java.util.List;
 import java.util.function.Consumer;
+
+import static net.minecraftforge.registries.ForgeRegistries.BLOCKS;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
 
@@ -34,15 +39,56 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oreBlasting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 100, "sapphire");
         **/
 
-        /** exemplo
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SAPPHIRE_BLOCK.get())
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.COLDEST_ICE.get())
                 .pattern("SSS")
                 .pattern("SSS")
                 .pattern("SSS")
-                .define('S', ModItems.SAPPHIRE.get())
-                .unlockedBy(getHasName(ModItems.SAPPHIRE.get()), has(ModItems.SAPPHIRE.get()))
+                .define('S', ModItems.ICY_CRYSTAL.get())
+                .unlockedBy(getHasName(ModItems.ICY_CRYSTAL.get()), has(ModItems.ICY_CRYSTAL.get()))
                 .save(pWriter);
-        **/
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.COLDEST_ICE_HELMET.get())
+                .pattern("SSS")
+                .pattern("S S")
+                .pattern("   ")
+                .define('S', ModItems.COLDEST_ICE.get())
+                .unlockedBy(getHasName(ModItems.COLDEST_ICE.get()), has(ModItems.COLDEST_ICE.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.COLDEST_ICE_CHESTPLATE.get())
+                .pattern("S S")
+                .pattern("SSS")
+                .pattern("SSS")
+                .define('S', ModItems.COLDEST_ICE.get())
+                .unlockedBy(getHasName(ModItems.COLDEST_ICE.get()), has(ModItems.COLDEST_ICE.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.COLDEST_ICE_LEGGINGS.get())
+                .pattern("SSS")
+                .pattern("S S")
+                .pattern("S S")
+                .define('S', ModItems.COLDEST_ICE.get())
+                .unlockedBy(getHasName(ModItems.COLDEST_ICE.get()), has(ModItems.COLDEST_ICE.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.COLDEST_ICE_BOOTS.get())
+                .pattern("   ")
+                .pattern("S S")
+                .pattern("S S")
+                .define('S', ModItems.COLDEST_ICE.get())
+                .unlockedBy(getHasName(ModItems.COLDEST_ICE.get()), has(ModItems.COLDEST_ICE.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WATER_TREASURE.get())
+                .pattern("SIS")
+                .pattern("INI")
+                .pattern("SIS")
+                .define('S', Blocks.SAND)
+                .define('I', ModItems.ICY_CRYSTAL.get())
+                .define('N', Items.NAUTILUS_SHELL )
+                .unlockedBy(getHasName(ModItems.ICY_CRYSTAL.get()), has(ModItems.ICY_CRYSTAL.get()))
+                .save(pWriter);
 
         /** exemplo
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 9)

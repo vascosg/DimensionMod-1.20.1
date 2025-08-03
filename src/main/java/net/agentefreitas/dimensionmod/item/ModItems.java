@@ -89,6 +89,12 @@ public class ModItems {
     public static final RegistryObject<Item> COLDEST_ICE_BOOTS = ITEMS.register("coldest_ice_boots",
             () -> new ArmorItem(ModArmorMaterials.COLDEST_ICE, ArmorItem.Type.BOOTS, new Item.Properties()));
 
+    public static final RegistryObject<Item> ICY_SEEDS = ITEMS.register("icy_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.ICY_CROP.get(), new Item.Properties()));
+
+    public static final RegistryObject<Item> ICY_CRYSTAL = ITEMS.register("icy_crystal",
+            () -> new Item(new Item.Properties()));
+
 
 
 

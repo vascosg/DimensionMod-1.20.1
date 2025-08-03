@@ -1,7 +1,16 @@
-// 1.20.1	2025-07-29T11:51:48.5518294	Block States: dimensionmod
+// 1.20.1	2025-08-03T23:06:55.2759444	Block States: dimensionmod
 f28d4255333fb0e04a0f6ac989c69f892f839caa assets/dimensionmod/blockstates/dimension_door_block.json
 451470d24cd3054269dab96e12a44a520f8cda69 assets/dimensionmod/blockstates/guardian_block.json
+4a928efd415b6673d03a4937cf1bf8f5a8de6e17 assets/dimensionmod/blockstates/icy_crop.json
 cdfe4fdf50e580c6d423d843cbd7ab9290c0d08f assets/dimensionmod/models/block/dimension_door_block.json
 9137384e98cd3bd9c37dd0f497e07f7487e936e1 assets/dimensionmod/models/block/guardian_block.json
+a6515de6fc51d91d99ebbe9609416bc856a4c3cd assets/dimensionmod/models/block/icy_stage0.json
+e64cba48709c79089fcf80ecd4b4d8d22183f486 assets/dimensionmod/models/block/icy_stage1.json
+e5661c21478c47053d6683eb0aba54e74dd6eee1 assets/dimensionmod/models/block/icy_stage2.json
+b4db5f0943efe7514db7f52545b6e849b3ef0576 assets/dimensionmod/models/block/icy_stage3.json
+e86ce1f6de8db9dddde3a2a6c57c18b5c28d5570 assets/dimensionmod/models/block/icy_stage4.json
+1898458906a11e3b2da46c083823b1d6eb555519 assets/dimensionmod/models/block/icy_stage5.json
+1b94f75ac8b23273b3c696899ca830e50c5139c7 assets/dimensionmod/models/block/icy_stage6.json
+ba6fb4a4337173dda8401aebf3d2213339d09e4c assets/dimensionmod/models/block/icy_stage7.json
 ccc565397980270183a33c5ae8e01bd19d57f54b assets/dimensionmod/models/item/dimension_door_block.json
 c628c5f0158a3bda1c4e5e7be612a4544c5c4c4e assets/dimensionmod/models/item/guardian_block.json

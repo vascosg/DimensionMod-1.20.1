@@ -55,6 +55,9 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.COLDEST_ICE_LEGGINGS.get());
                         pOutput.accept(ModItems.COLDEST_ICE_BOOTS.get());
 
+                        pOutput.accept(ModItems.ICY_SEEDS.get());
+                        pOutput.accept(ModItems.ICY_CRYSTAL.get());
+
                     })
                     .build());
 

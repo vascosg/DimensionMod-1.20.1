@@ -51,28 +51,26 @@ public class ModServerEvents {
 
 
         if (customLevel != null) {
-            BlockPos pos = new BlockPos(0, 0, 0);
             ResourceLocation bridgeStartId = new ResourceLocation("dimensionmod", "aqua_ruin/aqua_bridge_start");
-            StructureSpawner.generate(customLevel, pos,bridgeStartId);
-            BlockPos pos2 = new BlockPos(48, -1, 0);
             ResourceLocation bridgeMiddleId = new ResourceLocation("dimensionmod", "aqua_ruin/aqua_bridge_middle");
-            StructureSpawner.generate(customLevel, pos2,bridgeMiddleId);
-            BlockPos pos3 = new BlockPos((48*2), -1, 0);
-            BlockPos pos4 = new BlockPos((48*3), -1, 0);
-            BlockPos pos5 = new BlockPos((48*4), -1, 0);
-            BlockPos pos6 = new BlockPos((48*5), -1, 0);
-            BlockPos pos7 = new BlockPos((48*6), -1, 0);
-            BlockPos pos8 = new BlockPos((48*7), -1, 0);
-            BlockPos pos9 = new BlockPos((48*8), -1, 0);
-            BlockPos pos10 = new BlockPos((48*9), -1, 0);
-            StructureSpawner.generate(customLevel, pos3,bridgeMiddleId);
-            StructureSpawner.generate(customLevel, pos4,bridgeMiddleId);
-            StructureSpawner.generate(customLevel, pos5,bridgeMiddleId);
-            StructureSpawner.generate(customLevel, pos6,bridgeMiddleId);
-            StructureSpawner.generate(customLevel, pos7,bridgeMiddleId);
-            StructureSpawner.generate(customLevel, pos8,bridgeMiddleId);
-            StructureSpawner.generate(customLevel, pos9,bridgeMiddleId);
-            StructureSpawner.generate(customLevel, pos10,bridgeMiddleId);
+            ResourceLocation centerBaseId = new ResourceLocation( "dimensionmod", "aqua_ruin/aqua_center_base");
+            ResourceLocation centerTopId = new ResourceLocation( "dimensionmod", "aqua_ruin/aqua_center_top");
+
+            BlockPos pos = new BlockPos(0, 0, 0);
+            StructureSpawner.generate(customLevel, pos,bridgeStartId);
+
+            for(int i = 1; i < 20; i++) {
+                pos = new BlockPos((48*i),-1,0);
+                StructureSpawner.generate(customLevel, pos,bridgeMiddleId);
+                if (i == 19 ) {
+                    pos = new BlockPos((48*(i+1)),0,-10);
+                    StructureSpawner.generate(customLevel, pos,centerBaseId);
+                    pos = new BlockPos((48*(i+1)),48,-10);
+                    StructureSpawner.generate(customLevel, pos,centerTopId);
+                }
+            }
+
+
         } else {
             System.out.println("❌ Dimensão não encontrada: " + AQUA_DIMENSION.location());
         }

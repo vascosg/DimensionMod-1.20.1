@@ -18,8 +18,17 @@ public class GuardianDoorBlockEntity extends BlockEntity {
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, GuardianDoorBlockEntity entity) {
-        if (!level.isClientSide() && !hasGuardianBlockAtDistance(level,pos,20)) {
-            level.setBlock(pos, state.setValue(GuardianDoorBlock.OPEN, true), 3);
+        if (!level.isClientSide()) {
+            boolean shouldOpen = !hasGuardianBlockAtDistance(level, pos, 20);
+            BlockState current = level.getBlockState(pos);
+            boolean isOpen = current.getValue(GuardianDoorBlock.OPEN);
+
+
+            if (shouldOpen && !isOpen) {
+                level.setBlock(pos, current.setValue(GuardianDoorBlock.OPEN, true), 3);
+            } else if (!shouldOpen && isOpen) {
+                level.setBlock(pos, current.setValue(GuardianDoorBlock.OPEN, false), 3);
+            }
         }
     }
 

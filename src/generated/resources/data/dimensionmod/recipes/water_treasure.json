@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "dimensionmod:icy_crystal"
+    },
+    "N": {
+      "item": "minecraft:nautilus_shell"
+    },
+    "S": {
+      "item": "minecraft:sand"
+    }
+  },
+  "pattern": [
+    "SIS",
+    "INI",
+    "SIS"
+  ],
+  "result": {
+    "item": "dimensionmod:water_treasure"
+  },
+  "show_notification": true
+}

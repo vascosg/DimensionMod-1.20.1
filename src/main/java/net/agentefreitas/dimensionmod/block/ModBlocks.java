@@ -4,6 +4,7 @@ import net.agentefreitas.dimensionmod.DimensionMod;
 import net.agentefreitas.dimensionmod.block.custom.DimensionBookLectern;
 import net.agentefreitas.dimensionmod.block.custom.GuardianBlock;
 import net.agentefreitas.dimensionmod.block.custom.GuardianDoorBlock;
+import net.agentefreitas.dimensionmod.block.custom.IceCropBlock;
 import net.agentefreitas.dimensionmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -36,6 +37,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> GUARDIAN_DOOR_BLOCK = registerBlock("guardian_door_block",
             ()-> new GuardianDoorBlock(BlockBehaviour.Properties.copy((Blocks.BEDROCK))));
+
+    public static final RegistryObject<Block> ICY_CROP = BLOCKS.register("icy_crop",
+            () -> new IceCropBlock(BlockBehaviour.Properties.copy(Blocks.KELP_PLANT).noOcclusion().noCollission()));
 
     /** exemplo
     public static final RegistryObject<Block> RAW_SAPPHIRE_BLOCK = registerBlock("raw_sapphire_block",

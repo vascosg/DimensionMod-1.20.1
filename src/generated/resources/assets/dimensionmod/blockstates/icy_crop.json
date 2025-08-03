@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "age=0,waterlogged=false": {
+      "model": "dimensionmod:block/icy_stage0"
+    },
+    "age=0,waterlogged=true": {
+      "model": "dimensionmod:block/icy_stage0"
+    },
+    "age=1,waterlogged=false": {
+      "model": "dimensionmod:block/icy_stage1"
+    },
+    "age=1,waterlogged=true": {
+      "model": "dimensionmod:block/icy_stage1"
+    },
+    "age=2,waterlogged=false": {
+      "model": "dimensionmod:block/icy_stage2"
+    },
+    "age=2,waterlogged=true": {
+      "model": "dimensionmod:block/icy_stage2"
+    },
+    "age=3,waterlogged=false": {
+      "model": "dimensionmod:block/icy_stage3"
+    },
+    "age=3,waterlogged=true": {
+      "model": "dimensionmod:block/icy_stage3"
+    },
+    "age=4,waterlogged=false": {
+      "model": "dimensionmod:block/icy_stage4"
+    },
+    "age=4,waterlogged=true": {
+      "model": "dimensionmod:block/icy_stage4"
+    },
+    "age=5,waterlogged=false": {
+      "model": "dimensionmod:block/icy_stage5"
+    },
+    "age=5,waterlogged=true": {
+      "model": "dimensionmod:block/icy_stage5"
+    },
+    "age=6,waterlogged=false": {
+      "model": "dimensionmod:block/icy_stage6"
+    },
+    "age=6,waterlogged=true": {
+      "model": "dimensionmod:block/icy_stage6"
+    },
+    "age=7,waterlogged=false": {
+      "model": "dimensionmod:block/icy_stage7"
+    },
+    "age=7,waterlogged=true": {
+      "model": "dimensionmod:block/icy_stage7"
+    }
+  }
+}
