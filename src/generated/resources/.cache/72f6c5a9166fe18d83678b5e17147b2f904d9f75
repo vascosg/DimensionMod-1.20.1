@@ -1,4 +1,4 @@
-// 1.20.1	2025-08-03T23:06:55.2789437	Item Models: dimensionmod
+// 1.20.1	2025-08-20T23:58:52.2068173	Item Models: dimensionmod
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dimensionmod/models/item/bai_yu_spawn_egg.json
 68f0aad47c4ad60c583a539ff04d3e50953821fd assets/dimensionmod/models/item/blue_book.json
 7057bf06e3452ab62aa18a50879ab9c160070cf3 assets/dimensionmod/models/item/coldest_ice.json
@@ -62,6 +62,7 @@ bfa6b7075c47a9564fcd1b1889086e3f88609b7a assets/dimensionmod/models/item/icy_cry
 9b96b8cc1b8e060454a6f54cf7d0d0b2b2dcef02 assets/dimensionmod/models/item/orange_book.json
 bea1ec99daf1990094e9b0438ca22bc1aae9d061 assets/dimensionmod/models/item/purple_book.json
 90c1627f84ddd26b43f5572b6107e80f576a630f assets/dimensionmod/models/item/red_book.json
+159cfda3e00f4c5007a267bc1768a52c1a61c95b assets/dimensionmod/models/item/sapphire.json
 c571021a5f833c4650d8e3cbb54d5ae7b5193c84 assets/dimensionmod/models/item/sun_sword.json
 75ffe25a32466020ea653bcca1a6f21c51bf972e assets/dimensionmod/models/item/water_treasure.json
 9fe406330aa64e6401226286ef1269ead14a8f07 assets/dimensionmod/models/item/wood_treasure.json

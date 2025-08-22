@@ -36,6 +36,13 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.DIMENSION_BOOK_LECTERN.get());
         this.dropSelf(ModBlocks.GUARDIAN_BLOCK.get());
         this.dropSelf(ModBlocks.GUARDIAN_DOOR_BLOCK.get());
+
+        this.dropSelf(ModBlocks.ORANGE_LOG.get());
+        this.dropSelf(ModBlocks.ORANGE_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_ORANGE_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_ORANGE_WOOD.get());
+        this.dropSelf(ModBlocks.ORANGE_PLANKS.get());
+        this.dropSelf(ModBlocks.ORANGE_LEAVES.get());
         /** exemplo
         this.dropSelf(ModBlocks.RAW_SAPPHIRE_BLOCK.get());
         this.dropSelf(ModBlocks.SOUND_BLOCK.get());
@@ -54,8 +61,11 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 .hasBlockStateProperties(ModBlocks.ICY_CROP.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(IceCropBlock.AGE, 6));
 
-        this.add(ModBlocks.ICY_CROP.get(), createCropDrops(ModBlocks.ICY_CROP.get(), ModItems.COLDEST_ICE.get(),
+        this.add(ModBlocks.ICY_CROP.get(), createCropDrops(ModBlocks.ICY_CROP.get(), ModItems.ICY_CRYSTAL.get(),
                 ModItems.ICY_SEEDS.get(), lootitemcondition$builder));
+
+        this.add(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(),
+                block -> createCopperLikeOreDrops(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(), ModItems.SAPPHIRE.get()));
     }
 
     protected LootTable.Builder createCopperLikeOreDrops(Block pBlock, Item item) {

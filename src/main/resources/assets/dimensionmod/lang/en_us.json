@@ -25,12 +25,24 @@
 
   "item.dimensionmod.five_element_indestructible_sword": "Five Element Indestructible sword",
   "item.dimensionmod.moon_bow": "Moon Bow",
+  "item.dimension.sun_sword": "Sun Sword",
+
+  "item.dimension.sapphire": "Sapphire",
 
   "block.dimensionmod.dimension_door_block": "Dimension Door ",
   "block.dimensionmod.lectern_white": "Dimension Book Lectern",
   "block.dimensionmod.guardian_block": "Guardian Block",
   "block.dimensionmod.guardian_door_closed": "Guardian Door Block",
   "block.dimensionmod.guardian_door_block": "Guardian Door Block",
+
+  "block.dimensionmod.orange_log": "Orange Log",
+  "block.dimensionmod.orange_planks": "Orange Planks",
+  "block.dimensionmod.orange_wood": "Orange Wood",
+  "block.dimensionmod.stripped_orange_log": "Stripped Orange Log",
+  "block.dimensionmod.stripped_orange_wood": "Stripped Orange Wood",
+  "block.dimensionmod.orange_leaves": "Orange Leaves",
+
+  "block.dimensionmod.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
 
 
   "creativetab.dimension_tab": "Dimension Tab"

@@ -48,5 +48,20 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(ModBlocks.END_STONE_SAPPHIRE_ORE.get());
 
         **/
+
+        this.tag(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.ORANGE_LOG.get())
+                .add(ModBlocks.ORANGE_WOOD.get())
+                .add(ModBlocks.STRIPPED_ORANGE_LOG.get())
+                .add(ModBlocks.STRIPPED_ORANGE_WOOD.get());
+
+        this.tag(BlockTags.PLANKS)
+                .add(ModBlocks.ORANGE_PLANKS.get());
+
+        this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get());
+
+        this.tag(BlockTags.NEEDS_IRON_TOOL)
+                .add(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get());
     }
 }

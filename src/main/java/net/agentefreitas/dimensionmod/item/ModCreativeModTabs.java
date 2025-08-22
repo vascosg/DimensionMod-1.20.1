@@ -58,6 +58,18 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.ICY_SEEDS.get());
                         pOutput.accept(ModItems.ICY_CRYSTAL.get());
 
+                        pOutput.accept(ModItems.SAPPHIRE.get());
+
+                        pOutput.accept(ModBlocks.ORANGE_LOG.get());
+                        pOutput.accept(ModBlocks.ORANGE_WOOD.get());
+                        pOutput.accept(ModBlocks.STRIPPED_ORANGE_LOG.get());
+                        pOutput.accept(ModBlocks.STRIPPED_ORANGE_WOOD.get());
+
+                        pOutput.accept(ModBlocks.ORANGE_PLANKS.get());
+                        pOutput.accept(ModBlocks.ORANGE_LEAVES.get());
+
+                        pOutput.accept(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get());
+
                     })
                     .build());
 

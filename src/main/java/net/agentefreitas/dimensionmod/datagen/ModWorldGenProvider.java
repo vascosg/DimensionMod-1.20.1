@@ -1,11 +1,10 @@
 package net.agentefreitas.dimensionmod.datagen;
 
 import net.agentefreitas.dimensionmod.DimensionMod;
-//import net.kaupenjoe.tutorialmod.worldgen.ModBiomeModifiers;
-//import net.kaupenjoe.tutorialmod.worldgen.ModConfiguredFeatures;
-//import net.kaupenjoe.tutorialmod.worldgen.ModPlacedFeatures;
-//import net.kaupenjoe.tutorialmod.worldgen.biome.ModBiomes;
-//import net.agentefreitas.dimensionmod.worldgen.dimension.ModDimensions;
+
+import net.agentefreitas.dimensionmod.worldgen.ModBiomeModifiers;
+import net.agentefreitas.dimensionmod.worldgen.ModConfiguredFeatures;
+import net.agentefreitas.dimensionmod.worldgen.ModPlacedFeatures;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
@@ -17,11 +16,11 @@ import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 public class ModWorldGenProvider extends DatapackBuiltinEntriesProvider {
-    public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder();
+    public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             //.add(Registries.DIMENSION_TYPE, ModDimensions::bootstrapType)
-            //.add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap)
-            //.add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrap)
-            //.add(ForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap)
+            .add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap)
+            .add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrap)
+            .add(ForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap);
             //.add(Registries.BIOME, ModBiomes::boostrap)
             //.add(Registries.LEVEL_STEM, ModDimensions::bootstrapStem);
 

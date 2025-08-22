@@ -76,6 +76,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.ICY_SEEDS);
         simpleItem(ModItems.ICY_CRYSTAL);
 
+        simpleItem(ModItems.SAPPHIRE);
+
 
         /** exemplo
         simpleItem(ModItems.SAPPHIRE);

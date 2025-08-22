@@ -1,1 +1,4 @@
-// 1.20.1	2025-02-27T22:44:14.3266423	Registries
+// 1.20.1	2025-08-22T23:55:08.7593795	Registries
+f4ddba6a22f0a657fd5cbc6a20ccedc3c6125dec data/dimensionmod/forge/biome_modifier/add_sapphire_ore.json
+3238c79ce196366d606a914c0bd119841560ecc5 data/dimensionmod/worldgen/configured_feature/sapphire_ore.json
+a5e9b190f617c58d6a26edbf6982051e944fa542 data/dimensionmod/worldgen/placed_feature/sapphire_ore_placed.json

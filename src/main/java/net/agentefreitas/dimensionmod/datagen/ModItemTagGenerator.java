@@ -1,10 +1,12 @@
 package net.agentefreitas.dimensionmod.datagen;
 
 import net.agentefreitas.dimensionmod.DimensionMod;
+import net.agentefreitas.dimensionmod.block.ModBlocks;
 import net.agentefreitas.dimensionmod.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -25,5 +27,15 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                         ModItems.COLDEST_ICE_CHESTPLATE.get(),
                         ModItems.COLDEST_ICE_LEGGINGS.get(),
                         ModItems.COLDEST_ICE_BOOTS.get());
+
+        this.tag(ItemTags.LOGS_THAT_BURN)
+                .add(ModBlocks.ORANGE_LOG.get().asItem())
+                .add(ModBlocks.ORANGE_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_ORANGE_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_ORANGE_WOOD.get().asItem());
+
+        this.tag(ItemTags.PLANKS)
+                .add(ModBlocks.ORANGE_PLANKS.get().asItem());
+
     }
 }

@@ -95,6 +95,8 @@ public class ModItems {
     public static final RegistryObject<Item> ICY_CRYSTAL = ITEMS.register("icy_crystal",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",
+            () -> new Item(new Item.Properties().fireResistant()));
 
 
 
