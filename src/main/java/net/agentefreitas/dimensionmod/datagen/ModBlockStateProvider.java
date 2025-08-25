@@ -44,9 +44,18 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         blockWithItem(ModBlocks.ORANGE_PLANKS);
         blockWithItem(ModBlocks.ORANGE_LEAVES);
+        blockWithItem(ModBlocks.ORANGE_FRUIT_LEAF);
 
         blockWithItem(ModBlocks.DEEPSLATE_SAPPHIRE_ORE);
+
+        saplingBlock(ModBlocks.ORANGE_SAPLING);
     }
+
+    private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
+        simpleBlock(blockRegistryObject.get(),
+                models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
+
 
     public void makeIcyCrop(CropBlock block, String modelName, String textureName) {
         Function<BlockState, ConfiguredModel[]> function = state -> icyStates(state, block, modelName, textureName);

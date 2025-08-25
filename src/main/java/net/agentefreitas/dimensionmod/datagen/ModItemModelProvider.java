@@ -1,6 +1,7 @@
 package net.agentefreitas.dimensionmod.datagen;
 
 import net.agentefreitas.dimensionmod.DimensionMod;
+import net.agentefreitas.dimensionmod.block.ModBlocks;
 import net.agentefreitas.dimensionmod.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
@@ -78,6 +79,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.SAPPHIRE);
 
+        saplingItem(ModBlocks.ORANGE_SAPLING);
 
         /** exemplo
         simpleItem(ModItems.SAPPHIRE);
@@ -87,6 +89,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.PINE_CONE);
         simpleItem(ModItems.STRAWBERRY);
          **/
+    }
+
+    private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(DimensionMod.MOD_ID,"block/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

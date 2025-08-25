@@ -68,7 +68,10 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModBlocks.ORANGE_PLANKS.get());
                         pOutput.accept(ModBlocks.ORANGE_LEAVES.get());
 
+                        pOutput.accept(ModBlocks.ORANGE_SAPLING.get());
+
                         pOutput.accept(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get());
+
 
                     })
                     .build());

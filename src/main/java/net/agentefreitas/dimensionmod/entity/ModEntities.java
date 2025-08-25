@@ -34,6 +34,10 @@ public class ModEntities {
             ENTITY_TYPES.register("demi_cat", () -> EntityType.Builder.of(DemiCatEntity::new, MobCategory.AMBIENT)
                     .sized(0.6f, 1.9f).build("demi_cat"));
 
+    public static final RegistryObject<EntityType<OrangeFruitEntity>> ORANGE_FRUIT =
+            ENTITY_TYPES.register("orange_fruit", () -> EntityType.Builder.of(OrangeFruitEntity::new, MobCategory.AMBIENT)
+                    .sized(0.3f, 0.3f).build("orange_fruit"));
+
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

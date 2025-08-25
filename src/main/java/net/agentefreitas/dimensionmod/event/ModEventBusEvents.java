@@ -44,6 +44,7 @@ public class ModEventBusEvents {
 
         event.register(ModEntities.DEMI_CAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+
     }
 
 }

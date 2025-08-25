@@ -98,6 +98,7 @@ public class DimensionMod {
             EntityRenderers.register(ModEntities.BAI_YU.get(), BaiYuRenderer::new);
             EntityRenderers.register(ModEntities.GAO_YU.get(), GaoYuRenderer::new);
             EntityRenderers.register(ModEntities.DEMI_CAT.get(), DemiCatRenderer::new);
+            EntityRenderers.register(ModEntities.ORANGE_FRUIT.get(), OrangeFruitRenderer::new);
             ModItemProperties.addCustomItemProperties();
         }
     }

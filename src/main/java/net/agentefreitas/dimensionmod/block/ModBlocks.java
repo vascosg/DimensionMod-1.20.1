@@ -3,6 +3,7 @@ package net.agentefreitas.dimensionmod.block;
 import net.agentefreitas.dimensionmod.DimensionMod;
 import net.agentefreitas.dimensionmod.block.custom.*;
 import net.agentefreitas.dimensionmod.item.ModItems;
+import net.agentefreitas.dimensionmod.worldgen.tree.OrangeTreeGrower;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -86,6 +87,27 @@ public class ModBlocks {
                     return 30;
                 }
             });
+
+    public static final RegistryObject<Block> ORANGE_FRUIT_LEAF = registerBlock("orange_fruit_leaf",
+            () -> new OrangeFruitLeafBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).randomTicks()){
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 60;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 30;
+                }
+            });
+
+    public static final RegistryObject<Block> ORANGE_SAPLING = registerBlock("orange_sapling",
+            () -> new SaplingBlock(new OrangeTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
     public static final RegistryObject<Block> DEEPSLATE_SAPPHIRE_ORE = registerBlock("deepslate_sapphire_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)));

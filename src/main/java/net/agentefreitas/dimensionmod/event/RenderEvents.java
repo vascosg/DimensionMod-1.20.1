@@ -82,7 +82,7 @@ public class RenderEvents {
 
             if (stack.getItem() instanceof MoonBowItem) {
                 PoseStack poseStack = event.getPoseStack();
-                poseStack.popPose(); // ✅ garante que a matriz volta ao normal
+                poseStack.popPose();
             }
         }
     }
