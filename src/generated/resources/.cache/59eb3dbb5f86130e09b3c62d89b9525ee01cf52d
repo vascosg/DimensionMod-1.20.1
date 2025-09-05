@@ -1,10 +1,11 @@
-// 1.20.1	2025-08-25T09:09:02.9429342	Loot Tables
+// 1.20.1	2025-09-05T01:45:30.7802866	Loot Tables
 549c64e96c571261c3fe214e6cd0091782580022 data/dimensionmod/loot_tables/blocks/deepslate_sapphire_ore.json
 655d2211d67e59ec73eac606c7c8b158b8acef96 data/dimensionmod/loot_tables/blocks/dimension_door_block.json
 985331b3472d5711ff8132f071964a8355ee603e data/dimensionmod/loot_tables/blocks/guardian_block.json
 d622d6dc51b755c7b35e56266a0863b998e39632 data/dimensionmod/loot_tables/blocks/guardian_door_block.json
 bbfb05886e61af2295afc102080c46bb673cd38b data/dimensionmod/loot_tables/blocks/icy_crop.json
 46e5be63167e4e2c3cd3fa41f792d1cc258c7269 data/dimensionmod/loot_tables/blocks/lectern_white.json
+4dbe0fd89587979f31c58e0bac7ecfb21867de02 data/dimensionmod/loot_tables/blocks/orange_berry_bush.json
 977f312cf4f0327c41ab4ab318e5f0495acf534c data/dimensionmod/loot_tables/blocks/orange_fruit_leaf.json
 40f1dd3fd15e7e9849232dbd5891172eedaa3a91 data/dimensionmod/loot_tables/blocks/orange_leaves.json
 d3a53b814e064a5490c28d9b5e3895f4bb96292f data/dimensionmod/loot_tables/blocks/orange_log.json

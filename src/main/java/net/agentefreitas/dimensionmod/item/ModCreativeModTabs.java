@@ -72,6 +72,7 @@ public class ModCreativeModTabs {
 
                         pOutput.accept(ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get());
 
+                        pOutput.accept(ModBlocks.ORANGE_BERRY_BUSH.get());
 
                     })
                     .build());

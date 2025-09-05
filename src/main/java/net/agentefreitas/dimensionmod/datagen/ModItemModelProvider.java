@@ -81,6 +81,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         saplingItem(ModBlocks.ORANGE_SAPLING);
 
+        simpleBlockItemBlockTexture(ModBlocks.ORANGE_BERRY_BUSH);
+
         /** exemplo
         simpleItem(ModItems.SAPPHIRE);
         simpleItem(ModItems.RAW_SAPPHIRE);
@@ -107,6 +109,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(DimensionMod.MOD_ID,"item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder simpleBlockItemBlockTexture(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(DimensionMod.MOD_ID,"block/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {

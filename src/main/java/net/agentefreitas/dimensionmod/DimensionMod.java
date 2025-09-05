@@ -75,6 +75,9 @@ public class DimensionMod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        // event.enqueueWork(() -> {
+        //            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.CATMINT.getId(), ModBlocks.POTTED_CATMINT);
+        //        });
     }
 
     // Add the example block item to the building blocks tab

@@ -1,8 +1,9 @@
-// 1.20.1	2025-08-25T09:09:02.9409359	Block States: dimensionmod
+// 1.20.1	2025-09-05T01:45:30.7762881	Block States: dimensionmod
 fd8d89daa984efc41c6766089fbca296cc76ebb9 assets/dimensionmod/blockstates/deepslate_sapphire_ore.json
 f28d4255333fb0e04a0f6ac989c69f892f839caa assets/dimensionmod/blockstates/dimension_door_block.json
 451470d24cd3054269dab96e12a44a520f8cda69 assets/dimensionmod/blockstates/guardian_block.json
 4a928efd415b6673d03a4937cf1bf8f5a8de6e17 assets/dimensionmod/blockstates/icy_crop.json
+44e49b63ec60a557465724fc59b7d1536b077be2 assets/dimensionmod/blockstates/orange_berry_bush.json
 dfa1dc84846ad02ed9969bba5f85661cd42fac97 assets/dimensionmod/blockstates/orange_fruit_leaf.json
 cd7579c938fc8782c78f199b67d7f182ae1731ad assets/dimensionmod/blockstates/orange_leaves.json
 bc9649131cc9360465948676407a6b230009a8da assets/dimensionmod/blockstates/orange_log.json
@@ -22,6 +23,7 @@ e86ce1f6de8db9dddde3a2a6c57c18b5c28d5570 assets/dimensionmod/models/block/icy_st
 1898458906a11e3b2da46c083823b1d6eb555519 assets/dimensionmod/models/block/icy_stage5.json
 1b94f75ac8b23273b3c696899ca830e50c5139c7 assets/dimensionmod/models/block/icy_stage6.json
 ba6fb4a4337173dda8401aebf3d2213339d09e4c assets/dimensionmod/models/block/icy_stage7.json
+a7a16fcbe17a894ff237fd0ff1a777d76c4f0d6f assets/dimensionmod/models/block/orange_berry_bush.json
 026eaedec37c35b01f995413f8877d0502c5d2f3 assets/dimensionmod/models/block/orange_fruit_leaf.json
 b9966784403c4a7a795486264510f259e640ea37 assets/dimensionmod/models/block/orange_leaves.json
 1a1b42804238431cfa7a93c5110f8b6fe3541476 assets/dimensionmod/models/block/orange_log.json
@@ -37,6 +39,7 @@ d52fe9378604e4e8f07c2212b368eb38ad7530ee assets/dimensionmod/models/block/stripp
 607782d81a954ca861f14a9a3b6ed500d55f8558 assets/dimensionmod/models/item/deepslate_sapphire_ore.json
 ccc565397980270183a33c5ae8e01bd19d57f54b assets/dimensionmod/models/item/dimension_door_block.json
 c628c5f0158a3bda1c4e5e7be612a4544c5c4c4e assets/dimensionmod/models/item/guardian_block.json
+677cfdd8ef3d3974ddf7ba458ec7c9df04f7cf69 assets/dimensionmod/models/item/orange_berry_bush.json
 51a0021b3b40b7fd887a7d3dbaa98b40282e1f61 assets/dimensionmod/models/item/orange_fruit_leaf.json
 d779865f3be5c468fa8bb7923d9cdc0b612d9e8d assets/dimensionmod/models/item/orange_leaves.json
 c342d778aa760a14477fd7ccd8982fe9cb0e0300 assets/dimensionmod/models/item/orange_log.json

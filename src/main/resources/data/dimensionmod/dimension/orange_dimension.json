@@ -1,0 +1,11 @@
+{
+  "type": "dimensionmod:orange_dimension_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "dimensionmod:orange_noise",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "dimensionmod:orange_biome"
+    }
+  }
+}

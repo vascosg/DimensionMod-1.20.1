@@ -4,6 +4,7 @@ import net.agentefreitas.dimensionmod.DimensionMod;
 import net.agentefreitas.dimensionmod.block.custom.*;
 import net.agentefreitas.dimensionmod.item.ModItems;
 import net.agentefreitas.dimensionmod.worldgen.tree.OrangeTreeGrower;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -111,6 +112,13 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> DEEPSLATE_SAPPHIRE_ORE = registerBlock("deepslate_sapphire_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)));
+
+    public static final RegistryObject<Block> ORANGE_BERRY_BUSH = registerBlock("orange_berry_bush",
+            () -> new OrangeBerryBushBlock(() -> MobEffects.LUCK, 5,
+                    BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH).noOcclusion().noCollission()));
+    //public static final RegistryObject<Block> POTTED_CATMINT = BLOCKS.register("potted_catmint",
+    //        () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.CATMINT,
+    //                BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
 
     /** exemplo
     public static final RegistryObject<Block> RAW_SAPPHIRE_BLOCK = registerBlock("raw_sapphire_block",
