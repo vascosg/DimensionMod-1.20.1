@@ -16,13 +16,13 @@
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "dimensionmod:orange_log"
+        "Name": "minecraft:brown_terracotta"
       }
     },
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "dimensionmod:orange_leaves"
+        "Name": "dimensionmod:terracotta_leaves"
       }
     },
     "trunk_placer": {

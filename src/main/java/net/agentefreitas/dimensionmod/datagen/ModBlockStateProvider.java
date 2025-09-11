@@ -52,6 +52,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         simpleBlockWithItem(ModBlocks.ORANGE_BERRY_BUSH.get(), models().cross(blockTexture(ModBlocks.ORANGE_BERRY_BUSH.get()).getPath(),
                 blockTexture(ModBlocks.ORANGE_BERRY_BUSH.get())).renderType("cutout"));
+
+        blockWithItem(ModBlocks.TERRACOTTA_LEAVES);
+        blockWithItem(ModBlocks.ORANGE_MUSHROOM_BLOCK);
     }
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {

@@ -74,6 +74,9 @@ public class ModCreativeModTabs {
 
                         pOutput.accept(ModBlocks.ORANGE_BERRY_BUSH.get());
 
+                        pOutput.accept(ModBlocks.TERRACOTTA_LEAVES.get());
+                        pOutput.accept(ModBlocks.ORANGE_MUSHROOM_BLOCK.get());
+
                     })
                     .build());
 

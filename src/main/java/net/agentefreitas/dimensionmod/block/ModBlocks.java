@@ -116,6 +116,13 @@ public class ModBlocks {
     public static final RegistryObject<Block> ORANGE_BERRY_BUSH = registerBlock("orange_berry_bush",
             () -> new OrangeBerryBushBlock(() -> MobEffects.LUCK, 5,
                     BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH).noOcclusion().noCollission()));
+
+    public static final RegistryObject<Block> TERRACOTTA_LEAVES = registerBlock("terracotta_leaves",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES).sound(SoundType.CHERRY_LEAVES)));
+
+    public static final RegistryObject<Block> ORANGE_MUSHROOM_BLOCK = registerBlock("orange_mushroom_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM)));
+
     //public static final RegistryObject<Block> POTTED_CATMINT = BLOCKS.register("potted_catmint",
     //        () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.CATMINT,
     //                BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));

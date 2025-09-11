@@ -45,8 +45,11 @@
   "block.dimensionmod.orange_sapling": "Orange Sapling",
 
   "block.dimensionmod.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
+  "item.dimensionmod.sapphire": "Sapphire",
 
   "block.dimensionmod.orange_berry_bush": "Orange Berry Bush",
+  "block.dimensionmod.terracotta_leaves": "Terracotta Leaves",
+  "block.dimensionmod.orange_mushroom_block": "Orange Mushroom Block",
 
 
   "creativetab.dimension_tab": "Dimension Tab"
