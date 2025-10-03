@@ -25,6 +25,11 @@ public class ModEventBusEvents {
         event.put(ModEntities.BAI_YU.get(), BaiYuEntity.createAttributes().build());
         event.put(ModEntities.GAO_YU.get(), GaoYuEntity.createAttributes().build());
         event.put(ModEntities.DEMI_CAT.get(), DemiCatEntity.createAttributes().build());
+        event.put(ModEntities.ORANGE_VILLAGER.get(),OrangeVillagerEntity.createAttributes().build());
+        event.put(ModEntities.ORANGE_VILLAGER_RARE.get(),OrangeVillagerRareEntity.createAttributes().build());
+        event.put(ModEntities.ORANGE_VILLAGER_JUICE.get(),OrangeVillagerJuiceEntity.createAttributes().build());
+        event.put(ModEntities.ORANGE_VILLAGER_MAGE.get(),OrangeVillagerMageEntity.createAttributes().build());
+        event.put(ModEntities.ORANGE_PIG.get(),OrangePigEntity.createAttributes().build());
     }
 
 
@@ -45,6 +50,20 @@ public class ModEventBusEvents {
         event.register(ModEntities.DEMI_CAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 
+        event.register(ModEntities.ORANGE_VILLAGER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+
+        event.register(ModEntities.ORANGE_VILLAGER_RARE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+
+        event.register(ModEntities.ORANGE_VILLAGER_JUICE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+
+        event.register(ModEntities.ORANGE_VILLAGER_MAGE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+
+        event.register(ModEntities.ORANGE_PIG.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
     }
 
 }

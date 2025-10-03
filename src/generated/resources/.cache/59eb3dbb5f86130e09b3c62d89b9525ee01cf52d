@@ -1,4 +1,4 @@
-// 1.20.1	2025-09-09T21:34:15.7194617	Loot Tables
+// 1.20.1	2025-09-12T21:44:25.2191928	Loot Tables
 549c64e96c571261c3fe214e6cd0091782580022 data/dimensionmod/loot_tables/blocks/deepslate_sapphire_ore.json
 655d2211d67e59ec73eac606c7c8b158b8acef96 data/dimensionmod/loot_tables/blocks/dimension_door_block.json
 985331b3472d5711ff8132f071964a8355ee603e data/dimensionmod/loot_tables/blocks/guardian_block.json
@@ -12,7 +12,11 @@ d3a53b814e064a5490c28d9b5e3895f4bb96292f data/dimensionmod/loot_tables/blocks/or
 4d743e1bde500bdf5c6b6b75f846f4c608efe298 data/dimensionmod/loot_tables/blocks/orange_mushroom_block.json
 b403f92e6468cac16f8d7a135bf923afafde0749 data/dimensionmod/loot_tables/blocks/orange_planks.json
 029973f196dd466e6259af4f905c944daf9f7364 data/dimensionmod/loot_tables/blocks/orange_sapling.json
+eebb0f35c2ac147c063a5d688b0acf22f8de2799 data/dimensionmod/loot_tables/blocks/orange_terracotta_slab.json
+50cd6a4ad05b23c67d2eae23c18c8463c316d1e8 data/dimensionmod/loot_tables/blocks/orange_terracotta_stairs.json
 a72287748dc0304a3ec7255d837de7c2b4bd46c7 data/dimensionmod/loot_tables/blocks/orange_wood.json
 6921e3bc35e64e3848d4dcc7d51db0796c2a7689 data/dimensionmod/loot_tables/blocks/stripped_orange_log.json
 72dd79014c8d5c0c613cd1337c74bddbb09c9663 data/dimensionmod/loot_tables/blocks/stripped_orange_wood.json
 2b7c9c8799a516bdbb20991ac04030c7b2f9200e data/dimensionmod/loot_tables/blocks/terracotta_leaves.json
+71a29c3c223d38f594d52b3a23c40208e5b8b0d9 data/dimensionmod/loot_tables/blocks/white_terracotta_slab.json
+702c5d2b871faa75d1e5166e15692b0470d52114 data/dimensionmod/loot_tables/blocks/white_terracotta_stairs.json

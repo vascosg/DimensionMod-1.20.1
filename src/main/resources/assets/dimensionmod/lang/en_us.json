@@ -27,7 +27,15 @@
   "item.dimensionmod.moon_bow": "Moon Bow",
   "item.dimension.sun_sword": "Sun Sword",
 
-  "item.dimension.sapphire": "Sapphire",
+  "item.dimensionmod.sapphire": "Sapphire",
+  "item.dimensionmod.zord_map": "Zord Map",
+
+  "item.dimensionmod.zord_bp_head": "Zord Blueprint Head",
+  "item.dimensionmod.zord_bp_chest": "Zord Blueprint Chest",
+  "item.dimensionmod.zord_bp_r_arm": "Zord Blueprint Right Arm",
+  "item.dimensionmod.zord_bp_l_arm": "Zord Blueprint Left Arm",
+  "item.dimensionmod.zord_bp_r_leg": "Zord Blueprint Right Leg",
+  "item.dimensionmod.zord_bp_l_leg": "Zord Blueprint Left Leg",
 
   "block.dimensionmod.dimension_door_block": "Dimension Door ",
   "block.dimensionmod.lectern_white": "Dimension Book Lectern",
@@ -45,11 +53,15 @@
   "block.dimensionmod.orange_sapling": "Orange Sapling",
 
   "block.dimensionmod.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
-  "item.dimensionmod.sapphire": "Sapphire",
 
   "block.dimensionmod.orange_berry_bush": "Orange Berry Bush",
   "block.dimensionmod.terracotta_leaves": "Terracotta Leaves",
   "block.dimensionmod.orange_mushroom_block": "Orange Mushroom Block",
+
+  "block.dimensionmod.orange_terracotta_stairs": "Orange Terracotta Stairs",
+  "block.dimensionmod.orange_terracotta_slab" : "Orange Terracotta Slab",
+  "block.dimensionmod.white_terracotta_stairs": "White Terracotta Stairs",
+  "block.dimensionmod.white_terracotta_slab" : "White Terracotta Slab",
 
 
   "creativetab.dimension_tab": "Dimension Tab"

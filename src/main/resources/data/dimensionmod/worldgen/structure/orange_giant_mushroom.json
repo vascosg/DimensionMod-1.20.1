@@ -2,7 +2,7 @@
   "type": "minecraft:jigsaw",
   "biomes": ["dimensionmod:orange_biome"],
   "step": "surface_structures",
-  "terrain_adaptation": "none",
+  "terrain_adaptation": "beard_thin",
   "spawn_overrides": {},
   "start_pool": "dimensionmod:orange_giant_mushroom_pool",
   "size": 1,

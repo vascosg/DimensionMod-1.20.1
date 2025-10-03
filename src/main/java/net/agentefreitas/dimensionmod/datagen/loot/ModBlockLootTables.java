@@ -50,6 +50,13 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.TERRACOTTA_LEAVES.get());
         this.dropSelf(ModBlocks.ORANGE_MUSHROOM_BLOCK.get());
 
+        this.dropSelf(ModBlocks.ORANGE_TERRACOTTA_STAIRS.get());
+        this.dropSelf(ModBlocks.ORANGE_TERRACOTTA_SLAB.get());
+
+        this.dropSelf(ModBlocks.WHITE_TERRACOTTA_STAIRS.get());
+        this.add(ModBlocks.WHITE_TERRACOTTA_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.WHITE_TERRACOTTA_SLAB.get()));
+
         /** exemplo
         this.dropSelf(ModBlocks.RAW_SAPPHIRE_BLOCK.get());
         this.dropSelf(ModBlocks.SOUND_BLOCK.get());

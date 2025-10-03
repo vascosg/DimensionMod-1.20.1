@@ -1,7 +1,10 @@
 package net.agentefreitas.dimensionmod.entity.custom;
 
+import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
@@ -54,10 +57,14 @@ public class OrangeFruitEntity extends Entity {
 
             // Colisão com jogador
             List<Player> players = this.level().getEntitiesOfClass(Player.class, this.getBoundingBox().inflate(0.2));
+            ResourceKey<Level> destination = ResourceKey.create(Registries.DIMENSION,
+                    new ResourceLocation("dimensionmod", "orange_dimension"));
             for (Player player : players) {
                 if (player instanceof ServerPlayer sp) {
                     // Teleporte ou efeito
-                    sp.teleportTo(sp.serverLevel(), 0, 100, 0, sp.getYRot(), sp.getXRot());
+                    ServerLevel targetWorld = sp.server.getLevel(destination);
+                    assert targetWorld != null;
+                    sp.teleportTo(targetWorld, 0, 100, 0, sp.getYRot(), sp.getXRot());
                     this.discard(); // só descarta depois de tocar no jogador
                 }
             }

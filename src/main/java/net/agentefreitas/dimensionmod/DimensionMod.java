@@ -12,6 +12,7 @@ import net.agentefreitas.dimensionmod.event.NoClouds;
 import net.agentefreitas.dimensionmod.event.TeleportToCustomDimension;
 import net.agentefreitas.dimensionmod.item.ModCreativeModTabs;
 import net.agentefreitas.dimensionmod.item.ModItems;
+import net.agentefreitas.dimensionmod.item.ModPaintings;
 import net.agentefreitas.dimensionmod.util.ModDatapackLoader;
 //import net.agentefreitas.dimensionmod.worldgen.dimension.ModDimensions;
 import net.agentefreitas.dimensionmod.util.ModItemProperties;
@@ -62,6 +63,7 @@ public class DimensionMod {
         ModBlocks.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModEntities.register(modEventBus);
+        ModPaintings.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(ModDatapackLoader.class);
         //ModDimensions.register();
@@ -102,6 +104,11 @@ public class DimensionMod {
             EntityRenderers.register(ModEntities.GAO_YU.get(), GaoYuRenderer::new);
             EntityRenderers.register(ModEntities.DEMI_CAT.get(), DemiCatRenderer::new);
             EntityRenderers.register(ModEntities.ORANGE_FRUIT.get(), OrangeFruitRenderer::new);
+            EntityRenderers.register(ModEntities.ORANGE_VILLAGER.get(), OrangeVillagerRenderer::new);
+            EntityRenderers.register(ModEntities.ORANGE_VILLAGER_RARE.get(), OrangeVillagerRareRenderer::new);
+            EntityRenderers.register(ModEntities.ORANGE_VILLAGER_JUICE.get(), OrangeVillagerJuiceRenderer::new);
+            EntityRenderers.register(ModEntities.ORANGE_VILLAGER_MAGE.get(), OrangeVillagerMageRenderer::new);
+            EntityRenderers.register(ModEntities.ORANGE_PIG.get(), OrangePigRenderer::new);
             ModItemProperties.addCustomItemProperties();
         }
     }

@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "dimensionmod:gold_pot",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 100,
+    "separation": 90,
+    "salt": 1142787550
+  }
+}

@@ -17,5 +17,10 @@ public class ModEventBusClientEvents {
         event.registerLayerDefinition(ModModelLayers.GAO_YU_LAYER, GaoYuModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.DEMI_CAT_LAYER, DemiCatModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.ORANGE_FRUIT_LAYER, OrangeFruitModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.ORANGE_VILLAGER_LAYER, OrangeVillagerModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.ORANGE_VILLAGER_RARE_LAYER, OrangeVillagerRareModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.ORANGE_VILLAGER_JUICE_LAYER, OrangeVillagerJuiceModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.ORANGE_VILLAGER_MAGE_LAYER, OrangeVillagerMageModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.ORANGE_PIG_LAYER, OrangePigModel::createBodyLayer);
     }
 }

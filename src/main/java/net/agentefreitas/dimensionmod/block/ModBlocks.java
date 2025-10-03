@@ -123,6 +123,21 @@ public class ModBlocks {
     public static final RegistryObject<Block> ORANGE_MUSHROOM_BLOCK = registerBlock("orange_mushroom_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.MUSHROOM_STEM)));
 
+    public static final RegistryObject<Block> ORANGE_TERRACOTTA_STAIRS = registerBlock("orange_terracotta_stairs",
+            () -> new StairBlock(() -> Blocks.ORANGE_TERRACOTTA.defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.ORANGE_TERRACOTTA).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ORANGE_TERRACOTTA_SLAB = registerBlock("orange_terracotta_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.ORANGE_TERRACOTTA).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block>  WHITE_TERRACOTTA_STAIRS = registerBlock("white_terracotta_stairs",
+            () -> new StairBlock(() -> Blocks.WHITE_TERRACOTTA.defaultBlockState(),
+                    BlockBehaviour.Properties.copy(Blocks.WHITE_TERRACOTTA).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> WHITE_TERRACOTTA_SLAB = registerBlock("white_terracotta_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_TERRACOTTA).sound(SoundType.STONE)));
+
+
     //public static final RegistryObject<Block> POTTED_CATMINT = BLOCKS.register("potted_catmint",
     //        () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.CATMINT,
     //                BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));

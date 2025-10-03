@@ -22,4 +22,19 @@ public class ModModelLayers {
 
     public static final ModelLayerLocation ORANGE_FRUIT_LAYER = new ModelLayerLocation(
             new ResourceLocation(DimensionMod.MOD_ID, "orange_fruit_layer"), "main");
+
+    public static final ModelLayerLocation ORANGE_VILLAGER_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DimensionMod.MOD_ID, "orange_villager_layer"), "main");
+
+    public static final ModelLayerLocation ORANGE_VILLAGER_RARE_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DimensionMod.MOD_ID, "orange_villager_rare_layer"), "main");
+
+    public static final ModelLayerLocation ORANGE_VILLAGER_JUICE_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DimensionMod.MOD_ID, "orange_villager_juice_layer"), "main");
+
+    public static final ModelLayerLocation ORANGE_VILLAGER_MAGE_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DimensionMod.MOD_ID, "orange_villager_mage_layer"), "main");
+
+    public static final ModelLayerLocation ORANGE_PIG_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DimensionMod.MOD_ID, "orange_pig"), "main");
 }

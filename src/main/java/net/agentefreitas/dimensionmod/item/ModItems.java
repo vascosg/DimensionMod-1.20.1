@@ -3,10 +3,7 @@ package net.agentefreitas.dimensionmod.item;
 import net.agentefreitas.dimensionmod.DimensionMod;
 import net.agentefreitas.dimensionmod.block.ModBlocks;
 import net.agentefreitas.dimensionmod.entity.ModEntities;
-import net.agentefreitas.dimensionmod.item.custom.BlackWordlessBook;
-import net.agentefreitas.dimensionmod.item.custom.DimensionBookItem;
-import net.agentefreitas.dimensionmod.item.custom.MoonBowItem;
-import net.agentefreitas.dimensionmod.item.custom.SunSwordItem;
+import net.agentefreitas.dimensionmod.item.custom.*;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -63,18 +60,24 @@ public class ModItems {
     //Entities
     public static final RegistryObject<Item> DISCIPLE_SPANW_EGG = ITEMS.register("disciple_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.DISCIPLE, 0xf2f2f2, 0x990000, new Item.Properties()));
-
     public static final RegistryObject<Item> LITTLE_PURPLE_SPANW_EGG = ITEMS.register("little_purple_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.LITTLE_PURPLE, 0xf2f2f2, 0x8b4eb4, new Item.Properties()));
-
     public static final RegistryObject<Item> BAI_YU_SPANW_EGG = ITEMS.register("bai_yu_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.BAI_YU, 0xf2f2f2, 0x7db473, new Item.Properties()));
-
     public static final RegistryObject<Item> GAO_YU_SPANW_EGG = ITEMS.register("gao_yu_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.GAO_YU, 0xf2f2f2, 0x7a1d1d, new Item.Properties()));
-
     public static final RegistryObject<Item> DEMI_CAT_SPANW_EGG = ITEMS.register("demi_cat_spawn_egg",
             () -> new ForgeSpawnEggItem(ModEntities.DEMI_CAT, 0xf2f2f2, 0x27273a, new Item.Properties()));
+    public static final RegistryObject<Item> ORANGE_VILLAGER_SPANW_EGG = ITEMS.register("orange_villager_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.ORANGE_VILLAGER, 0Xe97b13, 0xffc47a, new Item.Properties()));
+    public static final RegistryObject<Item> ORANGE_VILLAGER_RARE_SPANW_EGG = ITEMS.register("orange_villager_rare_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.ORANGE_VILLAGER_RARE, 0Xe97b13, 0x8f0e0e, new Item.Properties()));
+    public static final RegistryObject<Item> ORANGE_VILLAGER_JUICE_SPANW_EGG = ITEMS.register("orange_villager_juice_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.ORANGE_VILLAGER_JUICE, 0Xe97b13, 0xcacaca, new Item.Properties()));
+    public static final RegistryObject<Item> ORANGE_VILLAGER_MAGE_SPANW_EGG = ITEMS.register("orange_villager_mage_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.ORANGE_VILLAGER_MAGE, 0Xe97b13, 0x273f2c, new Item.Properties()));
+
+
 
     //armor
     public static final RegistryObject<Item> COLDEST_ICE = ITEMS.register("coldest_ice",
@@ -99,6 +102,21 @@ public class ModItems {
             () -> new Item(new Item.Properties().fireResistant()));
 
 
+    public static final RegistryObject<Item> ZORD_MAP = ITEMS.register("zord_map",
+            () -> new ZordMapItem( new Item.Properties()));
+
+    public static final RegistryObject<Item> ZORD_BP_HEAD = ITEMS.register("zord_bp_head",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ZORD_BP_CHEST = ITEMS.register("zord_bp_chest",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ZORD_BP_R_ARM = ITEMS.register("zord_bp_r_arm",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ZORD_BP_L_ARM = ITEMS.register("zord_bp_l_arm",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ZORD_BP_R_LEG = ITEMS.register("zord_bp_r_leg",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ZORD_BP_L_LEG = ITEMS.register("zord_bp_l_leg",
+            () -> new Item(new Item.Properties()));
 
     /** exemplo
     public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",

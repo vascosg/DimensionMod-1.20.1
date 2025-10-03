@@ -14,6 +14,8 @@ import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraft.world.item.armortrim.TrimMaterial;
 import net.minecraft.world.item.armortrim.TrimMaterials;
@@ -67,6 +69,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.BAI_YU_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.GAO_YU_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.DEMI_CAT_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.ORANGE_VILLAGER_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.ORANGE_VILLAGER_JUICE_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.ORANGE_VILLAGER_MAGE_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.ORANGE_VILLAGER_RARE_SPANW_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
         simpleItem(ModItems.COLDEST_ICE);
         trimmedArmorItem(ModItems.COLDEST_ICE_HELMET);
@@ -82,6 +88,20 @@ public class ModItemModelProvider extends ItemModelProvider {
         saplingItem(ModBlocks.ORANGE_SAPLING);
 
         simpleBlockItemBlockTexture(ModBlocks.ORANGE_BERRY_BUSH);
+
+        evenSimplerBlockItem(ModBlocks.ORANGE_TERRACOTTA_STAIRS);
+        evenSimplerBlockItem(ModBlocks.ORANGE_TERRACOTTA_SLAB);
+        evenSimplerBlockItem(ModBlocks.WHITE_TERRACOTTA_STAIRS);
+        evenSimplerBlockItem(ModBlocks.WHITE_TERRACOTTA_SLAB);
+
+        simpleItem(ModItems.ZORD_MAP);
+
+        simpleItem(ModItems.ZORD_BP_HEAD);
+        simpleItem(ModItems.ZORD_BP_CHEST);
+        simpleItem(ModItems.ZORD_BP_R_ARM);
+        simpleItem(ModItems.ZORD_BP_L_ARM);
+        simpleItem(ModItems.ZORD_BP_R_LEG);
+        simpleItem(ModItems.ZORD_BP_L_LEG);
 
         /** exemplo
         simpleItem(ModItems.SAPPHIRE);
@@ -104,6 +124,12 @@ public class ModItemModelProvider extends ItemModelProvider {
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(DimensionMod.MOD_ID,"item/" + item.getId().getPath()));
     }
+
+    public void evenSimplerBlockItem(RegistryObject<Block> block) {
+        this.withExistingParent(DimensionMod.MOD_ID + ":" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
+                modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath()));
+    }
+
 
     private ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {
         return withExistingParent(item.getId().getPath(),

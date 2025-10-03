@@ -6,7 +6,7 @@
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "dimensionmod:orange_village/orange_village_straight_road_1",
-        "projection": "rigid",
+        "projection": "terrain_matching",
         "processors": "minecraft:empty"
       }
     },
@@ -15,7 +15,7 @@
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "dimensionmod:orange_village/orange_village_straight_road_2",
-        "projection": "rigid",
+        "projection": "terrain_matching",
         "processors": "minecraft:empty"
       }
     },
@@ -24,7 +24,7 @@
       "element": {
         "element_type": "minecraft:single_pool_element",
         "location": "dimensionmod:orange_village/orange_village_straight_road_3",
-        "projection": "rigid",
+        "projection": "terrain_matching",
         "processors": "minecraft:empty"
       }
     }

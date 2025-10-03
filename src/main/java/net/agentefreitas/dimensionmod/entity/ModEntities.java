@@ -38,6 +38,26 @@ public class ModEntities {
             ENTITY_TYPES.register("orange_fruit", () -> EntityType.Builder.of(OrangeFruitEntity::new, MobCategory.AMBIENT)
                     .sized(0.3f, 0.3f).build("orange_fruit"));
 
+    public static final RegistryObject<EntityType<OrangeVillagerEntity>> ORANGE_VILLAGER =
+            ENTITY_TYPES.register("orange_villager", () -> EntityType.Builder.of(OrangeVillagerEntity::new, MobCategory.AMBIENT)
+                    .sized(0.5f, 0.5f).build("orange_villager"));
+
+    public static final RegistryObject<EntityType<OrangeVillagerRareEntity>> ORANGE_VILLAGER_RARE =
+            ENTITY_TYPES.register("orange_villager_rare", () -> EntityType.Builder.of(OrangeVillagerRareEntity::new, MobCategory.AMBIENT)
+                    .sized(0.5f, 0.5f).build("orange_villager_rare"));
+
+    public static final RegistryObject<EntityType<OrangeVillagerJuiceEntity>> ORANGE_VILLAGER_JUICE =
+            ENTITY_TYPES.register("orange_villager_juice", () -> EntityType.Builder.of(OrangeVillagerJuiceEntity::new, MobCategory.AMBIENT)
+                    .sized(0.5f, 0.5f).build("orange_villager_juice"));
+
+    public static final RegistryObject<EntityType<OrangeVillagerMageEntity>> ORANGE_VILLAGER_MAGE =
+            ENTITY_TYPES.register("orange_villager_mage", () -> EntityType.Builder.of(OrangeVillagerMageEntity::new, MobCategory.AMBIENT)
+                    .sized(0.5f, 0.5f).build("orange_villager_mage"));
+
+    public static final RegistryObject<EntityType<OrangePigEntity>> ORANGE_PIG =
+            ENTITY_TYPES.register("orange_pig", () -> EntityType.Builder.of(OrangePigEntity::new, MobCategory.AMBIENT)
+                    .sized(0.6f, 1.9f).build("orange_pig"));
+
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

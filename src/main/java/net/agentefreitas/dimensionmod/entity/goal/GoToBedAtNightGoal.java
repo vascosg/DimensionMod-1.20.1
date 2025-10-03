@@ -3,7 +3,9 @@ package net.agentefreitas.dimensionmod.entity.goal;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.goal.Goal;
+import net.minecraft.world.level.block.BedBlock;
 
 import java.util.Optional;
 
@@ -46,15 +48,20 @@ public class GoToBedAtNightGoal extends Goal {
     }
 
     private Optional<BlockPos> findNearestBed() {
-        BlockPos mobPos = mob.blockPosition();
-        int radius = 10;
-
-        for (BlockPos pos : BlockPos.betweenClosed(mobPos.offset(-radius, -2, -radius), mobPos.offset(radius, 2, radius))) {
-            if (mob.level().getBlockState(pos).is(BlockTags.BEDS)) {
+        BlockPos origin = mob.blockPosition();
+        int r = 10;
+        for (BlockPos pos : BlockPos.betweenClosed(origin.offset(-r, -2, -r), origin.offset(r, 2, r))) {
+            if (mob.level().getBlockState(pos).is(BlockTags.BEDS)
+                    && !mob.level().getBlockState(pos).getValue(BedBlock.OCCUPIED)) {
                 return Optional.of(pos.immutable());
             }
         }
-
         return Optional.empty();
+    }
+
+    @Override
+    public void stop() {
+        bedPos = null;
+        mob.setPose(Pose.STANDING);
     }
 }

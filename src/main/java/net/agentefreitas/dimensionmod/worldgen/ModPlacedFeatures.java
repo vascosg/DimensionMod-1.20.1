@@ -1,17 +1,19 @@
 package net.agentefreitas.dimensionmod.worldgen;
 
 import net.agentefreitas.dimensionmod.DimensionMod;
+import net.agentefreitas.dimensionmod.block.ModBlocks;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.PlacementModifier;
+import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
 
@@ -22,16 +24,38 @@ public class ModPlacedFeatures {
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
+        HolderGetter<ConfiguredFeature<?, ?>> configured = context.lookup(Registries.CONFIGURED_FEATURE);
+
 
 
         register(context, SAPPHIRE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_SAPPHIRE_ORE_KEY),
                 ModOrePlacement.commonOrePlacement(24,
                         HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(0))));
 
-        register(context, ORANGE_TREE_PLACED_KEY,
-                configuredFeatures.getOrThrow(ModConfiguredFeatures.ORANGE_KEY),
-                List.of() // aqui você pode adicionar RarityFilter, HeightRange, etc.
+        /*
+        Holder<ConfiguredFeature<?, ?>> orangeHolder =
+                configured.getOrThrow(ModConfiguredFeatures.ORANGE_KEY);
+
+
+        context.register(
+                ORANGE_TREE_PLACED_KEY,
+                new PlacedFeature(
+                        orangeHolder,
+                        List.of(
+                                PlacementUtils.filteredByBlockSurvival(ModBlocks.ORANGE_SAPLING.get()),
+                                RarityFilter.onAverageOnceEvery(3),
+                                InSquarePlacement.spread(),
+                                PlacementUtils.HEIGHTMAP_OCEAN_FLOOR,
+                                BiomeFilter.biome()
+                        )
+                )
         );
+
+         */
+
+        register(context, ORANGE_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.ORANGE_KEY),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.005f, 1),
+                        ModBlocks.ORANGE_SAPLING.get()));
     }
 
 

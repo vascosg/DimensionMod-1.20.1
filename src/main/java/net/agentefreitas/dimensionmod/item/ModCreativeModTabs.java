@@ -48,6 +48,10 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.BAI_YU_SPANW_EGG.get());
                         pOutput.accept(ModItems.GAO_YU_SPANW_EGG.get());
                         pOutput.accept(ModItems.DEMI_CAT_SPANW_EGG.get());
+                        pOutput.accept(ModItems.ORANGE_VILLAGER_SPANW_EGG.get());
+                        pOutput.accept(ModItems.ORANGE_VILLAGER_RARE_SPANW_EGG.get());
+                        pOutput.accept(ModItems.ORANGE_VILLAGER_MAGE_SPANW_EGG.get());
+                        pOutput.accept(ModItems.ORANGE_VILLAGER_JUICE_SPANW_EGG.get());
 
                         pOutput.accept(ModItems.COLDEST_ICE.get());
                         pOutput.accept(ModItems.COLDEST_ICE_HELMET.get());
@@ -59,6 +63,15 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.ICY_CRYSTAL.get());
 
                         pOutput.accept(ModItems.SAPPHIRE.get());
+
+                        pOutput.accept(ModItems.ZORD_MAP.get());
+
+                        pOutput.accept(ModItems.ZORD_BP_HEAD.get());
+                        pOutput.accept(ModItems.ZORD_BP_CHEST.get());
+                        pOutput.accept(ModItems.ZORD_BP_R_ARM.get());
+                        pOutput.accept(ModItems.ZORD_BP_L_ARM.get());
+                        pOutput.accept(ModItems.ZORD_BP_R_LEG.get());
+                        pOutput.accept(ModItems.ZORD_BP_L_LEG.get());
 
                         pOutput.accept(ModBlocks.ORANGE_LOG.get());
                         pOutput.accept(ModBlocks.ORANGE_WOOD.get());
@@ -76,6 +89,14 @@ public class ModCreativeModTabs {
 
                         pOutput.accept(ModBlocks.TERRACOTTA_LEAVES.get());
                         pOutput.accept(ModBlocks.ORANGE_MUSHROOM_BLOCK.get());
+
+                        pOutput.accept(ModBlocks.ORANGE_TERRACOTTA_STAIRS.get());
+                        pOutput.accept(ModBlocks.ORANGE_TERRACOTTA_SLAB.get());
+
+                        pOutput.accept(ModBlocks.WHITE_TERRACOTTA_STAIRS.get());
+                        pOutput.accept(ModBlocks.WHITE_TERRACOTTA_SLAB.get());
+
+                        pOutput.accept(ModItems.ZORD_BP_CHEST.get());
 
                     })
                     .build());

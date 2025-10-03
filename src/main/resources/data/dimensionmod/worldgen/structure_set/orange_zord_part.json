@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "dimensionmod:orange_zord_part",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 21,
+    "separation": 4,
+    "salt": 1558557423
+  }
+}
