@@ -1,5 +1,8 @@
 package net.agentefreitas.dimensionmod.entity.custom;
 
+import net.agentefreitas.dimensionmod.entity.ModEntities;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
@@ -7,11 +10,14 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MoverType;
+import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.network.NetworkHooks;
 
 import java.util.List;
@@ -64,11 +70,67 @@ public class OrangeFruitEntity extends Entity {
                     // Teleporte ou efeito
                     ServerLevel targetWorld = sp.server.getLevel(destination);
                     assert targetWorld != null;
-                    sp.teleportTo(targetWorld, 0, 100, 0, sp.getYRot(), sp.getXRot());
+
+                    // Escolhe X e Z fixos ou aleatórios
+                    double x = player.getX();  // Podes mudar para qualquer coordenada
+                    double z = player.getZ();
+
+                    BlockPos safePos = findSafeSpawn(targetWorld, (int) x, (int) z);
+
+                    sp.teleportTo(targetWorld, x, safePos.getY(), z, sp.getYRot(), sp.getXRot());
                     this.discard(); // só descarta depois de tocar no jogador
                 }
             }
+
+            ServerLevel currentLevel = (ServerLevel) this.level();
+            ServerLevel targetWorld = currentLevel.getServer().getLevel(destination);
+            if (targetWorld == null) {
+                return;
+            }
+
+            List<Pig> pigs = this.level().getEntitiesOfClass(Pig.class, this.getBoundingBox().inflate(0.5));
+            for (Pig pig : pigs) {
+                // Remove o porco do mundo atual
+
+                double x = pig.getX();  // Podes mudar para qualquer coordenada
+                double z = pig.getZ();
+                pig.discard();
+
+                // Cria e posiciona a OrangePigEntity no mundo destino
+                OrangePigEntity orangePig = new OrangePigEntity(ModEntities.ORANGE_PIG.get(), targetWorld);
+
+                BlockPos safePos = findSafeSpawn(targetWorld, (int) x, (int) z);
+
+                orangePig.moveTo(x, safePos.getY(), z, pig.getYRot(), pig.getXRot());
+
+                // Spawna no servidor
+                targetWorld.addFreshEntity(orangePig);
+            }
         }
+    }
+
+    private static BlockPos findSafeSpawn(ServerLevel level, int x, int z) {
+        int blockX = Mth.floor(x);
+        int blockZ = Mth.floor(z);
+        int maxY = level.getMaxBuildHeight() - 1;
+        int minY = level.getMinBuildHeight();
+
+        BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos(blockX, maxY, blockZ);
+
+        // Desce até encontrar bloco sólido com dois de ar acima
+        while (pos.getY() > minY) {
+            BlockState below = level.getBlockState(pos);
+            BlockState above1 = level.getBlockState(pos.above());
+            BlockState above2 = level.getBlockState(pos.above(2));
+
+            if (!below.isAir() && above1.isAir() && above2.isAir()) {
+                return pos.above(); // ponto de spawn é acima do bloco sólido
+            }
+            pos.move(Direction.DOWN);
+        }
+
+        // Se não encontrou, fallback para Y=100 com posição forçada
+        return new BlockPos(blockX, 100, blockZ);
     }
 
 
