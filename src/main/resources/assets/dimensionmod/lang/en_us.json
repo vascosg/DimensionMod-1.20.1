@@ -63,6 +63,8 @@
   "block.dimensionmod.white_terracotta_stairs": "White Terracotta Stairs",
   "block.dimensionmod.white_terracotta_slab" : "White Terracotta Slab",
 
+  "block.dimensionmod.custom_portal_block": "Custom Portal Block",
+
 
   "creativetab.dimension_tab": "Dimension Tab"
 }

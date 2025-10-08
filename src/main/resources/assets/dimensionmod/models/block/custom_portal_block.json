@@ -1,0 +1,17 @@
+{
+  "parent": "block/block",
+  "render_type": "translucent",
+  "textures": {
+    "particle": "dimensionmod:block/passion_fruit_portal"
+  },
+  "elements": [
+    {
+      "from": [0, 0, 7.5],
+      "to": [16, 16, 8.5],
+      "faces": {
+        "north": { "texture": "#particle" },
+        "south": { "texture": "#particle" }
+      }
+    }
+  ]
+}

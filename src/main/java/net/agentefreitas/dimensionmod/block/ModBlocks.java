@@ -137,6 +137,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> WHITE_TERRACOTTA_SLAB = registerBlock("white_terracotta_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_TERRACOTTA).sound(SoundType.STONE)));
 
+    public static final RegistryObject<Block> CUSTOM_PORTAL_BLOCK = registerBlock("custom_portal_block",
+            () -> new CustomPortalBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).sound(SoundType.GLASS)));
+
 
     //public static final RegistryObject<Block> POTTED_CATMINT = BLOCKS.register("potted_catmint",
     //        () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.CATMINT,

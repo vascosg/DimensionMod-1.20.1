@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "dimensionmod:block/custom_portal_block", "y": 0 },
+    "facing=south": { "model": "dimensionmod:block/custom_portal_block", "y": 180 },
+    "facing=west":  { "model": "dimensionmod:block/custom_portal_block", "y": 270 },
+    "facing=east":  { "model": "dimensionmod:block/custom_portal_block", "y": 90 }
+  }
+}

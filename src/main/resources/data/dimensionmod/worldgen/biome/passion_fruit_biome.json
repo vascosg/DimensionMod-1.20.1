@@ -1,0 +1,28 @@
+{
+  "temperature_modifier": "none",
+  "carvers": {},
+  "creature_spawn_probability": 0.07,
+  "downfall": 1.0,
+  "effects": {
+    "fog_color": 16098893,
+    "grass_color": 6071295,
+    "foliage_color": 3637729,
+    "grass_color_modifier": "none",
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2,
+      "sound": "minecraft:music.overworld.flower_forest",
+      "tick_delay": 6000
+    },
+    "ambient_light": 1.0,
+    "has_skylight": true,
+    "sky_color": 9330939,
+    "water_color": 16746496,
+    "water_fog_color": 15104512
+  },
+  "features": [],
+  "has_precipitation": false,
+  "spawn_costs": {},
+  "spawners": {},
+  "temperature": 1.0
+}

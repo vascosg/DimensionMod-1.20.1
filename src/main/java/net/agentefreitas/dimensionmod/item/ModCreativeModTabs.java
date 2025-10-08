@@ -98,6 +98,8 @@ public class ModCreativeModTabs {
 
                         pOutput.accept(ModItems.ZORD_BP_CHEST.get());
 
+                        pOutput.accept(ModBlocks.CUSTOM_PORTAL_BLOCK.get());
+
                     })
                     .build());
 

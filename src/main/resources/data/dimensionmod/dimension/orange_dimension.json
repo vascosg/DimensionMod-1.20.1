@@ -4,8 +4,33 @@
     "type": "minecraft:noise",
     "settings": "dimensionmod:orange_noise",
     "biome_source": {
-      "type": "minecraft:fixed",
-      "biome": "dimensionmod:orange_biome"
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "dimensionmod:orange_biome",
+          "parameters": {
+            "temperature": 0.5,
+            "humidity": 0.5,
+            "continentalness": 0.5,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "dimensionmod:passion_fruit_biome",
+          "parameters": {
+            "temperature": 0.2,
+            "humidity": 0.7,
+            "continentalness": 0.9,
+            "erosion": 0.8,
+            "weirdness": 0.6,
+            "depth": 0,
+            "offset": 0.2
+          }
+        }
+      ]
     }
   }
 }
