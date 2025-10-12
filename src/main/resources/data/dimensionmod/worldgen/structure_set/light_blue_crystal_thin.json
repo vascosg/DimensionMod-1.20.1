@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "dimensionmod:light_blue_crystal_thin",
+      "weight": 60
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 3,
+    "separation": 2,
+    "salt": 16267450
+  }
+}

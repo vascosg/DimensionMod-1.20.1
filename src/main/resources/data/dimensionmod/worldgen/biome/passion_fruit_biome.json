@@ -20,7 +20,10 @@
     "water_color": 16746496,
     "water_fog_color": 15104512
   },
-  "features": [],
+  "features": [
+    [], [], ["dimensionmod:magenta_terracotta_disk","dimensionmod:blue_terracotta_disk","dimensionmod:light_blue_terracotta_disk","dimensionmod:yellow_terracotta_disk"], [], [],
+    [], ["dimensionmod:light_blue_crystal_thin","dimensionmod:blue_crystal_thin","dimensionmod:magenta_crystal_thin"], []
+  ],
   "has_precipitation": false,
   "spawn_costs": {},
   "spawners": {},
