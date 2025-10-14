@@ -118,6 +118,10 @@ public class ModItems {
     public static final RegistryObject<Item> ZORD_BP_L_LEG = ITEMS.register("zord_bp_l_leg",
             () -> new Item(new Item.Properties()));
 
+    //others
+    public static final RegistryObject<Item> SPACE_STAFF = ITEMS.register("space_staff",
+            () -> new SpaceStaffItem(new Item.Properties().stacksTo(1)));
+
     /** exemplo
     public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",
             () -> new Item(new Item.Properties()));

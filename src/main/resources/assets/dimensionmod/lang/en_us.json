@@ -37,6 +37,9 @@
   "item.dimensionmod.zord_bp_r_leg": "Zord Blueprint Right Leg",
   "item.dimensionmod.zord_bp_l_leg": "Zord Blueprint Left Leg",
 
+  "item.dimensionmod.space_staff": "Space Staff",
+  "item.dimensionmod.space_staff.tooltip": "This staff has the power to activate portals to neighbour dimensions",
+
   "block.dimensionmod.dimension_door_block": "Dimension Door ",
   "block.dimensionmod.lectern_white": "Dimension Book Lectern",
   "block.dimensionmod.guardian_block": "Guardian Block",
@@ -64,7 +67,8 @@
   "block.dimensionmod.white_terracotta_slab" : "White Terracotta Slab",
 
   "block.dimensionmod.custom_portal_block": "Custom Portal Block",
-
+  "block.dimensionmod.po_terracotta": "Purple Orange Conector",
+  "block.dimensionmod.po_terracotta_lock": "Purple Orange Portal Lock",
 
   "creativetab.dimension_tab": "Dimension Tab"
 }

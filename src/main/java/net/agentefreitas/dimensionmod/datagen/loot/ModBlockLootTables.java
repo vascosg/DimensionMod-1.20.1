@@ -57,6 +57,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.WHITE_TERRACOTTA_SLAB.get(),
                 block -> createSlabItemTable(ModBlocks.WHITE_TERRACOTTA_SLAB.get()));
 
+        this.dropSelf((ModBlocks.PO_TERRACOTTA.get()));
+
         /** exemplo
         this.dropSelf(ModBlocks.RAW_SAPPHIRE_BLOCK.get());
         this.dropSelf(ModBlocks.SOUND_BLOCK.get());

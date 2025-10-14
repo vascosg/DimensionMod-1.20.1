@@ -138,7 +138,13 @@ public class ModBlocks {
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_TERRACOTTA).sound(SoundType.STONE)));
 
     public static final RegistryObject<Block> CUSTOM_PORTAL_BLOCK = registerBlock("custom_portal_block",
-            () -> new CustomPortalBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).sound(SoundType.GLASS)));
+            () -> new CustomPortalBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).sound(SoundType.GLASS).noLootTable()));
+
+    public static final RegistryObject<Block> PO_TERRACOTTA = registerBlock("po_terracotta",
+            () -> new POTerracottaBlock(BlockBehaviour.Properties.copy(Blocks.TERRACOTTA)));
+
+    public static final RegistryObject<Block> PO_TERRACOTTA_LOCK = registerBlock("po_terracotta_lock",
+            () -> new POTerracottaLockBlock(BlockBehaviour.Properties.copy(Blocks.TERRACOTTA).noLootTable()));
 
 
     //public static final RegistryObject<Block> POTTED_CATMINT = BLOCKS.register("potted_catmint",

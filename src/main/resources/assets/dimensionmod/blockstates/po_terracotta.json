@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "dimensionmod:block/po_terracotta" },
+    "facing=south": { "model": "dimensionmod:block/po_terracotta", "y": 180 },
+    "facing=west":  { "model": "dimensionmod:block/po_terracotta", "y": 270 },
+    "facing=east":  { "model": "dimensionmod:block/po_terracotta", "y": 90 }
+  }
+}

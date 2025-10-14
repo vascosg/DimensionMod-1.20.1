@@ -73,6 +73,8 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.ZORD_BP_R_LEG.get());
                         pOutput.accept(ModItems.ZORD_BP_L_LEG.get());
 
+                        pOutput.accept(ModItems.SPACE_STAFF.get());
+
                         pOutput.accept(ModBlocks.ORANGE_LOG.get());
                         pOutput.accept(ModBlocks.ORANGE_WOOD.get());
                         pOutput.accept(ModBlocks.STRIPPED_ORANGE_LOG.get());
@@ -99,6 +101,8 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.ZORD_BP_CHEST.get());
 
                         pOutput.accept(ModBlocks.CUSTOM_PORTAL_BLOCK.get());
+                        pOutput.accept(ModBlocks.PO_TERRACOTTA.get());
+                        pOutput.accept(ModBlocks.PO_TERRACOTTA_LOCK.get());
 
                     })
                     .build());

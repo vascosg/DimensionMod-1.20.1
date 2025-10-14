@@ -103,6 +103,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.ZORD_BP_R_LEG);
         simpleItem(ModItems.ZORD_BP_L_LEG);
 
+        simpleItem(ModItems.SPACE_STAFF);
+
         /** exemplo
         simpleItem(ModItems.SAPPHIRE);
         simpleItem(ModItems.RAW_SAPPHIRE);
