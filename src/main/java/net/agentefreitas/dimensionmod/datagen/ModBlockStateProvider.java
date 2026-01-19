@@ -60,6 +60,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
         stairsBlock(((StairBlock) ModBlocks.WHITE_TERRACOTTA_STAIRS.get()), blockTexture(Blocks.WHITE_TERRACOTTA));
         slabBlock(((SlabBlock) ModBlocks.WHITE_TERRACOTTA_SLAB.get()), blockTexture(Blocks.WHITE_TERRACOTTA), blockTexture(Blocks.WHITE_TERRACOTTA));
 
+        blockWithItem(ModBlocks.AMBER_BLOCK);
+        blockWithItem(ModBlocks.AQUAMARINE_BLOCK);
+        blockWithItem(ModBlocks.CITRINE_BLOCK);
+        blockWithItem(ModBlocks.GARNET_BLOCK);
+        blockWithItem(ModBlocks.KUNZITE_BLOCK);
+        blockWithItem(ModBlocks.PERIDOT_BLOCK);
+
     }
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {

@@ -104,6 +104,13 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModBlocks.PO_TERRACOTTA.get());
                         pOutput.accept(ModBlocks.PO_TERRACOTTA_LOCK.get());
 
+                        pOutput.accept(ModBlocks.AMBER_BLOCK.get());
+                        pOutput.accept(ModBlocks.AQUAMARINE_BLOCK.get());
+                        pOutput.accept(ModBlocks.CITRINE_BLOCK.get());
+                        pOutput.accept(ModBlocks.GARNET_BLOCK.get());
+                        pOutput.accept(ModBlocks.KUNZITE_BLOCK.get());
+                        pOutput.accept(ModBlocks.PERIDOT_BLOCK.get());
+
                     })
                     .build());
 

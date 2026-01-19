@@ -147,6 +147,26 @@ public class ModBlocks {
             () -> new POTerracottaLockBlock(BlockBehaviour.Properties.copy(Blocks.TERRACOTTA).noLootTable()));
 
 
+
+    public static final RegistryObject<Block> AMBER_BLOCK = registerBlock("amber_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST_CLUSTER).lightLevel(state -> 10)));
+
+    public static final RegistryObject<Block> AQUAMARINE_BLOCK = registerBlock("aquamarine_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST_CLUSTER).lightLevel(state -> 10)));
+
+    public static final RegistryObject<Block> CITRINE_BLOCK = registerBlock("citrine_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST_CLUSTER).lightLevel(state -> 10)));
+
+    public static final RegistryObject<Block> GARNET_BLOCK = registerBlock("garnet_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST_CLUSTER).lightLevel(state -> 10)));
+
+    public static final RegistryObject<Block> KUNZITE_BLOCK = registerBlock("kunzite_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST_CLUSTER).lightLevel(state -> 10)));
+
+    public static final RegistryObject<Block> PERIDOT_BLOCK = registerBlock("peridot_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST_CLUSTER).lightLevel(state -> 10)));
+
+
     //public static final RegistryObject<Block> POTTED_CATMINT = BLOCKS.register("potted_catmint",
     //        () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.CATMINT,
     //                BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));

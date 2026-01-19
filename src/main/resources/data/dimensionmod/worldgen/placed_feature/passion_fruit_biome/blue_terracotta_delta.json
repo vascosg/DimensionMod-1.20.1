@@ -1,0 +1,19 @@
+{
+  "feature": "dimensionmod:passion_fruit_biome/blue_terracotta_delta",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": 3
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:biome"
+    },
+    {
+      "type": "minecraft:count_on_every_layer",
+      "count": 1
+    }
+  ]
+}
