@@ -58,6 +58,30 @@ public class ModEntities {
             ENTITY_TYPES.register("orange_pig", () -> EntityType.Builder.of(OrangePigEntity::new, MobCategory.AMBIENT)
                     .sized(0.6f, 1.9f).build("orange_pig"));
 
+    public static final RegistryObject<EntityType<GarnetSwordEntity>> GARNET_SWORD =
+            ENTITY_TYPES.register("garnet_sword", () -> EntityType.Builder.of(GarnetSwordEntity::new, MobCategory.MONSTER)
+                    .sized(0.2f, 1.4f).build("garnet_sword"));
+
+    public static final RegistryObject<EntityType<AquamarineSwordEntity>> AQUAMARINE_SWORD =
+            ENTITY_TYPES.register("aquamarine_sword", () -> EntityType.Builder.of(AquamarineSwordEntity::new, MobCategory.AMBIENT)
+                    .sized(0.6f, 1.9f).build("aquamarine_sword"));
+
+    public static final RegistryObject<EntityType<PeridotSwordEntity>> PERIDOT_SWORD =
+            ENTITY_TYPES.register("peridot_sword", () -> EntityType.Builder.of(PeridotSwordEntity::new, MobCategory.AMBIENT)
+                    .sized(0.6f, 1.9f).build("peridot_sword"));
+
+    public static final RegistryObject<EntityType<CitrineSwordEntity>> CITRINE_SWORD =
+            ENTITY_TYPES.register("citrine_sword", () -> EntityType.Builder.of(CitrineSwordEntity::new, MobCategory.AMBIENT)
+                    .sized(0.6f, 1.9f).build("citrine_sword"));
+
+    public static final RegistryObject<EntityType<AmberSwordEntity>> AMBER_SWORD =
+            ENTITY_TYPES.register("amber_sword", () -> EntityType.Builder.of(AmberSwordEntity::new, MobCategory.AMBIENT)
+                    .sized(0.6f, 1.9f).build("amber_sword"));
+
+    public static final RegistryObject<EntityType<KunziteSwordEntity>> KUNZITE_SWORD =
+            ENTITY_TYPES.register("kunzite_sword", () -> EntityType.Builder.of(KunziteSwordEntity::new, MobCategory.AMBIENT)
+                    .sized(0.6f, 1.9f).build("kunzite_sword"));
+
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

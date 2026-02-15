@@ -22,5 +22,11 @@ public class ModEventBusClientEvents {
         event.registerLayerDefinition(ModModelLayers.ORANGE_VILLAGER_JUICE_LAYER, OrangeVillagerJuiceModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.ORANGE_VILLAGER_MAGE_LAYER, OrangeVillagerMageModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.ORANGE_PIG_LAYER, OrangePigModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.GARNET_SWORD_LAYER, GarnetSwordModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.AQUAMARINE_SWORD_LAYER, AquamarineSwordModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.PERIDOT_SWORD_LAYER, PeridotSwordModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.CITRINE_SWORD_LAYER, CitrineSwordModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.AMBER_SWORD_LAYER, AmberSwordModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.KUNZITE_SWORD_LAYER, KunziteSwordModel::createBodyLayer);
     }
 }

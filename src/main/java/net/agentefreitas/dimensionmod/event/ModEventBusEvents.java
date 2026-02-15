@@ -30,6 +30,12 @@ public class ModEventBusEvents {
         event.put(ModEntities.ORANGE_VILLAGER_JUICE.get(),OrangeVillagerJuiceEntity.createAttributes().build());
         event.put(ModEntities.ORANGE_VILLAGER_MAGE.get(),OrangeVillagerMageEntity.createAttributes().build());
         event.put(ModEntities.ORANGE_PIG.get(),OrangePigEntity.createAttributes().build());
+        event.put(ModEntities.GARNET_SWORD.get(),GarnetSwordEntity.createAttributes().build());
+        event.put(ModEntities.AQUAMARINE_SWORD.get(),AquamarineSwordEntity.createAttributes().build());
+        event.put(ModEntities.PERIDOT_SWORD.get(),PeridotSwordEntity.createAttributes().build());
+        event.put(ModEntities.CITRINE_SWORD.get(),CitrineSwordEntity.createAttributes().build());
+        event.put(ModEntities.AMBER_SWORD.get(),AmberSwordEntity.createAttributes().build());
+        event.put(ModEntities.KUNZITE_SWORD.get(),KunziteSwordEntity.createAttributes().build());
     }
 
 
@@ -63,6 +69,24 @@ public class ModEventBusEvents {
                 MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 
         event.register(ModEntities.ORANGE_PIG.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+
+        event.register(ModEntities.GARNET_SWORD.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+
+        event.register(ModEntities.AQUAMARINE_SWORD.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+
+        event.register(ModEntities.PERIDOT_SWORD.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+
+        event.register(ModEntities.CITRINE_SWORD.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+
+        event.register(ModEntities.AMBER_SWORD.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+
+        event.register(ModEntities.KUNZITE_SWORD.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
     }
 

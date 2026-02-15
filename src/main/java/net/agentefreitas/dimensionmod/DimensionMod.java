@@ -16,6 +16,7 @@ import net.agentefreitas.dimensionmod.item.ModPaintings;
 import net.agentefreitas.dimensionmod.util.ModDatapackLoader;
 //import net.agentefreitas.dimensionmod.worldgen.dimension.ModDimensions;
 import net.agentefreitas.dimensionmod.util.ModItemProperties;
+import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.Registry;
@@ -109,6 +110,12 @@ public class DimensionMod {
             EntityRenderers.register(ModEntities.ORANGE_VILLAGER_JUICE.get(), OrangeVillagerJuiceRenderer::new);
             EntityRenderers.register(ModEntities.ORANGE_VILLAGER_MAGE.get(), OrangeVillagerMageRenderer::new);
             EntityRenderers.register(ModEntities.ORANGE_PIG.get(), OrangePigRenderer::new);
+            EntityRenderers.register(ModEntities.GARNET_SWORD.get(), GarnetSwordRenderer::new);
+            EntityRenderers.register(ModEntities.AQUAMARINE_SWORD.get(), AquamarineSwordRenderer::new);
+            EntityRenderers.register(ModEntities.PERIDOT_SWORD.get(), PeridotSwordRenderer::new);
+            EntityRenderers.register(ModEntities.CITRINE_SWORD.get(), CitrineSwordRenderer::new);
+            EntityRenderers.register(ModEntities.AMBER_SWORD.get(), AmberSwordRenderer::new);
+            EntityRenderers.register(ModEntities.KUNZITE_SWORD.get(), KunziteSwordRenderer::new);
             ModItemProperties.addCustomItemProperties();
         }
     }

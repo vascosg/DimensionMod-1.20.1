@@ -37,4 +37,22 @@ public class ModModelLayers {
 
     public static final ModelLayerLocation ORANGE_PIG_LAYER = new ModelLayerLocation(
             new ResourceLocation(DimensionMod.MOD_ID, "orange_pig"), "main");
+
+    public static final ModelLayerLocation GARNET_SWORD_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DimensionMod.MOD_ID, "garnet_sword"), "main");
+
+    public static final ModelLayerLocation AQUAMARINE_SWORD_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DimensionMod.MOD_ID, "aquamarine_sword"), "main");
+
+    public static final ModelLayerLocation PERIDOT_SWORD_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DimensionMod.MOD_ID, "peridot_sword"), "main");
+
+    public static final ModelLayerLocation CITRINE_SWORD_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DimensionMod.MOD_ID, "citrine_sword"), "main");
+
+    public static final ModelLayerLocation AMBER_SWORD_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DimensionMod.MOD_ID, "amber_sword"), "main");
+
+    public static final ModelLayerLocation KUNZITE_SWORD_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DimensionMod.MOD_ID, "kunzite_sword"), "main");
 }
