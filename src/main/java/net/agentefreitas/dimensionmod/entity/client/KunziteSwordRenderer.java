@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 public class KunziteSwordRenderer extends MobRenderer<KunziteSwordEntity, KunziteSwordModel<KunziteSwordEntity>> {
 
     public KunziteSwordRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext, new KunziteSwordModel<>(pContext.bakeLayer(ModModelLayers.KUNZITE_SWORD_LAYER)), 1f);
+        super(pContext, new KunziteSwordModel<>(pContext.bakeLayer(ModModelLayers.KUNZITE_SWORD_LAYER)), 0.4f);
     }
 
     @Override

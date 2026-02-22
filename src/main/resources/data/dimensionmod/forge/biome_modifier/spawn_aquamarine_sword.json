@@ -2,7 +2,7 @@
   "type": "forge:add_spawns",
   "biomes": "dimensionmod:passion_fruit_biome",
   "spawners": {
-    "type": "dimensionmod:garnet_sword",
+    "type": "dimensionmod:aquamarine_sword",
     "weight": 30,
     "minCount": 1,
     "maxCount": 1

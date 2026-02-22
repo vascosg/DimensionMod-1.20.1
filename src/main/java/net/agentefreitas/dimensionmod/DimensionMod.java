@@ -116,6 +116,8 @@ public class DimensionMod {
             EntityRenderers.register(ModEntities.CITRINE_SWORD.get(), CitrineSwordRenderer::new);
             EntityRenderers.register(ModEntities.AMBER_SWORD.get(), AmberSwordRenderer::new);
             EntityRenderers.register(ModEntities.KUNZITE_SWORD.get(), KunziteSwordRenderer::new);
+            EntityRenderers.register(ModEntities.AMBER_PROJECTILE.get(), AmberProjectileRenderer::new);
+            EntityRenderers.register(ModEntities.KUNZITE_PROJECTILE.get(), KunziteProjectileRenderer::new);
             ModItemProperties.addCustomItemProperties();
         }
     }

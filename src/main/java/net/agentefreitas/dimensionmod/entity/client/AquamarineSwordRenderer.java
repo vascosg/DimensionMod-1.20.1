@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 public class AquamarineSwordRenderer extends MobRenderer<AquamarineSwordEntity, AquamarineSwordModel<AquamarineSwordEntity>> {
 
     public AquamarineSwordRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext, new AquamarineSwordModel<>(pContext.bakeLayer(ModModelLayers.AQUAMARINE_SWORD_LAYER)), 1f);
+        super(pContext, new AquamarineSwordModel<>(pContext.bakeLayer(ModModelLayers.AQUAMARINE_SWORD_LAYER)), 0.3f);
     }
 
     @Override

@@ -64,7 +64,7 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<AquamarineSwordEntity>> AQUAMARINE_SWORD =
             ENTITY_TYPES.register("aquamarine_sword", () -> EntityType.Builder.of(AquamarineSwordEntity::new, MobCategory.AMBIENT)
-                    .sized(0.6f, 1.9f).build("aquamarine_sword"));
+                    .sized(0.3f, 1.9f).build("aquamarine_sword"));
 
     public static final RegistryObject<EntityType<PeridotSwordEntity>> PERIDOT_SWORD =
             ENTITY_TYPES.register("peridot_sword", () -> EntityType.Builder.of(PeridotSwordEntity::new, MobCategory.AMBIENT)
@@ -72,15 +72,27 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<CitrineSwordEntity>> CITRINE_SWORD =
             ENTITY_TYPES.register("citrine_sword", () -> EntityType.Builder.of(CitrineSwordEntity::new, MobCategory.AMBIENT)
-                    .sized(0.6f, 1.9f).build("citrine_sword"));
+                    .sized(0.3f, 2.2f).build("citrine_sword"));
 
     public static final RegistryObject<EntityType<AmberSwordEntity>> AMBER_SWORD =
             ENTITY_TYPES.register("amber_sword", () -> EntityType.Builder.of(AmberSwordEntity::new, MobCategory.AMBIENT)
-                    .sized(0.6f, 1.9f).build("amber_sword"));
+                    .sized(0.5f, 0.7f).build("amber_sword"));
 
     public static final RegistryObject<EntityType<KunziteSwordEntity>> KUNZITE_SWORD =
             ENTITY_TYPES.register("kunzite_sword", () -> EntityType.Builder.of(KunziteSwordEntity::new, MobCategory.AMBIENT)
                     .sized(0.6f, 1.9f).build("kunzite_sword"));
+
+    public static final RegistryObject<EntityType<AmberProjectileEntity>> AMBER_PROJECTILE =
+            ENTITY_TYPES.register("amber_projectile", () -> EntityType.Builder.<AmberProjectileEntity>of(AmberProjectileEntity::new, MobCategory.MISC)
+                            .sized(0.25F, 0.25F)
+                            .build("amber_projectile")
+            );
+
+    public static final RegistryObject<EntityType<KunziteProjectileEntity>> KUNZITE_PROJECTILE =
+            ENTITY_TYPES.register("kunzite_projectile", () -> EntityType.Builder.<KunziteProjectileEntity>of(KunziteProjectileEntity::new, MobCategory.MISC)
+                    .sized(0.25F, 0.25F)
+                    .build("kunzite_projectile")
+            );
 
 
     public static void register(IEventBus eventBus) {

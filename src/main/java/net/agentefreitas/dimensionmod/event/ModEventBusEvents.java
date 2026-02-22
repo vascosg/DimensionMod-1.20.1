@@ -3,12 +3,14 @@ package net.agentefreitas.dimensionmod.event;
 import net.agentefreitas.dimensionmod.DimensionMod;
 import net.agentefreitas.dimensionmod.entity.ModEntities;
 import net.agentefreitas.dimensionmod.entity.custom.*;
+import net.agentefreitas.dimensionmod.entity.client.*;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.monster.Monster;
 import net.agentefreitas.dimensionmod.entity.MobEntitySpawnPlacements;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -88,6 +90,14 @@ public class ModEventBusEvents {
 
         event.register(ModEntities.KUNZITE_SWORD.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+
+
+    }
+
+    @SubscribeEvent
+    public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerEntityRenderer(ModEntities.AMBER_PROJECTILE.get(), AmberProjectileRenderer::new);
+        event.registerEntityRenderer(ModEntities.KUNZITE_PROJECTILE.get(), KunziteProjectileRenderer::new);
     }
 
 }

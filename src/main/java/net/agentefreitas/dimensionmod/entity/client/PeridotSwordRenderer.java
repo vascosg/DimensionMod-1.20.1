@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 public class PeridotSwordRenderer extends MobRenderer<PeridotSwordEntity, PeridotSwordModel<PeridotSwordEntity>> {
 
     public PeridotSwordRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext, new PeridotSwordModel<>(pContext.bakeLayer(ModModelLayers.PERIDOT_SWORD_LAYER)), 1f);
+        super(pContext, new PeridotSwordModel<>(pContext.bakeLayer(ModModelLayers.PERIDOT_SWORD_LAYER)), 0.4f);
     }
 
     @Override

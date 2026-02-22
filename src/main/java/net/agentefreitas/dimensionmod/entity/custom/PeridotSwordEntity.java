@@ -1,5 +1,9 @@
 package net.agentefreitas.dimensionmod.entity.custom;
 
+import net.agentefreitas.dimensionmod.entity.ModEntities;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.PathfinderMob;
@@ -75,4 +79,37 @@ public class PeridotSwordEntity extends PathfinderMob{
                 .add(Attributes.ATTACK_KNOCKBACK, 0.5f)
                 .add(Attributes.ATTACK_DAMAGE, 6.0D);
     }
+    @Override
+    public boolean hurt(DamageSource source, float amount) {
+
+        if (!this.level().isClientSide && !this.isDeadOrDying()) {
+
+            if (this.random.nextFloat() < 0.15f) {
+                this.duplicateMob();
+            }
+        }
+
+        if (this.level().isClientSide) {
+            for (int i = 0; i < 5; i++) {
+                this.level().addParticle(ParticleTypes.HAPPY_VILLAGER,
+                        this.getRandomX(0.5D), this.getRandomY(), this.getRandomZ(0.5D),
+                        0.0D, 0.1D, 0.0D);
+            }
+        }
+
+        if (!source.is(DamageTypeTags.IS_FIRE)) {
+            return false;
+        }
+
+        return super.hurt(source, amount);
+    }
+
+    private void duplicateMob() {
+
+        PeridotSwordEntity duplicate = new PeridotSwordEntity(ModEntities.PERIDOT_SWORD.get(), this.level());
+        duplicate.moveTo(this.getX(), this.getY(), this.getZ(), this.getYRot(), this.getXRot());
+
+        this.level().addFreshEntity(duplicate);
+    }
+
 }

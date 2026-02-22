@@ -55,4 +55,10 @@ public class ModModelLayers {
 
     public static final ModelLayerLocation KUNZITE_SWORD_LAYER = new ModelLayerLocation(
             new ResourceLocation(DimensionMod.MOD_ID, "kunzite_sword"), "main");
+
+    public static final ModelLayerLocation AMBER_PROJECTILE_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DimensionMod.MOD_ID, "amber_projectile"), "main");
+
+    public static final ModelLayerLocation KUNZITE_PROJECTILE_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DimensionMod.MOD_ID, "kunzite_projectile"), "main");
 }

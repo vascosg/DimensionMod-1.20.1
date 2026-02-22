@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 public class CitrineSwordRenderer extends MobRenderer<CitrineSwordEntity, CitrineSwordModel<CitrineSwordEntity>> {
 
     public CitrineSwordRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext, new CitrineSwordModel<>(pContext.bakeLayer(ModModelLayers.CITRINE_SWORD_LAYER)), 1f);
+        super(pContext, new CitrineSwordModel<>(pContext.bakeLayer(ModModelLayers.CITRINE_SWORD_LAYER)), 0.4f);
     }
 
     @Override

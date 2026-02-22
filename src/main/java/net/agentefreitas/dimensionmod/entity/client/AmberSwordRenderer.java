@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 public class AmberSwordRenderer extends MobRenderer<AmberSwordEntity, AmberSwordModel<AmberSwordEntity>> {
 
     public AmberSwordRenderer(EntityRendererProvider.Context pContext) {
-        super(pContext, new AmberSwordModel<>(pContext.bakeLayer(ModModelLayers.AMBER_SWORD_LAYER)), 1f);
+        super(pContext, new AmberSwordModel<>(pContext.bakeLayer(ModModelLayers.AMBER_SWORD_LAYER)), 0.4f);
     }
 
     @Override
