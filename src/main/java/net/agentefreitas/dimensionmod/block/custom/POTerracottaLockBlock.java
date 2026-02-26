@@ -87,8 +87,7 @@ public class POTerracottaLockBlock extends HorizontalDirectionalBlock {
                 BlockState newState = newBlock.defaultBlockState();
                 if (newState.hasProperty(HorizontalDirectionalBlock.FACING)) {
 
-                    Direction playerFacing = player.getDirection().getOpposite();
-                    newState = newState.setValue(HorizontalDirectionalBlock.FACING, playerFacing);
+                    newState = newState.setValue(HorizontalDirectionalBlock.FACING, facing);
                 }
 
                 // Para cada uma das 4 camadas acima

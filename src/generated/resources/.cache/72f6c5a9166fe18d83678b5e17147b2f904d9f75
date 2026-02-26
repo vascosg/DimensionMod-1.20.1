@@ -1,6 +1,7 @@
-// 1.20.1	2025-10-13T10:22:27.854158	Item Models: dimensionmod
+// 1.20.1	2026-02-22T18:57:58.656991	Item Models: dimensionmod
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dimensionmod/models/item/bai_yu_spawn_egg.json
 68f0aad47c4ad60c583a539ff04d3e50953821fd assets/dimensionmod/models/item/blue_book.json
+d2821d1386f5ca8c595593d5446860d0490ab2c0 assets/dimensionmod/models/item/broken_space_staff.json
 7057bf06e3452ab62aa18a50879ab9c160070cf3 assets/dimensionmod/models/item/coldest_ice.json
 26a3989f13c3ce564b531770ad922ce6b4db8222 assets/dimensionmod/models/item/coldest_ice_boots.json
 05404f9b7d770021dc2fd9366e3c90585c02e722 assets/dimensionmod/models/item/coldest_ice_boots_amethyst_trim.json
@@ -68,6 +69,7 @@ b2eb482f14e964f3aa2f125f3961002aac02d677 assets/dimensionmod/models/item/orange_
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dimensionmod/models/item/orange_villager_mage_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dimensionmod/models/item/orange_villager_rare_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dimensionmod/models/item/orange_villager_spawn_egg.json
+405882a2c95607b80e331169afe1187f56476937 assets/dimensionmod/models/item/overworld_bailer.json
 bea1ec99daf1990094e9b0438ca22bc1aae9d061 assets/dimensionmod/models/item/purple_book.json
 90c1627f84ddd26b43f5572b6107e80f576a630f assets/dimensionmod/models/item/red_book.json
 159cfda3e00f4c5007a267bc1768a52c1a61c95b assets/dimensionmod/models/item/sapphire.json

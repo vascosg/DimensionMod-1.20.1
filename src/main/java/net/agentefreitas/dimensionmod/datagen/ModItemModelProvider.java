@@ -84,6 +84,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.ICY_CRYSTAL);
 
         simpleItem(ModItems.SAPPHIRE);
+        simpleItem(ModItems.OverworldBailer);
 
         saplingItem(ModBlocks.ORANGE_SAPLING);
 
@@ -104,6 +105,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.ZORD_BP_L_LEG);
 
         simpleItem(ModItems.SPACE_STAFF);
+        simpleItem(ModItems.BROKEN_SPACE_STAFF);
 
         /** exemplo
         simpleItem(ModItems.SAPPHIRE);

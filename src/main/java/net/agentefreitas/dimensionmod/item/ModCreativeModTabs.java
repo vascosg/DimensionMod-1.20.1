@@ -63,6 +63,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.ICY_CRYSTAL.get());
 
                         pOutput.accept(ModItems.SAPPHIRE.get());
+                        pOutput.accept(ModItems.OverworldBailer.get());
 
                         pOutput.accept(ModItems.ZORD_MAP.get());
 
@@ -74,6 +75,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.ZORD_BP_L_LEG.get());
 
                         pOutput.accept(ModItems.SPACE_STAFF.get());
+                        pOutput.accept(ModItems.BROKEN_SPACE_STAFF.get());
 
                         pOutput.accept(ModBlocks.ORANGE_LOG.get());
                         pOutput.accept(ModBlocks.ORANGE_WOOD.get());

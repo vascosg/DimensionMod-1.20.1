@@ -19,7 +19,7 @@
           }
         },
         {
-          "biome": "dimensionmod:passion_fruit_biome",
+          "biome": "dimensionmod:passion_fruit_od_biome",
           "parameters": {
             "temperature": 0.2,
             "humidity": 0.7,

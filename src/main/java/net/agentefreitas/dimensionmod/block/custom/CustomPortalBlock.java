@@ -2,7 +2,14 @@ package net.agentefreitas.dimensionmod.block.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.Mth;
 import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -22,6 +29,7 @@ import net.minecraft.world.item.ItemStack;
 
 
 import javax.swing.text.html.BlockView;
+
 
 public class CustomPortalBlock extends BaseEntityBlock {
 
@@ -115,4 +123,51 @@ public class CustomPortalBlock extends BaseEntityBlock {
     }
     */
 
+    @Override
+    public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
+        // 1. Verificamos se é um jogador e se estamos no servidor
+        if (pEntity instanceof ServerPlayer serverPlayer && !pLevel.isClientSide) {
+
+
+            // 3. Obtemos a nossa dimensão customizada
+            ResourceKey<Level> destination = ResourceKey.create(Registries.DIMENSION,
+                    new ResourceLocation("dimensionmod", "passion_fruit_dimension"));
+
+            ServerLevel targetWorld = serverPlayer.server.getLevel(destination);
+            assert targetWorld != null;
+
+            // Escolhe X e Z fixos ou aleatórios
+            double x = pEntity.getX();  // Podes mudar para qualquer coordenada
+            double z = pEntity.getZ();
+
+            BlockPos safePos = findSafeSpawn(targetWorld, (int) x, (int) z);
+
+            serverPlayer.teleportTo(targetWorld, x, safePos.getY(), z, serverPlayer.getYRot(), serverPlayer.getXRot());
+
+        }
+    }
+
+    private static BlockPos findSafeSpawn(ServerLevel level, int x, int z) {
+        int blockX = Mth.floor(x);
+        int blockZ = Mth.floor(z);
+        int maxY = level.getMaxBuildHeight() - 1;
+        int minY = level.getMinBuildHeight();
+
+        BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos(blockX, maxY, blockZ);
+
+        // Desce até encontrar bloco sólido com dois de ar acima
+        while (pos.getY() > minY) {
+            BlockState below = level.getBlockState(pos);
+            BlockState above1 = level.getBlockState(pos.above());
+            BlockState above2 = level.getBlockState(pos.above(2));
+
+            if (!below.isAir() && above1.isAir() && above2.isAir()) {
+                return pos.above(); // ponto de spawn é acima do bloco sólido
+            }
+            pos.move(Direction.DOWN);
+        }
+
+        // Se não encontrou, fallback para Y=100 com posição forçada
+        return new BlockPos(blockX, 100, blockZ);
+    }
 }

@@ -101,6 +101,9 @@ public class ModItems {
     public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",
             () -> new Item(new Item.Properties().fireResistant()));
 
+    public static final RegistryObject<Item> OverworldBailer = ITEMS.register("overworld_bailer",
+            () -> new OverworldBailerItem(new Item.Properties().fireResistant()));
+
 
     public static final RegistryObject<Item> ZORD_MAP = ITEMS.register("zord_map",
             () -> new ZordMapItem( new Item.Properties()));
@@ -121,6 +124,9 @@ public class ModItems {
     //others
     public static final RegistryObject<Item> SPACE_STAFF = ITEMS.register("space_staff",
             () -> new SpaceStaffItem(new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> BROKEN_SPACE_STAFF = ITEMS.register("broken_space_staff",
+            () -> new Item(new Item.Properties().stacksTo(1)));
 
     /** exemplo
     public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",
