@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:diamond_block"
+    },
+    "G": {
+      "item": "minecraft:gold_block"
+    },
+    "I": {
+      "item": "minecraft:iron_block"
+    }
+  },
+  "pattern": [
+    "IIG",
+    "IDI",
+    "GII"
+  ],
+  "result": {
+    "item": "dimensionmod:malleable_mineral_condensate"
+  },
+  "show_notification": true
+}

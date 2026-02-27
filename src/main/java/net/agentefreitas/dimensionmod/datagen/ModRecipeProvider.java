@@ -98,6 +98,24 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.SAPPHIRE.get()), has(ModItems.SAPPHIRE.get()))
                 .save(pWriter);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CURSED_BONE.get())
+                .pattern("C C")
+                .pattern("C C")
+                .pattern(" C ")
+                .define('C', ModItems.CURSED_BONE_FRAGMENT.get())
+                .unlockedBy(getHasName(ModItems.CURSED_BONE_FRAGMENT.get()), has(ModItems.CURSED_BONE_FRAGMENT.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MALLEABLE_MINERAL_CONDENSATE.get())
+                .pattern("IIG")
+                .pattern("IDI")
+                .pattern("GII")
+                .define('I', Items.IRON_BLOCK)
+                .define('G', Items.GOLD_BLOCK)
+                .define('D', Items.DIAMOND_BLOCK)
+                .unlockedBy(getHasName(Items.IRON_BLOCK), has(Items.IRON_BLOCK))
+                .save(pWriter);
+
         /** exemplo
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 9)
                 .requires(ModBlocks.SAPPHIRE_BLOCK.get())

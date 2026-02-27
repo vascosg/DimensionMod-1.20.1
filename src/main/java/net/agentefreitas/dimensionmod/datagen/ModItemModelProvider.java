@@ -106,6 +106,18 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.SPACE_STAFF);
         simpleItem(ModItems.BROKEN_SPACE_STAFF);
+        simpleItem(ModItems.MALLEABLE_MINERAL_CONDENSATE);
+
+        simpleItem(ModItems.CURSED_BONE_FRAGMENT);
+        simpleItem(ModItems.SENTIENT_WATER);
+        simpleItem(ModItems.NATURE_SEED);
+        simpleItem(ModItems.STAR_ESSENCE);
+        simpleItem(ModItems.YANG_BLADE);
+        simpleItem(ModItems.YING_BLADE);
+        simpleItem(ModItems.CURSED_BONE);
+        simpleItem(ModItems.THREE_THOUSAND_COLORED_FLOWER);
+        simpleItem(ModItems.UNION_HILT);
+        handheldItem(ModItems.DUALITY_SWORD);
 
         /** exemplo
         simpleItem(ModItems.SAPPHIRE);

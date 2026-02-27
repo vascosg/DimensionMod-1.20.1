@@ -76,6 +76,19 @@ public class ModCreativeModTabs {
 
                         pOutput.accept(ModItems.SPACE_STAFF.get());
                         pOutput.accept(ModItems.BROKEN_SPACE_STAFF.get());
+                        pOutput.accept(ModItems.MALLEABLE_MINERAL_CONDENSATE.get());
+
+                        pOutput.accept(ModItems.CURSED_BONE_FRAGMENT.get());
+                        pOutput.accept(ModItems.SENTIENT_WATER.get());
+                        pOutput.accept(ModItems.NATURE_SEED.get());
+                        pOutput.accept(ModItems.STAR_ESSENCE.get());
+
+                        pOutput.accept(ModItems.CURSED_BONE.get());
+                        pOutput.accept(ModItems.THREE_THOUSAND_COLORED_FLOWER.get());
+
+                        pOutput.accept(ModItems.UNION_HILT.get());
+                        pOutput.accept(ModItems.DUALITY_SWORD.get());
+
 
                         pOutput.accept(ModBlocks.ORANGE_LOG.get());
                         pOutput.accept(ModBlocks.ORANGE_WOOD.get());
@@ -112,6 +125,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModBlocks.GARNET_BLOCK.get());
                         pOutput.accept(ModBlocks.KUNZITE_BLOCK.get());
                         pOutput.accept(ModBlocks.PERIDOT_BLOCK.get());
+
 
                     })
                     .build());

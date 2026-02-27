@@ -1,10 +1,15 @@
 package net.agentefreitas.dimensionmod.event;
 
 import net.agentefreitas.dimensionmod.DimensionMod;
+import net.agentefreitas.dimensionmod.enchantments.ModEnchantments;
 import net.agentefreitas.dimensionmod.item.ModItems;
+import net.agentefreitas.dimensionmod.item.custom.RainbowNameItem;
 import net.agentefreitas.dimensionmod.worldgen.StructureSpawner;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
@@ -12,13 +17,21 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.EnchantedBookItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.EnchantmentInstance;
 import net.minecraft.world.level.Level;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 import net.minecraft.core.registries.Registries;
+import net.minecraftforge.event.AnvilUpdateEvent;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.server.ServerStartedEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -77,4 +90,56 @@ public class ModServerEvents {
 
 
     }
+
+    //ENCHANTS
+    @SubscribeEvent
+    public static void onLivingHurt(LivingHurtEvent event) { //LIFE STEAL
+        // Verifica se quem atacou foi um Player
+        if (event.getSource().getEntity() instanceof Player player) {
+            ItemStack weapon = player.getMainHandItem();
+
+            // Verifica o nível do encantamento na arma
+            int level = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.LIFE_STEAL.get(), weapon);
+
+            if (level > 0) {
+                // Calcula quanto curar (ex: 10% do dano causado por nível)
+                float damageDealt = event.getAmount();
+                float healAmount = damageDealt * (level * 0.1f);
+
+                // Cura o jogador
+                player.heal(healAmount);
+
+                // Opcional: Adiciona umas partículas de coração para dar feedback visual
+                if (player.level() instanceof ServerLevel serverLevel) {
+                    serverLevel.sendParticles(ParticleTypes.HEART,
+                            player.getX(), player.getY() + 1.5, player.getZ(),
+                            5, 0.2, 0.2, 0.2, 0.1);
+                }
+            }
+        }
+    }
+
+    //ANVILS RECIPES
+    @SubscribeEvent
+    public static void onAnvilUpdate(AnvilUpdateEvent event) { //LIFE STEAL BOOK
+        ItemStack leftItem = event.getLeft();   // Item no 1º slot
+        ItemStack rightItem = event.getRight(); // Item no 2º slot
+
+        // 1. Verificar se o item da esquerda é um livro normal
+        // 2. Verificar se o item da direita é o material necessário (ex: Cursed Bone)
+        if (leftItem.getItem() == Items.BOOK && rightItem.getItem() == ModItems.CURSED_BONE.get()) {
+
+            // Criar o Livro Encantado de saída
+            ItemStack outputStack = new ItemStack(Items.ENCHANTED_BOOK);
+
+            // Adicionar o encantamento Life Steal Nível 1 ao livro
+            EnchantedBookItem.addEnchantment(outputStack, new EnchantmentInstance(ModEnchantments.LIFE_STEAL.get(), 1));
+
+            // Definir o resultado e o custo em XP
+            event.setOutput(outputStack);
+            event.setCost(5); // Custo de 5 níveis de XP
+            event.setMaterialCost(1); // Consome apenas 1 osso do stack
+        }
+    }
+
 }

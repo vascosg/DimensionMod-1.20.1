@@ -105,6 +105,7 @@ public class ModItems {
             () -> new OverworldBailerItem(new Item.Properties().fireResistant()));
 
 
+    //zord parts
     public static final RegistryObject<Item> ZORD_MAP = ITEMS.register("zord_map",
             () -> new ZordMapItem( new Item.Properties()));
 
@@ -127,6 +128,34 @@ public class ModItems {
 
     public static final RegistryObject<Item> BROKEN_SPACE_STAFF = ITEMS.register("broken_space_staff",
             () -> new Item(new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> MALLEABLE_MINERAL_CONDENSATE = ITEMS.register("malleable_mineral_condensate",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+
+    //swords loots
+    public static final RegistryObject<Item> CURSED_BONE_FRAGMENT = ITEMS.register("cursed_bone_fragment",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SENTIENT_WATER = ITEMS.register("sentient_water",
+            () -> new SentientWaterItem(new Item.Properties()));
+    public static final RegistryObject<Item> NATURE_SEED = ITEMS.register("nature_seed",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> STAR_ESSENCE = ITEMS.register("star_essence",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> YANG_BLADE = ITEMS.register("yang_blade",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> YING_BLADE = ITEMS.register("ying_blade",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> CURSED_BONE = ITEMS.register("cursed_bone",
+            () -> new ShinyItem(new Item.Properties()));
+    public static final RegistryObject<Item> THREE_THOUSAND_COLORED_FLOWER = ITEMS.register("three_thousand_colored_flower",
+            () -> new DuplicatorFlowerItem(new Item.Properties()));
+
+    public static final RegistryObject<Item> UNION_HILT = ITEMS.register("union_hilt",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DUALITY_SWORD = ITEMS.register("duality_sword",
+            () -> new DualitySwordItem(ModToolTiers.DUALITY_TEAR,3, -2.4F, new Item.Properties()));
+
 
     /** exemplo
     public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",

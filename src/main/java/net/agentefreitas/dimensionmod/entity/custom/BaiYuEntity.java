@@ -460,6 +460,11 @@ public class BaiYuEntity extends PathfinderMob implements Npc, Merchant {
                     new ItemStack(Items.CALCITE, 64),
                     10, 1, 0.05F
             ));
+            this.offers.add(new MerchantOffer(
+                    new ItemStack(ModItems.NATURE_SEED.get(), 1),
+                    new ItemStack(ModItems.THREE_THOUSAND_COLORED_FLOWER.get(), 1),
+                    3, 1000, 0.05F
+            ));
 
 
         }

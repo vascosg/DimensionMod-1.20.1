@@ -3,6 +3,7 @@ package net.agentefreitas.dimensionmod;
 import com.mojang.logging.LogUtils;
 import net.agentefreitas.dimensionmod.block.ModBlockEntities;
 import net.agentefreitas.dimensionmod.block.ModBlocks;
+import net.agentefreitas.dimensionmod.enchantments.ModEnchantments;
 import net.agentefreitas.dimensionmod.entity.MobEntitySpawnPlacements;
 import net.agentefreitas.dimensionmod.entity.ModEntities;
 import net.agentefreitas.dimensionmod.entity.client.*;
@@ -65,6 +66,7 @@ public class DimensionMod {
         ModBlockEntities.register(modEventBus);
         ModEntities.register(modEventBus);
         ModPaintings.register(modEventBus);
+        ModEnchantments.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(ModDatapackLoader.class);
         //ModDimensions.register();

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "dimensionmod:item/malleable_mineral_condensate"
+  }
+}

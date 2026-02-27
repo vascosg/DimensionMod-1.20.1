@@ -73,7 +73,7 @@ public class PeridotSwordEntity extends PathfinderMob{
 
     public static AttributeSupplier.Builder createAttributes() {
         return PathfinderMob.createLivingAttributes()
-                .add(Attributes.MAX_HEALTH, 100D)
+                .add(Attributes.MAX_HEALTH, 10D)
                 .add(Attributes.FOLLOW_RANGE, 24D)
                 .add(Attributes.MOVEMENT_SPEED, 0.3F)
                 .add(Attributes.ATTACK_KNOCKBACK, 0.5f)
@@ -84,7 +84,7 @@ public class PeridotSwordEntity extends PathfinderMob{
 
         if (!this.level().isClientSide && !this.isDeadOrDying()) {
 
-            if (this.random.nextFloat() < 0.15f) {
+            if (this.random.nextFloat() < 0.15f && !source.is(DamageTypeTags.IS_FIRE)) {
                 this.duplicateMob();
             }
         }

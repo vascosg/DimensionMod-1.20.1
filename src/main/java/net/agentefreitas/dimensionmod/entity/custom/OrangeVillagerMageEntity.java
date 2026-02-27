@@ -168,6 +168,13 @@ public class OrangeVillagerMageEntity extends PathfinderMob implements Npc, Merc
                     30, 1, 0.05F
             ));
 
+            this.offers.add(new MerchantOffer(
+                    new ItemStack(ModItems.NATURE_SEED.get(), 1),
+                    new ItemStack(ModItems.STAR_ESSENCE.get(), 1),
+                    new ItemStack(ModItems.UNION_HILT.get(), 1),
+                    30, 1, 0.05F
+            ));
+
         }
 
         boolean offerExists = false; //TODO so ugly

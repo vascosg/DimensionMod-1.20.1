@@ -36,4 +36,19 @@ public class ModToolTiers {
         public Ingredient getRepairIngredient() { return Ingredient.EMPTY; }
     };
 
+    public static final Tier DUALITY_TEAR = new Tier() {
+        @Override
+        public int getUses() { return 10500 ; }
+        @Override
+        public float getSpeed() { return 4.0F; }
+        @Override
+        public float getAttackDamageBonus() { return 12.0F; }
+        @Override
+        public int getLevel() { return 4; }
+        @Override
+        public int getEnchantmentValue() { return 100; }
+        @Override
+        public Ingredient getRepairIngredient() { return Ingredient.EMPTY; }
+    };
+
 }

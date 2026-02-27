@@ -39,6 +39,20 @@
 
   "item.dimensionmod.space_staff": "Space Staff",
   "item.dimensionmod.space_staff.tooltip": "This staff has the power to activate portals to neighbour dimensions",
+  "item.dimensionmod.malleable_mineral_condensate": "Malleable Mineral Condensate",
+
+  "item.dimensionmod.cursed_bone_fragment": "Cursed Bone Fragment",
+  "item.dimensionmod.sentient_water": "Sentient Water",
+  "item.dimensionmod.nature_seed": "Nature Seed",
+  "item.dimensionmod.star_essence": "Star Essence",
+  "item.dimensionmod.yang_blade": "Yang Blade",
+  "item.dimensionmod.ying_blade": "Ying Blade",
+
+  "item.dimensionmod.cursed_bone": "Cursed Bone",
+  "item.dimensionmod.three_thousand_colored_flower": "Three Thousand Colored Flower",
+
+  "item.dimensionmod.union_hilt": "Union Hilt",
+  "item.dimensionmod.duality_sword": "Duality Sword",
 
   "block.dimensionmod.dimension_door_block": "Dimension Door ",
   "block.dimensionmod.lectern_white": "Dimension Book Lectern",
@@ -69,6 +83,8 @@
   "block.dimensionmod.custom_portal_block": "Custom Portal Block",
   "block.dimensionmod.po_terracotta": "Purple Orange Conector",
   "block.dimensionmod.po_terracotta_lock": "Purple Orange Portal Lock",
+
+  "enchantment.dimensionmod.life_steal": "Life Steal",
 
   "creativetab.dimension_tab": "Dimension Tab"
 }

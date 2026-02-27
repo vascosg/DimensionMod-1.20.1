@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "dimensionmod:cursed_bone_fragment"
+    }
+  },
+  "pattern": [
+    "C C",
+    "C C",
+    " C "
+  ],
+  "result": {
+    "item": "dimensionmod:cursed_bone"
+  },
+  "show_notification": true
+}
