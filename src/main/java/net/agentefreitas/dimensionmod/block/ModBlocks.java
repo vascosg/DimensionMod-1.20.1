@@ -166,6 +166,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> PERIDOT_BLOCK = registerBlock("peridot_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SoundType.AMETHYST_CLUSTER).lightLevel(state -> 10)));
 
+    public static final RegistryObject<Block> ORANGE_ZORDE_FACTORY_BLOCK = registerBlock("orange_zord_factory_block",
+            () -> new OrangeZordFactoryBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
+                    .noOcclusion() // OBRIGATÓRIO para blocos com modelos customizados/entidades
+                    .dynamicShape() // Ajuda o motor de colisão a recalcular o VoxelShape
+            ));
 
     //public static final RegistryObject<Block> POTTED_CATMINT = BLOCKS.register("potted_catmint",
     //        () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.CATMINT,

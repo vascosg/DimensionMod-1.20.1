@@ -37,7 +37,17 @@
   "item.dimensionmod.zord_bp_r_leg": "Zord Blueprint Right Leg",
   "item.dimensionmod.zord_bp_l_leg": "Zord Blueprint Left Leg",
 
+  "item.dimensionmod.oz_head": "Orange Zord Head",
+  "item.dimensionmod.oz_chest": "Orange Zord Chest",
+  "item.dimensionmod.oz_right_arm": "Orange Zord Right Arm",
+  "item.dimensionmod.oz_left_arm": "Orange Zord Left Arm",
+  "item.dimensionmod.oz_right_leg": "Orange Zord Right Arm",
+  "item.dimensionmod.oz_left_leg": "Orange Zord Left Arm",
+
+  "item.dimensionmod.condensed_zord": "Condensed Zord ",
+
   "item.dimensionmod.space_staff": "Space Staff",
+  "item.dimensionmod.broken_space_staff": "Broken Space Staff",
   "item.dimensionmod.space_staff.tooltip": "This staff has the power to activate portals to neighbour dimensions",
   "item.dimensionmod.malleable_mineral_condensate": "Malleable Mineral Condensate",
 
@@ -83,6 +93,8 @@
   "block.dimensionmod.custom_portal_block": "Custom Portal Block",
   "block.dimensionmod.po_terracotta": "Purple Orange Conector",
   "block.dimensionmod.po_terracotta_lock": "Purple Orange Portal Lock",
+
+  "block.dimensionmod.orange_zord_factory_block": "Orange Zord Factory Block",
 
   "enchantment.dimensionmod.life_steal": "Life Steal",
 

@@ -1,6 +1,7 @@
 package net.agentefreitas.dimensionmod.entity;
 
 import net.agentefreitas.dimensionmod.DimensionMod;
+import net.agentefreitas.dimensionmod.block.custom.OrangeZordFactoryBlockEntity;
 import net.agentefreitas.dimensionmod.entity.custom.*;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -8,6 +9,8 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import static javax.swing.text.html.parser.DTDConstants.ENTITIES;
 
 public class ModEntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
@@ -93,6 +96,18 @@ public class ModEntities {
                     .sized(0.25F, 0.25F)
                     .build("kunzite_projectile")
             );
+
+    public static final RegistryObject<EntityType<OrangeZordEntity>> ORANGE_ZORD =
+            ENTITY_TYPES.register("orange_zord", () -> EntityType.Builder.<OrangeZordEntity>of(OrangeZordEntity::new, MobCategory.AMBIENT)
+                    .sized(0.3F, 0.6F)
+                    .build("orange_zord")
+            );
+
+    public static final RegistryObject<EntityType<OrangeZordFactoryEntity>> ORANGE_ZORD_FACTORY =
+            ENTITY_TYPES.register("orange_factory_visual",
+                    () -> EntityType.Builder.of(OrangeZordFactoryEntity::new, MobCategory.MISC)
+                            .sized(1.0f, 1.0f)
+                            .build("orange_factory_visual"));
 
 
     public static void register(IEventBus eventBus) {

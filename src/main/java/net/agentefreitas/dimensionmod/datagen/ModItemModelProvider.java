@@ -104,6 +104,15 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.ZORD_BP_R_LEG);
         simpleItem(ModItems.ZORD_BP_L_LEG);
 
+        simpleItem(ModItems.ZORD_HEAD);
+        simpleItem(ModItems.ZORD_CHEST);
+        simpleItem(ModItems.ZORD_RIGHT_ARM);
+        simpleItem(ModItems.ZORD_LEFT_ARM);
+        simpleItem(ModItems.ZORD_RIGHT_LEG);
+        simpleItem(ModItems.ZORD_LEFT_LEG);
+
+        simpleItem(ModItems.CONDENSED_ZORD);
+
         simpleItem(ModItems.SPACE_STAFF);
         simpleItem(ModItems.BROKEN_SPACE_STAFF);
         simpleItem(ModItems.MALLEABLE_MINERAL_CONDENSATE);

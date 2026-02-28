@@ -1,4 +1,4 @@
-// 1.20.1	2026-01-18T00:48:09.5668102	Loot Tables
+// 1.20.1	2026-02-28T19:53:12.4688163	Loot Tables
 6c7c9e66fcf039bee1a6c62db6b6a3601f9d4f8e data/dimensionmod/loot_tables/blocks/amber_block.json
 e12464bef8816a3b808360928175c37e3179d0b1 data/dimensionmod/loot_tables/blocks/aquamarine_block.json
 7323a4de36bcdcc2f4af7d0d17dec7aaa02f73d5 data/dimensionmod/loot_tables/blocks/citrine_block.json
@@ -20,6 +20,7 @@ b403f92e6468cac16f8d7a135bf923afafde0749 data/dimensionmod/loot_tables/blocks/or
 eebb0f35c2ac147c063a5d688b0acf22f8de2799 data/dimensionmod/loot_tables/blocks/orange_terracotta_slab.json
 50cd6a4ad05b23c67d2eae23c18c8463c316d1e8 data/dimensionmod/loot_tables/blocks/orange_terracotta_stairs.json
 a72287748dc0304a3ec7255d837de7c2b4bd46c7 data/dimensionmod/loot_tables/blocks/orange_wood.json
+c488ccd1ab68aecc417729805036242c92322093 data/dimensionmod/loot_tables/blocks/orange_zord_factory_block.json
 dc82108d87eaae3208c7e3d8669ccca8a1bef85a data/dimensionmod/loot_tables/blocks/peridot_block.json
 7130bcbb5b9f0637202ca5befbcf40a53f597173 data/dimensionmod/loot_tables/blocks/po_terracotta.json
 6921e3bc35e64e3848d4dcc7d51db0796c2a7689 data/dimensionmod/loot_tables/blocks/stripped_orange_log.json

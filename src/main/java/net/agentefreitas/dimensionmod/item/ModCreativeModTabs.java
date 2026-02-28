@@ -74,6 +74,15 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.ZORD_BP_R_LEG.get());
                         pOutput.accept(ModItems.ZORD_BP_L_LEG.get());
 
+                        pOutput.accept(ModItems.ZORD_HEAD.get());
+                        pOutput.accept(ModItems.ZORD_CHEST.get());
+                        pOutput.accept(ModItems.ZORD_RIGHT_ARM.get());
+                        pOutput.accept(ModItems.ZORD_LEFT_ARM.get());
+                        pOutput.accept(ModItems.ZORD_RIGHT_LEG.get());
+                        pOutput.accept(ModItems.ZORD_LEFT_LEG.get());
+
+                        pOutput.accept(ModItems.CONDENSED_ZORD.get());
+
                         pOutput.accept(ModItems.SPACE_STAFF.get());
                         pOutput.accept(ModItems.BROKEN_SPACE_STAFF.get());
                         pOutput.accept(ModItems.MALLEABLE_MINERAL_CONDENSATE.get());
@@ -125,6 +134,8 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModBlocks.GARNET_BLOCK.get());
                         pOutput.accept(ModBlocks.KUNZITE_BLOCK.get());
                         pOutput.accept(ModBlocks.PERIDOT_BLOCK.get());
+
+                        pOutput.accept(ModBlocks.ORANGE_ZORDE_FACTORY_BLOCK.get());
 
 
                     })

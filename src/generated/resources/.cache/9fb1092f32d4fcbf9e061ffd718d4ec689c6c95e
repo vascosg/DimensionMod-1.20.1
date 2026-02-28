@@ -1,4 +1,4 @@
-// 1.20.1	2026-02-27T20:53:05.7315587	Recipes
+// 1.20.1	2026-02-28T19:53:12.4718144	Recipes
 3c3cbf0f518e34cbfbbe3cfc93e5fdd221114e28 data/dimensionmod/advancements/recipes/misc/coldest_ice.json
 94fccbaa09a540c64da7e462f051d04f8d496157 data/dimensionmod/advancements/recipes/misc/coldest_ice_boots.json
 e68b68b6a5fb03fabb080f85e07272186e0c1ec8 data/dimensionmod/advancements/recipes/misc/coldest_ice_chestplate.json
@@ -17,3 +17,5 @@ ff6d5ef7ddd7b255432c83d183ba33ef9df90b34 data/dimensionmod/recipes/cursed_bone.j
 43fb38a3e8396c1c8660aeb3ff9980f8aaa73f62 data/dimensionmod/recipes/malleable_mineral_condensate.json
 60e9226ba6da347115ff290168ba1bc73d8b4869 data/dimensionmod/recipes/overworld_bailer.json
 f2f98a26bd575cf3e854772322688cf0ae545f59 data/dimensionmod/recipes/water_treasure.json
+1d6124e108922cf83f6999d7b4b6b81ad41cfe70 data/minecraft/advancements/recipes/misc/nether_star.json
+d5f8ee845bf64985964dac8b465f67a01567b7e8 data/minecraft/recipes/nether_star.json

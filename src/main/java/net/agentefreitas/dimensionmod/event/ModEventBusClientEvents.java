@@ -30,5 +30,7 @@ public class ModEventBusClientEvents {
         event.registerLayerDefinition(ModModelLayers.KUNZITE_SWORD_LAYER, KunziteSwordModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.AMBER_PROJECTILE_LAYER, AmberProjectileModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.KUNZITE_PROJECTILE_LAYER, KunziteProjectileModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.ORANGE_ZORD_LAYER, OrangeZordModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.ORANGE_ZORD_FACTORY_LAYER, OrangeZordFactoryModel::createBodyLayer);
     }
 }

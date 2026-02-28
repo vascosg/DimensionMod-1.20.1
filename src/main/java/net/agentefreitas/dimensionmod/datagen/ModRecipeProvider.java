@@ -13,6 +13,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.fml.common.Mod;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -114,6 +115,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('G', Items.GOLD_BLOCK)
                 .define('D', Items.DIAMOND_BLOCK)
                 .unlockedBy(getHasName(Items.IRON_BLOCK), has(Items.IRON_BLOCK))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.NETHER_STAR)
+                .pattern(" S ")
+                .pattern("S S")
+                .pattern(" S ")
+                .define('S', ModItems.STAR_ESSENCE.get())
+                .unlockedBy(getHasName(ModItems.STAR_ESSENCE.get()), has(ModItems.STAR_ESSENCE.get()))
                 .save(pWriter);
 
         /** exemplo

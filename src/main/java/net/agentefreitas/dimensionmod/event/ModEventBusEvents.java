@@ -38,6 +38,7 @@ public class ModEventBusEvents {
         event.put(ModEntities.CITRINE_SWORD.get(),CitrineSwordEntity.createAttributes().build());
         event.put(ModEntities.AMBER_SWORD.get(),AmberSwordEntity.createAttributes().build());
         event.put(ModEntities.KUNZITE_SWORD.get(),KunziteSwordEntity.createAttributes().build());
+        event.put(ModEntities.ORANGE_ZORD.get(),KunziteSwordEntity.createAttributes().build());
     }
 
 
@@ -91,6 +92,9 @@ public class ModEventBusEvents {
         event.register(ModEntities.KUNZITE_SWORD.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 
+        event.register(ModEntities.ORANGE_ZORD.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+
 
     }
 
@@ -98,6 +102,7 @@ public class ModEventBusEvents {
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(ModEntities.AMBER_PROJECTILE.get(), AmberProjectileRenderer::new);
         event.registerEntityRenderer(ModEntities.KUNZITE_PROJECTILE.get(), KunziteProjectileRenderer::new);
+        event.registerEntityRenderer(ModEntities.ORANGE_ZORD_FACTORY.get(), OrangeZordFactoryRenderer::new);
     }
 
 }

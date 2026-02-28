@@ -122,6 +122,24 @@ public class ModItems {
     public static final RegistryObject<Item> ZORD_BP_L_LEG = ITEMS.register("zord_bp_l_leg",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> ZORD_HEAD = ITEMS.register("oz_head",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ZORD_CHEST = ITEMS.register("oz_chest",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ZORD_RIGHT_ARM = ITEMS.register("oz_right_arm",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ZORD_LEFT_ARM = ITEMS.register("oz_left_arm",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ZORD_RIGHT_LEG = ITEMS.register("oz_right_leg",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ZORD_LEFT_LEG = ITEMS.register("oz_left_leg",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> CONDENSED_ZORD = ITEMS.register("condensed_zord",
+            () -> new Item(new Item.Properties()));
+
+
+
     //others
     public static final RegistryObject<Item> SPACE_STAFF = ITEMS.register("space_staff",
             () -> new SpaceStaffItem(new Item.Properties().stacksTo(1)));
@@ -130,7 +148,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> MALLEABLE_MINERAL_CONDENSATE = ITEMS.register("malleable_mineral_condensate",
-            () -> new Item(new Item.Properties().stacksTo(1)));
+            () -> new Item(new Item.Properties()));
 
     //swords loots
     public static final RegistryObject<Item> CURSED_BONE_FRAGMENT = ITEMS.register("cursed_bone_fragment",

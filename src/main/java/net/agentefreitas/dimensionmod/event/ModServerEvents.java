@@ -121,13 +121,13 @@ public class ModServerEvents {
 
     //ANVILS RECIPES
     @SubscribeEvent
-    public static void onAnvilUpdate(AnvilUpdateEvent event) { //LIFE STEAL BOOK
+    public static void onAnvilUpdate(AnvilUpdateEvent event) {
         ItemStack leftItem = event.getLeft();   // Item no 1º slot
         ItemStack rightItem = event.getRight(); // Item no 2º slot
 
         // 1. Verificar se o item da esquerda é um livro normal
         // 2. Verificar se o item da direita é o material necessário (ex: Cursed Bone)
-        if (leftItem.getItem() == Items.BOOK && rightItem.getItem() == ModItems.CURSED_BONE.get()) {
+        if (leftItem.getItem() == Items.BOOK && rightItem.getItem() == ModItems.CURSED_BONE.get()) {//LIFE STEAL BOOK
 
             // Criar o Livro Encantado de saída
             ItemStack outputStack = new ItemStack(Items.ENCHANTED_BOOK);
@@ -136,6 +136,60 @@ public class ModServerEvents {
             EnchantedBookItem.addEnchantment(outputStack, new EnchantmentInstance(ModEnchantments.LIFE_STEAL.get(), 1));
 
             // Definir o resultado e o custo em XP
+            event.setOutput(outputStack);
+            event.setCost(5); // Custo de 5 níveis de XP
+            event.setMaterialCost(1); // Consome apenas 1 osso do stack
+        }
+
+        if (leftItem.getItem() == ModItems.MALLEABLE_MINERAL_CONDENSATE.get() && rightItem.getItem() == ModItems.ZORD_BP_HEAD.get()) {//ZORD HEAD
+
+            ItemStack outputStack = new ItemStack(ModItems.ZORD_HEAD.get());
+
+            event.setOutput(outputStack);
+            event.setCost(5); // Custo de 5 níveis de XP
+            event.setMaterialCost(1); // Consome apenas 1 osso do stack
+        }
+
+        if (leftItem.getItem() == ModItems.MALLEABLE_MINERAL_CONDENSATE.get() && rightItem.getItem() == ModItems.ZORD_BP_CHEST.get()) {//ZORD CHEST
+
+            ItemStack outputStack = new ItemStack(ModItems.ZORD_CHEST.get());
+
+            event.setOutput(outputStack);
+            event.setCost(5); // Custo de 5 níveis de XP
+            event.setMaterialCost(1); // Consome apenas 1 osso do stack
+        }
+
+        if (leftItem.getItem() == ModItems.MALLEABLE_MINERAL_CONDENSATE.get() && rightItem.getItem() == ModItems.ZORD_BP_R_ARM.get()) {//ZORD RIGHT ARM
+
+            ItemStack outputStack = new ItemStack(ModItems.ZORD_RIGHT_ARM.get());
+
+            event.setOutput(outputStack);
+            event.setCost(5); // Custo de 5 níveis de XP
+            event.setMaterialCost(1); // Consome apenas 1 osso do stack
+        }
+
+        if (leftItem.getItem() == ModItems.MALLEABLE_MINERAL_CONDENSATE.get() && rightItem.getItem() == ModItems.ZORD_BP_L_ARM.get()) {//ZORD LEFT ARM
+
+            ItemStack outputStack = new ItemStack(ModItems.ZORD_LEFT_ARM.get());
+
+            event.setOutput(outputStack);
+            event.setCost(5); // Custo de 5 níveis de XP
+            event.setMaterialCost(1); // Consome apenas 1 osso do stack
+        }
+
+        if (leftItem.getItem() == ModItems.MALLEABLE_MINERAL_CONDENSATE.get() && rightItem.getItem() == ModItems.ZORD_BP_R_LEG.get()) {//ZORD RIGHT LEG
+
+            ItemStack outputStack = new ItemStack(ModItems.ZORD_RIGHT_LEG.get());
+
+            event.setOutput(outputStack);
+            event.setCost(5); // Custo de 5 níveis de XP
+            event.setMaterialCost(1); // Consome apenas 1 osso do stack
+        }
+
+        if (leftItem.getItem() == ModItems.MALLEABLE_MINERAL_CONDENSATE.get() && rightItem.getItem() == ModItems.ZORD_BP_L_LEG.get()) {//ZORD LEFT LEG
+
+            ItemStack outputStack = new ItemStack(ModItems.ZORD_LEFT_LEG.get());
+
             event.setOutput(outputStack);
             event.setCost(5); // Custo de 5 níveis de XP
             event.setMaterialCost(1); // Consome apenas 1 osso do stack

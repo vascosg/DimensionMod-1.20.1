@@ -1,10 +1,7 @@
 package net.agentefreitas.dimensionmod.block;
 
 import net.agentefreitas.dimensionmod.DimensionMod;
-import net.agentefreitas.dimensionmod.block.custom.CustomPortalBlockEntity;
-import net.agentefreitas.dimensionmod.block.custom.DimensionBookLecternBlockEntity;
-import net.agentefreitas.dimensionmod.block.custom.GuardianBlockEntity;
-import net.agentefreitas.dimensionmod.block.custom.GuardianDoorBlockEntity;
+import net.agentefreitas.dimensionmod.block.custom.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -33,6 +30,10 @@ public class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<CustomPortalBlockEntity>> CUSTOM_PORTAL_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("custom_portal_block_entity",
                     () -> BlockEntityType.Builder.of(CustomPortalBlockEntity::new, ModBlocks.CUSTOM_PORTAL_BLOCK.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<OrangeZordFactoryBlockEntity>> ORANGE_ZORDE_FACTORY_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("orange_zord_factory_block_entity",
+                    () -> BlockEntityType.Builder.of(OrangeZordFactoryBlockEntity::new, ModBlocks.ORANGE_ZORDE_FACTORY_BLOCK.get()).build(null));
 
 
     public static void register(IEventBus eventBus) {

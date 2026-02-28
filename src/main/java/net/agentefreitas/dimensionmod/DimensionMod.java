@@ -120,6 +120,8 @@ public class DimensionMod {
             EntityRenderers.register(ModEntities.KUNZITE_SWORD.get(), KunziteSwordRenderer::new);
             EntityRenderers.register(ModEntities.AMBER_PROJECTILE.get(), AmberProjectileRenderer::new);
             EntityRenderers.register(ModEntities.KUNZITE_PROJECTILE.get(), KunziteProjectileRenderer::new);
+            EntityRenderers.register(ModEntities.ORANGE_ZORD.get(), OrangeZordRenderer::new);
+            EntityRenderers.register(ModEntities.ORANGE_ZORD_FACTORY.get(), OrangeZordFactoryRenderer::new);
             ModItemProperties.addCustomItemProperties();
         }
     }

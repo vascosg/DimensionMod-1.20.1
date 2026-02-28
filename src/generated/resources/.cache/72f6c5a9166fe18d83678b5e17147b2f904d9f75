@@ -1,4 +1,4 @@
-// 1.20.1	2026-02-27T20:53:05.7345756	Item Models: dimensionmod
+// 1.20.1	2026-02-28T00:15:27.6229244	Item Models: dimensionmod
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dimensionmod/models/item/bai_yu_spawn_egg.json
 68f0aad47c4ad60c583a539ff04d3e50953821fd assets/dimensionmod/models/item/blue_book.json
 d2821d1386f5ca8c595593d5446860d0490ab2c0 assets/dimensionmod/models/item/broken_space_staff.json
@@ -47,6 +47,7 @@ e10968aea42847cf1ac4e25f4b6de684f68267c1 assets/dimensionmod/models/item/coldest
 a45fde8eadf6b3c6ea3499527c8e4453be895c37 assets/dimensionmod/models/item/coldest_ice_leggings_netherite_trim.json
 e5a03b9bf52d6fc9c5c7d9f4f6de943678f46326 assets/dimensionmod/models/item/coldest_ice_leggings_quartz_trim.json
 58f926c90172c28a3e8327d35045d9b9dbc10521 assets/dimensionmod/models/item/coldest_ice_leggings_redstone_trim.json
+b296f1dda48f01fe0dad372a6179ae127206a69f assets/dimensionmod/models/item/condensed_zord.json
 c79290e4171394f6236fb110e9524200c0ed1b54 assets/dimensionmod/models/item/cursed_bone.json
 3c94cb15071d0203ecba527e0c02c1673313aecc assets/dimensionmod/models/item/cursed_bone_fragment.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dimensionmod/models/item/demi_cat_spawn_egg.json
@@ -75,6 +76,12 @@ b2eb482f14e964f3aa2f125f3961002aac02d677 assets/dimensionmod/models/item/orange_
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dimensionmod/models/item/orange_villager_rare_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dimensionmod/models/item/orange_villager_spawn_egg.json
 405882a2c95607b80e331169afe1187f56476937 assets/dimensionmod/models/item/overworld_bailer.json
+6e35d148e36c3ef09feecffddcf39592314b1c0e assets/dimensionmod/models/item/oz_chest.json
+5140e2da278b65544aaee96fdd863a331f5cb39b assets/dimensionmod/models/item/oz_head.json
+85400102ea053fa4cc0dd6b817a9bd8b1d6cd64e assets/dimensionmod/models/item/oz_left_arm.json
+f1edd6435cf7b0dde6c8998c541ebcd5e3a88cf8 assets/dimensionmod/models/item/oz_left_leg.json
+3dc3dc5f98654163f4def8f5987327260a3b5acc assets/dimensionmod/models/item/oz_right_arm.json
+65d9fd87a3a09119d600625ceced55132d59504f assets/dimensionmod/models/item/oz_right_leg.json
 bea1ec99daf1990094e9b0438ca22bc1aae9d061 assets/dimensionmod/models/item/purple_book.json
 90c1627f84ddd26b43f5572b6107e80f576a630f assets/dimensionmod/models/item/red_book.json
 159cfda3e00f4c5007a267bc1768a52c1a61c95b assets/dimensionmod/models/item/sapphire.json
