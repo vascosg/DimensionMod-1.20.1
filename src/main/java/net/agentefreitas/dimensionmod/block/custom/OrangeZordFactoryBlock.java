@@ -44,7 +44,6 @@ public class OrangeZordFactoryBlock extends Block implements EntityBlock {
             BlockEntity be = pLevel.getBlockEntity(pPos);
             if (be instanceof OrangeZordFactoryBlockEntity factoryBe) {
                 factoryBe.setOwner(player.getUUID());
-                System.out.println("1. UUID enviado para a BlockEntity: " + player.getUUID());
             }
         }
 

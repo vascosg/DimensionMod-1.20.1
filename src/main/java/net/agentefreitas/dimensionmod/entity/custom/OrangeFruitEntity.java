@@ -6,23 +6,28 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MoverType;
+import net.minecraft.world.entity.*;
+import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.network.NetworkHooks;
 
 import java.util.List;
 
-public class OrangeFruitEntity extends Entity {
+public class OrangeFruitEntity extends LivingEntity {
+
+    private int lifeTime = 0;
+    private static final int MAX_LIFE = 5 * 20; // 5 segundos * 20 ticks
 
     public OrangeFruitEntity(EntityType<? extends OrangeFruitEntity> type, Level world) {
         super(type, world);
@@ -30,22 +35,18 @@ public class OrangeFruitEntity extends Entity {
 
     @Override
     protected void defineSynchedData() {
-        // Sem dados sincronizados adicionais
-    }
-
-    @Override
-    protected void readAdditionalSaveData(CompoundTag tag) {
-        // Se quiseres salvar dados da fruta (ex: tempo de vida), faz aqui
-    }
-
-    @Override
-    protected void addAdditionalSaveData(CompoundTag tag) {
-        // Salvar dados personalizados da fruta
+        super.defineSynchedData();
     }
 
     @Override
     public void tick() {
         super.tick();
+
+        this.lifeTime++;
+
+        if (!this.level().isClientSide && this.lifeTime >= MAX_LIFE) {
+            this.discard();
+        }
 
         if (!this.level().isClientSide) {
 
@@ -132,6 +133,29 @@ public class OrangeFruitEntity extends Entity {
         // Se não encontrou, fallback para Y=100 com posição forçada
         return new BlockPos(blockX, 100, blockZ);
     }
+
+    @Override
+    public Packet<ClientGamePacketListener> getAddEntityPacket() {
+        return NetworkHooks.getEntitySpawningPacket(this);
+    }
+
+    public static AttributeSupplier.Builder createAttributes() {
+        return LivingEntity.createLivingAttributes()
+                .add(Attributes.MAX_HEALTH, 1.0D)       // Só 1 de vida (meio coração)
+                .add(Attributes.MOVEMENT_SPEED, 0.0D); // Ela não anda sozinha
+    }
+
+    @Override
+    public Iterable<ItemStack> getArmorSlots() { return java.util.Collections.emptyList(); }
+
+    @Override
+    public ItemStack getItemBySlot(EquipmentSlot slot) { return ItemStack.EMPTY; }
+
+    @Override
+    public void setItemSlot(EquipmentSlot slot, ItemStack stack) {}
+
+    @Override
+    public HumanoidArm getMainArm() { return HumanoidArm.RIGHT; }
 
 
 }

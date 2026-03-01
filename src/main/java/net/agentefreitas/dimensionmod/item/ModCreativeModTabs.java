@@ -106,6 +106,7 @@ public class ModCreativeModTabs {
 
                         pOutput.accept(ModBlocks.ORANGE_PLANKS.get());
                         pOutput.accept(ModBlocks.ORANGE_LEAVES.get());
+                        pOutput.accept(ModBlocks.ORANGE_FRUIT_LEAF.get());
 
                         pOutput.accept(ModBlocks.ORANGE_SAPLING.get());
 

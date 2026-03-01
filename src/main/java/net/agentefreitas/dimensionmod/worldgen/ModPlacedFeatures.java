@@ -54,7 +54,7 @@ public class ModPlacedFeatures {
          */
 
         register(context, ORANGE_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.ORANGE_KEY),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.005f, 1),
+                VegetationPlacements.treePlacement(PlacementUtils.countExtra(0, 0.05f, 1),
                         ModBlocks.ORANGE_SAPLING.get()));
     }
 

@@ -27,6 +27,7 @@ public class ModEventBusEvents {
         event.put(ModEntities.BAI_YU.get(), BaiYuEntity.createAttributes().build());
         event.put(ModEntities.GAO_YU.get(), GaoYuEntity.createAttributes().build());
         event.put(ModEntities.DEMI_CAT.get(), DemiCatEntity.createAttributes().build());
+        event.put(ModEntities.ORANGE_FRUIT.get(), OrangeFruitEntity.createAttributes().build());
         event.put(ModEntities.ORANGE_VILLAGER.get(),OrangeVillagerEntity.createAttributes().build());
         event.put(ModEntities.ORANGE_VILLAGER_RARE.get(),OrangeVillagerRareEntity.createAttributes().build());
         event.put(ModEntities.ORANGE_VILLAGER_JUICE.get(),OrangeVillagerJuiceEntity.createAttributes().build());

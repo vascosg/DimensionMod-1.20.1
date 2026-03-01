@@ -44,7 +44,6 @@ public class OrangeZordFactoryBlockEntity extends BlockEntity {
             // Passamos o UUID que a BlockEntity guardou para a Entidade Visual
             entity.setOwner(this.ownerUUID);
 
-            System.out.println("2. UUID passado para a Entidade Visual: " + this.ownerUUID);
 
             level.addFreshEntity(entity);
             this.visualEntity = entity;

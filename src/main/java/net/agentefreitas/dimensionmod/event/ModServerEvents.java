@@ -16,6 +16,10 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.ai.attributes.AttributeInstance;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.ItemStack;
@@ -36,8 +40,16 @@ import net.minecraftforge.event.server.ServerStartedEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
 @Mod.EventBusSubscriber(modid = DimensionMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModServerEvents {
+
+    private static final Map<UUID, Integer> sprintingTicks = new HashMap<>();
+
+    private static final UUID SPEED_MODIFIER_UUID = UUID.fromString("d8f79f66-f8d2-11ed-be56-0242ac120002");
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         if (event.phase != TickEvent.Phase.END || event.player.level().isClientSide()) return;
@@ -51,6 +63,8 @@ public class ModServerEvents {
                 player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 40, 2, false, false));
             }
         }
+
+        performOneThousandStepArt(player);
     }
 
     @SubscribeEvent
@@ -91,9 +105,15 @@ public class ModServerEvents {
 
     }
 
-    //ENCHANTS
+
     @SubscribeEvent
-    public static void onLivingHurt(LivingHurtEvent event) { //LIFE STEAL
+    public static void onLivingHurt(LivingHurtEvent event) {
+        performLifeSteal(event);
+        performeOneThousandStepArtReduceDmg(event);
+
+    }
+
+    private static void performLifeSteal(LivingHurtEvent event) {//LIFE STEAL
         // Verifica se quem atacou foi um Player
         if (event.getSource().getEntity() instanceof Player player) {
             ItemStack weapon = player.getMainHandItem();
@@ -115,6 +135,62 @@ public class ModServerEvents {
                             player.getX(), player.getY() + 1.5, player.getZ(),
                             5, 0.2, 0.2, 0.2, 0.1);
                 }
+            }
+        }
+    }
+
+
+    private static void performOneThousandStepArt(Player player) {
+        int level = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.ONE_THOUSAND_STEP_ART.get(),
+                player.getItemBySlot(EquipmentSlot.FEET));
+
+        UUID playerUUID = player.getUUID();
+
+        // 1. Verificar se está a correr e tem as botas
+        if (level > 0 && player.isSprinting()) {
+            int ticks = sprintingTicks.getOrDefault(playerUUID, 0);
+
+            // Aumenta o contador
+            if (ticks < 100) {
+                ticks++;
+                sprintingTicks.put(playerUUID, ticks);
+            }
+
+            // 2. Calcula o nível do efeito Speed (0 a 4, por exemplo) baseado nos ticks
+            // A cada 20 ticks (1s), o bónus sobe.
+            // Se level for 3, a velocidade máxima será Speed 3 ou 4.
+            int speedAmplifier = (ticks / 25) * (level / 2 + 1);
+
+            if (speedAmplifier >= 0) {
+                // Aplicamos o efeito com duração curta (2 ticks) para ele se renovar constantemente
+                // false, false esconde as partículas de poção para não atrapalhar a visão
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 5, speedAmplifier, false, false));
+            }
+
+            // Partículas customizadas do Zord quando está rápido
+            if (ticks > 50 && player.level() instanceof ServerLevel serverLevel) {
+                serverLevel.sendParticles(ParticleTypes.FLAME, player.getX(), player.getY(), player.getZ(), 1, 0.1, 0, 0.1, 0.05);
+            }
+
+        } else {
+            // 3. Reset total se parar de correr
+            if (sprintingTicks.containsKey(playerUUID)) {
+                sprintingTicks.remove(playerUUID);
+                // Remove o efeito speed para parar na hora
+                player.removeEffect(MobEffects.MOVEMENT_SPEED);
+            }
+        }
+    }
+
+    private static void performeOneThousandStepArtReduceDmg(LivingHurtEvent event) {
+
+        if (event.getSource().is(net.minecraft.world.damagesource.DamageTypes.FALL)) {
+            int level = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.ONE_THOUSAND_STEP_ART.get(),
+                    event.getEntity().getItemBySlot(EquipmentSlot.FEET));
+            if (level > 0) {
+                // Reduz 25% do dano por nível (Nível 4 = Imune)
+                float multiplier = Math.max(0, 1.0f - (level * 0.25f));
+                event.setAmount(event.getAmount() * multiplier);
             }
         }
     }

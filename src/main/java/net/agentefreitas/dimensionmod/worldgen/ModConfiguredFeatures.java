@@ -1,5 +1,6 @@
 package net.agentefreitas.dimensionmod.worldgen;
 
+import com.google.common.collect.ImmutableList;
 import net.agentefreitas.dimensionmod.DimensionMod;
 import net.agentefreitas.dimensionmod.block.ModBlocks;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -52,8 +53,8 @@ public class ModConfiguredFeatures {
                 new StraightTrunkPlacer(3, 3, 2),
 
                 new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
-                        .add(ModBlocks.ORANGE_LEAVES.get().defaultBlockState(), 99)
                         .add(ModBlocks.ORANGE_FRUIT_LEAF.get().defaultBlockState(), 1)
+                        .add(ModBlocks.ORANGE_LEAVES.get().defaultBlockState(), 1)
                         .build()),
                 new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
 

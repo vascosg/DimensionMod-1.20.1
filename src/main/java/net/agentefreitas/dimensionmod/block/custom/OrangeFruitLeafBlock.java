@@ -21,7 +21,7 @@ public class OrangeFruitLeafBlock extends LeavesBlock {
     @Override
     public void randomTick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
         super.randomTick(state, world, pos, random);
-        if (random.nextFloat() < 0.0001f) {
+        if (random.nextFloat() < 0.001f) {
 
             OrangeFruitEntity fruta = new OrangeFruitEntity(ModEntities.ORANGE_FRUIT.get(), world);
 

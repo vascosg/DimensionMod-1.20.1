@@ -63,7 +63,6 @@ public class OrangeZordFactoryEntity extends Entity {
                 if (be instanceof OrangeZordFactoryBlockEntity factoryBe) {
                     if (factoryBe.getOwner() != null) {
                         this.setOwner(factoryBe.getOwner());
-                        System.out.println("3. Entidade Visual recuperou UUID do bloco: " + this.ownerUUID);
                     }
                 }
             }
