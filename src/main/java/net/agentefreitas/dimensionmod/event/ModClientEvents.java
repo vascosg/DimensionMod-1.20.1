@@ -6,10 +6,13 @@ import net.agentefreitas.dimensionmod.item.ModItems;
 import net.agentefreitas.dimensionmod.item.custom.RainbowNameItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.TextColor;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
@@ -20,6 +23,7 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 import java.awt.*;
 
@@ -27,7 +31,9 @@ import java.awt.*;
 public class ModClientEvents {
     private static int jumpCount = 0;
     private static boolean isSpacePressed = false;
+    public static int currentClientFocus = 0;
 
+    /**
     @SubscribeEvent
     public static void onComputerFovModifierEvent(ComputeFovModifierEvent event) {
         if(event.getPlayer().isUsingItem() && event.getPlayer().getUseItem().getItem() == ModItems.MOON_BOW.get()) {
@@ -42,11 +48,45 @@ public class ModClientEvents {
             fovModifier *= 1f - deltaTicks * 0.15f;
             event.setNewFovModifier(fovModifier);
         }
-    }
+    }**/
 
     @SubscribeEvent
     public static void onClientTick(TickEvent.ClientTickEvent event) {
         performDoubleJumpOneThousandStepArt(event);
+    }
+
+    /**
+    @SubscribeEvent
+    public static void onComputeFOV(ComputeFovModifierEvent event) {
+        if (currentClientFocus > 0) {
+            // 1.0f é o normal. 0.8f é zoom.
+            // Quanto maior o foco, mais baixamos o multiplicador (até 0.7f max zoom)
+            float zoom = 1.0f - (Math.min(currentClientFocus, 30) / 100f);
+            event.setNewFovModifier(event.getFovModifier() * zoom);
+        }
+    }**/
+
+    @SubscribeEvent
+    public static void onComputeFOV(ComputeFovModifierEvent event) {
+        float fovModifier = 1.0f; // Começamos com o FOV padrão
+
+        // --- PARTE 1: ZOOM DO ARCO (MOON BOW) ---
+        if(event.getPlayer().isUsingItem() && event.getPlayer().getUseItem().getItem() == ModItems.MOON_BOW.get()) {
+            int ticksUsingItem = event.getPlayer().getTicksUsingItem();
+            float deltaTicks = Math.min((float)ticksUsingItem / 20f, 1.0f);
+            // Aplica o zoom do arco
+            fovModifier *= (1.0f - deltaTicks * deltaTicks * 0.15f);
+        }
+
+        // --- PARTE 2: ZOOM DO OLHAR MORTAL (SYNC PACKET) ---
+        if (currentClientFocus > 0) {
+            // progressivo: quanto mais perto do tiro (100 ticks), mais zoom (até 30% ou 0.7f)
+            float eyeZoom = 1.0f - (Math.min(currentClientFocus, 30) * 0.01f);
+            fovModifier *= eyeZoom;
+        }
+
+        // Aplicamos o modificador final ao evento
+        event.setNewFovModifier(event.getFovModifier() * fovModifier);
     }
 
     private static void performDoubleJumpOneThousandStepArt(TickEvent.ClientTickEvent event) {
@@ -105,35 +145,5 @@ public class ModClientEvents {
         player.playSound(net.minecraft.sounds.SoundEvents.FIREWORK_ROCKET_LAUNCH, 1.0F, 1.2F);
     }
 
-    //not needed
-    /**
-    @SubscribeEvent
-    public static void onTooltip(ItemTooltipEvent event) {
-        ItemStack stack = event.getItemStack();
-
-        if (stack.getItem() instanceof RainbowNameItem) {
-            // Pegamos o nome que vem do .lang
-            String name = stack.getHoverName().getString();
-            MutableComponent colorfulName = Component.empty();
-
-            // Ajusta o divisor (100) para mudar a velocidade
-            long time = System.currentTimeMillis() / 100;
-
-            for (int i = 0; i < name.length(); i++) {
-                // Criamos o efeito arco-íris
-                float hue = ((time + (i * 2)) % 100) / 100f;
-                int rgb = Color.HSBtoRGB(hue, 1.0f, 1.0f);
-
-                // Forçamos a cor através do TextColor
-                colorfulName.append(Component.literal(String.valueOf(name.charAt(i)))
-                        .withStyle(style -> style.withColor(TextColor.fromRgb(rgb & 0xFFFFFF))));
-            }
-
-            // Substitui o título da Tooltip (índice 0)
-            if (!event.getToolTip().isEmpty()) {
-                event.getToolTip().set(0, colorfulName);
-            }
-        }
-    }**/
 
 }

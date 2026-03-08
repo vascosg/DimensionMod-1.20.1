@@ -137,6 +137,9 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModBlocks.PERIDOT_BLOCK.get());
 
                         pOutput.accept(ModBlocks.ORANGE_ZORDE_FACTORY_BLOCK.get());
+                        pOutput.accept(ModBlocks.ARRAY_CENTER_BLOCK.get());
+
+                        pOutput.accept(ModItems.ORANGE_RUINS_ZERO_COMPASS.get());
 
 
                     })

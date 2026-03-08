@@ -4,6 +4,9 @@ import net.agentefreitas.dimensionmod.DimensionMod;
 import net.agentefreitas.dimensionmod.enchantments.ModEnchantments;
 import net.agentefreitas.dimensionmod.item.ModItems;
 import net.agentefreitas.dimensionmod.item.custom.RainbowNameItem;
+import net.agentefreitas.dimensionmod.packet.Messages;
+import net.agentefreitas.dimensionmod.packet.SyncFocusPacket;
+import net.agentefreitas.dimensionmod.particle.ModParticleTypes;
 import net.agentefreitas.dimensionmod.worldgen.StructureSpawner;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -14,13 +17,18 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -32,6 +40,10 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.AnvilUpdateEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
@@ -47,9 +59,11 @@ import java.util.UUID;
 @Mod.EventBusSubscriber(modid = DimensionMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ModServerEvents {
 
-    private static final Map<UUID, Integer> sprintingTicks = new HashMap<>();
+    private static final Map<UUID, Integer> sprintingTicks = new HashMap<>(); //SPEED ENCH
 
-    private static final UUID SPEED_MODIFIER_UUID = UUID.fromString("d8f79f66-f8d2-11ed-be56-0242ac120002");
+    private static final Map<UUID, Integer> focusTime = new HashMap<>();     // EYE ENCH
+    private static final Map<UUID, Integer> lookCooldowns = new HashMap<>();
+
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         if (event.phase != TickEvent.Phase.END || event.player.level().isClientSide()) return;
@@ -65,6 +79,7 @@ public class ModServerEvents {
         }
 
         performOneThousandStepArt(player);
+        performEndlessStaringEyeArt(player);
     }
 
     @SubscribeEvent
@@ -110,6 +125,7 @@ public class ModServerEvents {
     public static void onLivingHurt(LivingHurtEvent event) {
         performLifeSteal(event);
         performeOneThousandStepArtReduceDmg(event);
+        performBlurryFateArt(event);
 
     }
 
@@ -192,6 +208,168 @@ public class ModServerEvents {
                 float multiplier = Math.max(0, 1.0f - (level * 0.25f));
                 event.setAmount(event.getAmount() * multiplier);
             }
+        }
+    }
+
+    private static void performEndlessStaringEyeArt(Player player) {
+        UUID pUUID = player.getUUID();
+
+        // 1. Gerir Cooldown
+        int cooldown = lookCooldowns.getOrDefault(pUUID, 0);
+        if (cooldown > 0) {
+            lookCooldowns.put(pUUID, cooldown - 1);
+            return;
+        }
+
+        // 2. Verificar Encantamento no Capacete
+        int level = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.ENDLESS_STARING_EYE_ART.get(),
+                player.getItemBySlot(EquipmentSlot.HEAD));
+
+        if (level > 0) {
+
+            // --- RAYCASTING ---
+            Vec3 eyePos = player.getEyePosition();
+            Vec3 lookVec = player.getViewVector(1.0F);
+            Vec3 reachVec = eyePos.add(lookVec.scale(15.0D));
+            AABB searchBox = player.getBoundingBox().expandTowards(lookVec.scale(15.0D)).inflate(1.0D);
+
+            // Aqui usamos o entityHit que criaste
+            EntityHitResult entityHit = ProjectileUtil.getEntityHitResult(
+                    player.level(),
+                    player,
+                    eyePos,
+                    reachVec,
+                    searchBox,
+                    ModServerEvents::isValidLookTarget
+            );
+
+            // 3. Verificação de Alvo (Simplificada porque entityHit já é do tipo certo)
+            if (entityHit != null && entityHit.getEntity() instanceof LivingEntity victim) {
+                UUID vUUID = victim.getUUID();
+                int currentFocus = focusTime.getOrDefault(vUUID, 0) + 1;
+                focusTime.put(vUUID, currentFocus);
+
+                System.out.println("Focando em: " + victim.getName().getString() + " | Progresso: " + currentFocus);
+
+                // No final da parte onde o foco aumenta:
+                Messages.sendToPlayer(new SyncFocusPacket(currentFocus), (ServerPlayer) player);
+
+                int requiredTicks = 100;
+                if (currentFocus >= 40 && currentFocus < 100) {
+                    int interval = 30; //(currentFocus > 75) ? 10 : 20;
+
+
+                    if (currentFocus % interval == 0) {
+                        player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
+                                net.minecraft.sounds.SoundEvents.WARDEN_HEARTBEAT,
+                                net.minecraft.sounds.SoundSource.PLAYERS,
+                                1.0F,
+                                0.8F + (currentFocus / 100.0F));
+                    }
+                }
+
+                // Feedback visual de carregamento
+                if (currentFocus % 5 == 0 && player.level() instanceof ServerLevel serverLevel) {
+                    serverLevel.sendParticles(ParticleTypes.ENCHANTED_HIT, victim.getX(), victim.getEyeY(), victim.getZ(), 3, 0.1, 0.1, 0.1, 0.02);
+                }
+
+                if (currentFocus >= requiredTicks) {
+                    // Dano Mágico
+                    victim.hurt(player.damageSources().magic(), 6.0F * level);
+
+                    if (level >= 2) {
+                        // Slowness I (amplificador 0) se for lvl 2, Slowness II (amplificador 1) se for lvl 3
+                        int slownessLevel = (level >= 3) ? 1 : 0;
+                        victim.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, slownessLevel));
+
+                        if (level >= 3) {
+                            // Aplica Weakness (Fraqueza) apenas no nível 3
+                            victim.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 0));
+                        }
+                    }
+
+                    if (player.level() instanceof ServerLevel serverLevel) {
+                        // 1. O "Flash" central para dar impacto
+                        serverLevel.sendParticles(ParticleTypes.FLASH, victim.getX(), victim.getEyeY(), victim.getZ(), 1, 0, 0, 0, 0);
+
+                        serverLevel.sendParticles(ModParticleTypes.EYE_STARING_PARTICLE.get(),
+                                victim.getX(), victim.getEyeY() + 0.5, victim.getZ(),
+                                1, 0, 0, 0, 0); // O '1' é a quantidade de olhos
+
+                        // 2. Partículas Vermelhas (Explosão)
+                        // Parâmetros: Particle, x, y, z, quantidade, dx, dy, dz, velocidade
+                        // Para ENTITY_EFFECT, os campos dx, dy, dz funcionam como cores R, G, B (0.0 a 1.0)
+                        for (int i = 0; i < 20; i++) {
+                            serverLevel.sendParticles(ParticleTypes.ENTITY_EFFECT,
+                                    victim.getX(), victim.getEyeY(), victim.getZ(), 0,
+                                    1.0, 0.0, 0.0, 1.0); // Vermelho Puro (R=1.0, G=0.0, B=0.0)
+                        }
+
+                        // 3. Partículas Pretas (Fumo denso)
+                        for (int i = 0; i < 15; i++) {
+                            serverLevel.sendParticles(ParticleTypes.ENTITY_EFFECT,
+                                    victim.getX(), victim.getEyeY(), victim.getZ(), 0,
+                                    0.0, 0.0, 0.0, 1.0); // Preto (R=0, G=0, B=0)
+                        }
+
+                        // 4. Som de impacto mais pesado (opcional)
+                        serverLevel.playSound(null, victim.getX(), victim.getY(), victim.getZ(),
+                                net.minecraft.sounds.SoundEvents.TOTEM_USE, SoundSource.PLAYERS, 0.5F, 0.5F);
+                    }
+
+                    lookCooldowns.put(pUUID, 100);
+                    Messages.sendToPlayer(new SyncFocusPacket(0), (ServerPlayer) player);
+                    focusTime.remove(vUUID);
+                }
+            } else {
+                if (!focusTime.isEmpty() ) {
+                    System.out.println("Olhar desviado - Foco resetado.");
+                    Messages.sendToPlayer(new SyncFocusPacket(0), (ServerPlayer) player);
+                    focusTime.clear();
+                }
+                // Se o olhar não encontrar nada, resetamos o foco deste jogador
+                focusTime.remove(pUUID);
+            }
+        }
+    }
+
+    private static boolean isValidLookTarget(net.minecraft.world.entity.Entity entity) {
+        // Evita que o jogador foque em si mesmo ou em espetadores
+        return !entity.isSpectator() && entity instanceof net.minecraft.world.entity.LivingEntity && entity.isPickable();
+    }
+
+    private static void performBlurryFateArt(LivingHurtEvent event){
+
+        if (event.getEntity() instanceof Player player) {
+
+            // 2. Verificamos se o Player tem o encantamento nas botas ou armadura
+            // Podes escolher onde o encantamento deve estar (ex: PÉS ou PEITORAL)
+            int level = EnchantmentHelper.getEnchantmentLevel(ModEnchantments.BLURRY_FATE_ART_ENCHANTMENT.get(), player);
+
+            if (level > 0) {
+                // 3. Cálculo da Chance (ex: 10% por nível)
+                float chance = level * 0.2F;
+
+                if (player.getRandom().nextFloat() < chance) {
+                    // 4. CANCELA O DANO
+                    event.setCanceled(true);
+
+                    // 5. Feedback Visual (Opcional mas recomendado)
+                    // Som de "esquiva" ou a tua partícula de Olho/Flash
+                    player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
+                            SoundEvents.ENCHANTMENT_TABLE_USE, SoundSource.PLAYERS, 1.0F, 2.0F);
+
+                    if (player.level() instanceof ServerLevel serverLevel) {
+                        serverLevel.sendParticles(ParticleTypes.ENCHANTED_HIT,
+                                player.getX(), player.getEyeY(), player.getZ(), 10, 0.2, 0.2, 0.2, 0.1);
+                    }
+
+                    if (level >= 3) {
+                        player.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 200, 0));
+                    }
+                }
+            }
+
         }
     }
 

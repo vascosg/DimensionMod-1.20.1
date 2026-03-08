@@ -1,9 +1,13 @@
 package net.agentefreitas.dimensionmod.event;
 
 import net.agentefreitas.dimensionmod.DimensionMod;
+import net.agentefreitas.dimensionmod.block.ModBlockEntities;
+import net.agentefreitas.dimensionmod.block.custom.ArrayCenterBlockEntityRenderer;
 import net.agentefreitas.dimensionmod.entity.ModEntities;
 import net.agentefreitas.dimensionmod.entity.custom.*;
 import net.agentefreitas.dimensionmod.entity.client.*;
+import net.agentefreitas.dimensionmod.particle.ModParticleTypes;
+import net.agentefreitas.dimensionmod.particle.custom.EyeStaringParticle;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.animal.Animal;
@@ -11,6 +15,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.agentefreitas.dimensionmod.entity.MobEntitySpawnPlacements;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -40,6 +45,7 @@ public class ModEventBusEvents {
         event.put(ModEntities.AMBER_SWORD.get(),AmberSwordEntity.createAttributes().build());
         event.put(ModEntities.KUNZITE_SWORD.get(),KunziteSwordEntity.createAttributes().build());
         event.put(ModEntities.ORANGE_ZORD.get(),KunziteSwordEntity.createAttributes().build());
+        event.put(ModEntities.GLOW_BOX.get(), GlowBoxEntity.createAttributes().build());
     }
 
 
@@ -104,6 +110,13 @@ public class ModEventBusEvents {
         event.registerEntityRenderer(ModEntities.AMBER_PROJECTILE.get(), AmberProjectileRenderer::new);
         event.registerEntityRenderer(ModEntities.KUNZITE_PROJECTILE.get(), KunziteProjectileRenderer::new);
         event.registerEntityRenderer(ModEntities.ORANGE_ZORD_FACTORY.get(), OrangeZordFactoryRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.ARRAY_CENTER_BLOCK_ENTITY.get(), ArrayCenterBlockEntityRenderer::new);
+        event.registerEntityRenderer(ModEntities.GLOW_BOX.get(), GlowBoxRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerParticleFactories(RegisterParticleProvidersEvent event) {
+        event.registerSpriteSet(ModParticleTypes.EYE_STARING_PARTICLE.get(), EyeStaringParticle.Provider::new);
     }
 
 }

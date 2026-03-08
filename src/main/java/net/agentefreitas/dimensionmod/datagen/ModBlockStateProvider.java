@@ -67,6 +67,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.KUNZITE_BLOCK);
         blockWithItem(ModBlocks.PERIDOT_BLOCK);
 
+        blockWithItem(ModBlocks.ARRAY_CENTER_BLOCK);
+
     }
 
     private void saplingBlock(RegistryObject<Block> blockRegistryObject) {

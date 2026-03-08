@@ -1,8 +1,7 @@
 package net.agentefreitas.dimensionmod.enchantments;
 
 import net.agentefreitas.dimensionmod.DimensionMod;
-import net.agentefreitas.dimensionmod.enchantments.custom.LifeStealEnchantment;
-import net.agentefreitas.dimensionmod.enchantments.custom.OneThousandStepArtEnchantment;
+import net.agentefreitas.dimensionmod.enchantments.custom.*;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentCategory;
@@ -21,6 +20,19 @@ public class ModEnchantments {
 
     public static final RegistryObject<Enchantment> ONE_THOUSAND_STEP_ART = ENCHANTMENTS.register("one_thousand_step_art",
             () -> new OneThousandStepArtEnchantment(Enchantment.Rarity.RARE, EnchantmentCategory.ARMOR_FEET, EquipmentSlot.FEET));
+
+    public static final RegistryObject<Enchantment> CLEAR_VISION_ART = ENCHANTMENTS.register("clear_vision_art",
+            () -> new ClearVisionArtEnchantment(Enchantment.Rarity.RARE, EnchantmentCategory.ARMOR_HEAD, EquipmentSlot.HEAD));
+
+    public static final RegistryObject<Enchantment> ENDLESS_STARING_EYE_ART = ENCHANTMENTS.register("endless_staring_eye_art",
+            () -> new EndlessStaringEyeArtEnchantment(Enchantment.Rarity.RARE, EnchantmentCategory.ARMOR_HEAD, EquipmentSlot.HEAD));
+
+    public static final RegistryObject<Enchantment> BLURRY_FATE_ART_ENCHANTMENT = ENCHANTMENTS.register("blurry_fate_art_enchantment",
+            () -> new BlurryFateArtEnchantment(
+                    Enchantment.Rarity.RARE,
+                    EnchantmentCategory.ARMOR, // Categoria para qualquer armadura
+                    EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET // Todos os slots
+            ));
 
     public static void register(IEventBus eventBus) {
         ENCHANTMENTS.register(eventBus);

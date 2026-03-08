@@ -109,6 +109,11 @@ public class ModEntities {
                             .sized(1.0f, 1.0f)
                             .build("orange_factory_visual"));
 
+    public static final RegistryObject<EntityType<GlowBoxEntity>> GLOW_BOX =
+            ENTITY_TYPES.register("glow_box", () -> EntityType.Builder.<GlowBoxEntity>of(GlowBoxEntity::new, MobCategory.MISC)
+                    .sized(1.0f, 1.0f)
+                    .build("glow_box"));
+
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

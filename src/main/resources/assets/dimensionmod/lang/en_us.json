@@ -64,6 +64,8 @@
   "item.dimensionmod.union_hilt": "Union Hilt",
   "item.dimensionmod.duality_sword": "Duality Sword",
 
+  "item.dimensionmod.orange_ruins_zero_compass": "Orange Ruins Compass",
+
   "block.dimensionmod.dimension_door_block": "Dimension Door ",
   "block.dimensionmod.lectern_white": "Dimension Book Lectern",
   "block.dimensionmod.guardian_block": "Guardian Block",
@@ -95,9 +97,12 @@
   "block.dimensionmod.po_terracotta_lock": "Purple Orange Portal Lock",
 
   "block.dimensionmod.orange_zord_factory_block": "Orange Zord Factory Block",
+  "block.dimensionmod.array_center_block": "Array Center Block",
 
   "enchantment.dimensionmod.life_steal": "Life Steal",
   "enchantment.dimensionmod.one_thousand_step_art": "One Thousand Step Art",
+  "enchantment.dimensionmod.clear_vision_art": "Clear Vision Art",
+  "enchantment.dimensionmod.endless_staring_eye_art": "Endless Staring Eye Art",
 
   "creativetab.dimension_tab": "Dimension Tab"
 }

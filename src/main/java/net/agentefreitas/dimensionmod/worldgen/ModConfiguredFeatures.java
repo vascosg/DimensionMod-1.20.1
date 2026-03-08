@@ -54,7 +54,7 @@ public class ModConfiguredFeatures {
 
                 new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
                         .add(ModBlocks.ORANGE_FRUIT_LEAF.get().defaultBlockState(), 1)
-                        .add(ModBlocks.ORANGE_LEAVES.get().defaultBlockState(), 1)
+                        .add(ModBlocks.ORANGE_LEAVES.get().defaultBlockState(), 6)
                         .build()),
                 new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
 

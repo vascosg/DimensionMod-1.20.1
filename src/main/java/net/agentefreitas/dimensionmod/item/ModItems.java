@@ -174,6 +174,9 @@ public class ModItems {
     public static final RegistryObject<Item> DUALITY_SWORD = ITEMS.register("duality_sword",
             () -> new DualitySwordItem(ModToolTiers.DUALITY_TEAR,3, -2.4F, new Item.Properties()));
 
+    public static final RegistryObject<Item> ORANGE_RUINS_ZERO_COMPASS = ITEMS.register("orange_ruins_zero_compass",
+            () -> new OrangeRuinsZeroCompassItem(new Item.Properties()));
+
 
     /** exemplo
     public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",

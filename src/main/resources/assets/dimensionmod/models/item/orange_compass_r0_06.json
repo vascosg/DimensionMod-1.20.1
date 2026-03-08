@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "dimensionmod:item/orange_compass_r0/orange_compass_r0_07"
+  }
+}

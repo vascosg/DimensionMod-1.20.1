@@ -1,6 +1,7 @@
-// 1.20.1	2026-01-18T00:48:09.5638103	Block States: dimensionmod
+// 1.20.1	2026-03-01T04:48:41.5912648	Block States: dimensionmod
 33c9e19f5542331a5c8802492759a33cc407b70a assets/dimensionmod/blockstates/amber_block.json
 5ac236b3a2c33f105b7ceb1eb7c41f029ebf3cbe assets/dimensionmod/blockstates/aquamarine_block.json
+57016df19e66f8cbc4129beb66ab5afbe9cfc710 assets/dimensionmod/blockstates/array_center_block.json
 7ef30049007dbc9c63bc95841d2ab1e982987258 assets/dimensionmod/blockstates/citrine_block.json
 fd8d89daa984efc41c6766089fbca296cc76ebb9 assets/dimensionmod/blockstates/deepslate_sapphire_ore.json
 f28d4255333fb0e04a0f6ac989c69f892f839caa assets/dimensionmod/blockstates/dimension_door_block.json
@@ -26,6 +27,7 @@ abea2523d98741f3e49227a140c7ed7896b07787 assets/dimensionmod/blockstates/white_t
 3f3ee59b5537defa544b604e8cd7c13ce8717a5e assets/dimensionmod/blockstates/white_terracotta_stairs.json
 7e94aa33891005cfd1dd631fd4dbec8d3ad4462b assets/dimensionmod/models/block/amber_block.json
 8f8bbe431bbb6da430bd1c0eee6b01f6b4533249 assets/dimensionmod/models/block/aquamarine_block.json
+c49377e93918943156f56864f3011066ded2bf37 assets/dimensionmod/models/block/array_center_block.json
 e60f8e2b08bef5ffd4a05957bab433d633ea411f assets/dimensionmod/models/block/citrine_block.json
 bd1fa4bdd67f9932ac7546ef085479f6213765b1 assets/dimensionmod/models/block/deepslate_sapphire_ore.json
 cdfe4fdf50e580c6d423d843cbd7ab9290c0d08f assets/dimensionmod/models/block/dimension_door_block.json
@@ -68,6 +70,7 @@ c2a45e73a0ae07c41e140b8599653f4480975839 assets/dimensionmod/models/block/white_
 9a8d248fe9f00e438ee9c85797171120b92ede02 assets/dimensionmod/models/block/white_terracotta_stairs_outer.json
 88ebff6e32df17225ec28df22656edd71bb383e4 assets/dimensionmod/models/item/amber_block.json
 804aee6d2a82c43ea066753d810b9f0ab5652320 assets/dimensionmod/models/item/aquamarine_block.json
+11f3dae691727ff3d246f167d22c65d46540c23a assets/dimensionmod/models/item/array_center_block.json
 1d4c55d189b1815e992a3816b132119c43d9cf47 assets/dimensionmod/models/item/citrine_block.json
 607782d81a954ca861f14a9a3b6ed500d55f8558 assets/dimensionmod/models/item/deepslate_sapphire_ore.json
 ccc565397980270183a33c5ae8e01bd19d57f54b assets/dimensionmod/models/item/dimension_door_block.json

@@ -1,0 +1,40 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "dimensionmod:item/orange_compass_r0/orange_compass_r0_00"
+  },
+  "overrides": [
+    { "predicate": { "angle": 0.0000 }, "model": "dimensionmod:item/orange_compass_r0_00" },
+    { "predicate": { "angle": 0.03125 }, "model": "dimensionmod:item/orange_compass_r0_01" },
+    { "predicate": { "angle": 0.0625 }, "model": "dimensionmod:item/orange_compass_r0_02" },
+    { "predicate": { "angle": 0.09375 }, "model": "dimensionmod:item/orange_compass_r0_03" },
+    { "predicate": { "angle": 0.1250 }, "model": "dimensionmod:item/orange_compass_r0_04" },
+    { "predicate": { "angle": 0.15625 }, "model": "dimensionmod:item/orange_compass_r0_05" },
+    { "predicate": { "angle": 0.1875 }, "model": "dimensionmod:item/orange_compass_r0_06" },
+    { "predicate": { "angle": 0.21875 }, "model": "dimensionmod:item/orange_compass_r0_07" },
+    { "predicate": { "angle": 0.2500 }, "model": "dimensionmod:item/orange_compass_r0_08" },
+    { "predicate": { "angle": 0.28125 }, "model": "dimensionmod:item/orange_compass_r0_09" },
+    { "predicate": { "angle": 0.3125 }, "model": "dimensionmod:item/orange_compass_r0_10" },
+    { "predicate": { "angle": 0.34375 }, "model": "dimensionmod:item/orange_compass_r0_11" },
+    { "predicate": { "angle": 0.3750 }, "model": "dimensionmod:item/orange_compass_r0_12" },
+    { "predicate": { "angle": 0.40625 }, "model": "dimensionmod:item/orange_compass_r0_13" },
+    { "predicate": { "angle": 0.4375 }, "model": "dimensionmod:item/orange_compass_r0_14" },
+    { "predicate": { "angle": 0.46875 }, "model": "dimensionmod:item/orange_compass_r0_15" },
+    { "predicate": { "angle": 0.5000 }, "model": "dimensionmod:item/orange_compass_r0_16" },
+    { "predicate": { "angle": 0.53125 }, "model": "dimensionmod:item/orange_compass_r0_17" },
+    { "predicate": { "angle": 0.5625 }, "model": "dimensionmod:item/orange_compass_r0_18" },
+    { "predicate": { "angle": 0.59375 }, "model": "dimensionmod:item/orange_compass_r0_19" },
+    { "predicate": { "angle": 0.6250 }, "model": "dimensionmod:item/orange_compass_r0_20" },
+    { "predicate": { "angle": 0.65625 }, "model": "dimensionmod:item/orange_compass_r0_21" },
+    { "predicate": { "angle": 0.6875 }, "model": "dimensionmod:item/orange_compass_r0_22" },
+    { "predicate": { "angle": 0.71875 }, "model": "dimensionmod:item/orange_compass_r0_23" },
+    { "predicate": { "angle": 0.7500 }, "model": "dimensionmod:item/orange_compass_r0_24" },
+    { "predicate": { "angle": 0.78125 }, "model": "dimensionmod:item/orange_compass_r0_25" },
+    { "predicate": { "angle": 0.8125 }, "model": "dimensionmod:item/orange_compass_r0_26" },
+    { "predicate": { "angle": 0.84375 }, "model": "dimensionmod:item/orange_compass_r0_27" },
+    { "predicate": { "angle": 0.8750 }, "model": "dimensionmod:item/orange_compass_r0_28" },
+    { "predicate": { "angle": 0.90625 }, "model": "dimensionmod:item/orange_compass_r0_29" },
+    { "predicate": { "angle": 0.9375 }, "model": "dimensionmod:item/orange_compass_r0_30" },
+    { "predicate": { "angle": 0.96875 }, "model": "dimensionmod:item/orange_compass_r0_31" }
+  ]
+}

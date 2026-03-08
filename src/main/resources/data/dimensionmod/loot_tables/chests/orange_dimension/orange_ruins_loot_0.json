@@ -1,0 +1,92 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "dimensionmod:orange_ruins_zero_compass",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:golden_pickaxe",
+          "functions": [
+            {
+              "function": "minecraft:set_enchantments",
+              "enchantments": { "minecraft:efficiency": 5 }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": { "min": 2, "max": 4 },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_block",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "dimensionmod:orange_log",
+          "weight": 5
+        }
+      ]
+    },
+    {
+      "rolls": { "min": 1, "max": 3 },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{Potion:\"minecraft:swiftness\"}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{Potion:\"minecraft:leaping\"}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": { "min": 2, "max": 4 },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:ender_pearl",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": { "min": 2, "max": 6 }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:cooked_beef",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": { "min": 3, "max": 8 }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

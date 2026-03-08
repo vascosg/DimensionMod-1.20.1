@@ -24,43 +24,6 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = DimensionMod.MOD_ID, value = Dist.CLIENT)
 public class RenderEvents {
 
-    /*aumentar na visão do jogador
-
-    @SubscribeEvent
-    public static void onRenderHand(RenderHandEvent event) {
-        ItemStack stack = event.getItemStack();
-
-        if (stack.getItem() instanceof MoonBowItem) {
-            PoseStack poseStack = event.getPoseStack();
-            poseStack.pushPose();
-
-            poseStack.scale(1.5F, 1.5F, 1.5F);
-
-            ResourceLocation texture = new ResourceLocation(DimensionMod.MOD_ID, "textures/item/moon_bow.png");
-
-            VertexConsumer buffer = event.getMultiBufferSource().getBuffer(RenderType.entityCutoutNoCull(texture));
-
-            LocalPlayer player = Minecraft.getInstance().player;
-            if (player != null) {
-                Minecraft.getInstance().getItemRenderer().renderStatic(
-                        stack,
-                        event.getHand() == InteractionHand.MAIN_HAND
-                                ? ItemDisplayContext.FIRST_PERSON_RIGHT_HAND
-                                : ItemDisplayContext.FIRST_PERSON_LEFT_HAND,
-                        event.getPackedLight(),
-                        OverlayTexture.NO_OVERLAY,
-                        poseStack,
-                        event.getMultiBufferSource(),
-                        player.level(),
-                        player.getId()
-                );
-            }
-
-            poseStack.popPose();
-            event.setCanceled(true);
-        }
-    }
-    */
 
     @SubscribeEvent
     public static void onRenderLivingPre(RenderLivingEvent.Pre<LivingEntity, ?> event) {

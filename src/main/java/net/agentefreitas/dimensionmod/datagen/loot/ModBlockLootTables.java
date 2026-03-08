@@ -67,6 +67,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.PERIDOT_BLOCK.get());
 
         this.dropSelf(ModBlocks.ORANGE_ZORDE_FACTORY_BLOCK.get());
+        this.dropSelf(ModBlocks.ARRAY_CENTER_BLOCK.get());
 
         /** exemplo
         this.dropSelf(ModBlocks.RAW_SAPPHIRE_BLOCK.get());

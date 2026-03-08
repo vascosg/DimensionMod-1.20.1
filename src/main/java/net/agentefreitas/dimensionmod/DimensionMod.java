@@ -7,13 +7,12 @@ import net.agentefreitas.dimensionmod.enchantments.ModEnchantments;
 import net.agentefreitas.dimensionmod.entity.MobEntitySpawnPlacements;
 import net.agentefreitas.dimensionmod.entity.ModEntities;
 import net.agentefreitas.dimensionmod.entity.client.*;
-import net.agentefreitas.dimensionmod.event.BlockPlaceRestriction;
-import net.agentefreitas.dimensionmod.event.ChatListener;
-import net.agentefreitas.dimensionmod.event.NoClouds;
-import net.agentefreitas.dimensionmod.event.TeleportToCustomDimension;
+import net.agentefreitas.dimensionmod.event.*;
 import net.agentefreitas.dimensionmod.item.ModCreativeModTabs;
 import net.agentefreitas.dimensionmod.item.ModItems;
 import net.agentefreitas.dimensionmod.item.ModPaintings;
+import net.agentefreitas.dimensionmod.packet.Messages;
+import net.agentefreitas.dimensionmod.particle.ModParticleTypes;
 import net.agentefreitas.dimensionmod.util.ModDatapackLoader;
 //import net.agentefreitas.dimensionmod.worldgen.dimension.ModDimensions;
 import net.agentefreitas.dimensionmod.util.ModItemProperties;
@@ -67,6 +66,8 @@ public class DimensionMod {
         ModEntities.register(modEventBus);
         ModPaintings.register(modEventBus);
         ModEnchantments.register(modEventBus);
+        ModParticleTypes.register(modEventBus);
+        Messages.register();
 
         MinecraftForge.EVENT_BUS.register(ModDatapackLoader.class);
         //ModDimensions.register();
@@ -122,7 +123,8 @@ public class DimensionMod {
             EntityRenderers.register(ModEntities.KUNZITE_PROJECTILE.get(), KunziteProjectileRenderer::new);
             EntityRenderers.register(ModEntities.ORANGE_ZORD.get(), OrangeZordRenderer::new);
             EntityRenderers.register(ModEntities.ORANGE_ZORD_FACTORY.get(), OrangeZordFactoryRenderer::new);
-            ModItemProperties.addCustomItemProperties();
+            EntityRenderers.register(ModEntities.GLOW_BOX.get(), GlowBoxRenderer::new);
+            event.enqueueWork(ModItemProperties::addCustomItemProperties);
         }
     }
 }

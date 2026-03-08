@@ -1,6 +1,7 @@
-// 1.20.1	2026-02-28T19:53:12.4688163	Loot Tables
+// 1.20.1	2026-03-01T04:48:41.5952574	Loot Tables
 6c7c9e66fcf039bee1a6c62db6b6a3601f9d4f8e data/dimensionmod/loot_tables/blocks/amber_block.json
 e12464bef8816a3b808360928175c37e3179d0b1 data/dimensionmod/loot_tables/blocks/aquamarine_block.json
+fc09efd2339ec36d1a32cb02fd20d1015543cdb1 data/dimensionmod/loot_tables/blocks/array_center_block.json
 7323a4de36bcdcc2f4af7d0d17dec7aaa02f73d5 data/dimensionmod/loot_tables/blocks/citrine_block.json
 549c64e96c571261c3fe214e6cd0091782580022 data/dimensionmod/loot_tables/blocks/deepslate_sapphire_ore.json
 655d2211d67e59ec73eac606c7c8b158b8acef96 data/dimensionmod/loot_tables/blocks/dimension_door_block.json

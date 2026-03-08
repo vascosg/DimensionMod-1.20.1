@@ -35,6 +35,11 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("orange_zord_factory_block_entity",
                     () -> BlockEntityType.Builder.of(OrangeZordFactoryBlockEntity::new, ModBlocks.ORANGE_ZORDE_FACTORY_BLOCK.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<ArrayCenterBlockEntity>> ARRAY_CENTER_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("array_center_block_entity",
+                    () -> BlockEntityType.Builder.of(ArrayCenterBlockEntity::new,
+                            ModBlocks.ARRAY_CENTER_BLOCK.get()).build(null));
+
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
