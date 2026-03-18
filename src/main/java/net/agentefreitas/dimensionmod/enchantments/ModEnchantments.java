@@ -27,12 +27,20 @@ public class ModEnchantments {
     public static final RegistryObject<Enchantment> ENDLESS_STARING_EYE_ART = ENCHANTMENTS.register("endless_staring_eye_art",
             () -> new EndlessStaringEyeArtEnchantment(Enchantment.Rarity.RARE, EnchantmentCategory.ARMOR_HEAD, EquipmentSlot.HEAD));
 
-    public static final RegistryObject<Enchantment> BLURRY_FATE_ART_ENCHANTMENT = ENCHANTMENTS.register("blurry_fate_art_enchantment",
+    public static final RegistryObject<Enchantment> BLURRY_FATE_ART_ENCHANTMENT = ENCHANTMENTS.register("blurry_fate_art",
             () -> new BlurryFateArtEnchantment(
                     Enchantment.Rarity.RARE,
                     EnchantmentCategory.ARMOR, // Categoria para qualquer armadura
-                    EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET // Todos os slots
-            ));
+                    EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS, EquipmentSlot.FEET));// Todos os slots
+
+    public static final RegistryObject<Enchantment> LIGHTNING_SWORD_AURA_ART = ENCHANTMENTS.register("lightning_sword_aura_art",
+            () -> new LightningSwordAuraArtEnchantment(Enchantment.Rarity.RARE, EnchantmentCategory.WEAPON, EquipmentSlot.MAINHAND));
+
+    public static final RegistryObject<Enchantment> BODY_ENSLAVEMENT_ART_ENCHANTMENT = ENCHANTMENTS.register("body_enslavement_art",
+            () -> new BodyEnslavementArtEnchantment(Enchantment.Rarity.RARE, EnchantmentCategory.WEAPON, EquipmentSlot.MAINHAND));
+
+    public static final RegistryObject<Enchantment> EVER_EVOLVING_SPIRIT_ART_ENCHANTMENT = ENCHANTMENTS.register("ever_evolving_spirit_art",
+            () -> new EverEvolvingSpiritArtEnchantment(Enchantment.Rarity.RARE, EnchantmentCategory.WEAPON, EquipmentSlot.MAINHAND));
 
     public static void register(IEventBus eventBus) {
         ENCHANTMENTS.register(eventBus);

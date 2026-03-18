@@ -3,6 +3,7 @@ package net.agentefreitas.dimensionmod.event;
 import net.agentefreitas.dimensionmod.DimensionMod;
 import net.agentefreitas.dimensionmod.block.ModBlockEntities;
 import net.agentefreitas.dimensionmod.block.custom.ArrayCenterBlockEntityRenderer;
+import net.agentefreitas.dimensionmod.block.custom.MobFigureBlockEntityRenderer;
 import net.agentefreitas.dimensionmod.entity.ModEntities;
 import net.agentefreitas.dimensionmod.entity.custom.*;
 import net.agentefreitas.dimensionmod.entity.client.*;
@@ -112,6 +113,7 @@ public class ModEventBusEvents {
         event.registerEntityRenderer(ModEntities.ORANGE_ZORD_FACTORY.get(), OrangeZordFactoryRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.ARRAY_CENTER_BLOCK_ENTITY.get(), ArrayCenterBlockEntityRenderer::new);
         event.registerEntityRenderer(ModEntities.GLOW_BOX.get(), GlowBoxRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.MOB_FIGURE_BLOCK_ENTITY.get(), MobFigureBlockEntityRenderer::new);
     }
 
     @SubscribeEvent

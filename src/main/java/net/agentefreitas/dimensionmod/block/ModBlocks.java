@@ -175,6 +175,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> ARRAY_CENTER_BLOCK = registerBlock("array_center_block",
             () -> new ArrayCenterBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
+    public static final RegistryObject<Block> MOB_FIGURE_BLOCK = registerBlock("mob_figure_block",
+            () -> new MobFigureBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
+
     //public static final RegistryObject<Block> POTTED_CATMINT = BLOCKS.register("potted_catmint",
     //        () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.CATMINT,
     //                BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));

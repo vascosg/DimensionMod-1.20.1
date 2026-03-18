@@ -1,6 +1,7 @@
 package net.agentefreitas.dimensionmod.event;
 
 import net.agentefreitas.dimensionmod.DimensionMod;
+import net.agentefreitas.dimensionmod.block.ModBlocks;
 import net.agentefreitas.dimensionmod.enchantments.ModEnchantments;
 import net.agentefreitas.dimensionmod.item.ModItems;
 import net.agentefreitas.dimensionmod.item.custom.RainbowNameItem;
@@ -11,6 +12,9 @@ import net.agentefreitas.dimensionmod.worldgen.StructureSpawner;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.StringTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceKey;
@@ -22,11 +26,14 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.item.EnchantedBookItem;
@@ -46,6 +53,7 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.AnvilUpdateEvent;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.server.ServerStartedEvent;
@@ -53,6 +61,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -126,7 +135,59 @@ public class ModServerEvents {
         performLifeSteal(event);
         performeOneThousandStepArtReduceDmg(event);
         performBlurryFateArt(event);
+        performLightningAura(event);
 
+    }
+
+    @SubscribeEvent
+    public static void onLivingDeath(LivingDeathEvent event) {
+        performBodyEnslavement(event);
+    }
+
+    private static void performBodyEnslavement(LivingDeathEvent event) {
+        if (event.getSource().getEntity() instanceof Player player) {
+            ItemStack weapon = player.getMainHandItem();
+            int lvl = EnchantmentHelper.getItemEnchantmentLevel(ModEnchantments.BODY_ENSLAVEMENT_ART_ENCHANTMENT.get(), weapon);
+
+            if (lvl > 0 && player.getRandom().nextFloat() < (lvl * 1.0f)) {
+                LivingEntity victim = event.getEntity();
+                Level level = victim.level();
+
+                if (!level.isClientSide()) {
+                    ItemStack drop = new ItemStack(ModBlocks.MOB_FIGURE_BLOCK.get());
+                    String registryName = EntityType.getKey(victim.getType()).toString();
+
+                    // DEBUG 1: Ver se o evento disparou
+                    System.out.println("[DEBUG-DROP] Gerando drop para: " + registryName);
+
+                    CompoundTag blockEntityTag = drop.getOrCreateTagElement("BlockEntityTag");
+                    blockEntityTag.putString("MobId", registryName);
+
+                    CompoundTag mobData = new CompoundTag();
+                    victim.saveWithoutId(mobData);
+                    blockEntityTag.put("MobData", mobData);
+
+                    // DEBUG 2: Confirmar se o NBT foi inserido no Item
+                    System.out.println("[DEBUG-DROP] NBT Gravado no Item: " + drop.getTag());
+
+                    // 2. ADICIONAR A TOOLTIP (LORE)
+                    // O Minecraft guarda a descrição em display -> Lore
+                    CompoundTag displayTag = drop.getOrCreateTagElement("display");
+                    ListTag loreList = new ListTag();
+
+                    // Obtemos o nome legível (ex: "Zombie", "Ender Dragon")
+                    String mobName = victim.getDisplayName().getString();
+
+                    // Criamos o texto formatado em JSON
+                    String jsonLore = "{\"text\":\"Has: " + mobName + "\",\"color\":\"gray\",\"italic\":true}";
+                    loreList.add(StringTag.valueOf(jsonLore));
+
+                    displayTag.put("Lore", loreList);
+
+                    level.addFreshEntity(new ItemEntity(level, victim.getX(), victim.getY(), victim.getZ(), drop));
+                }
+            }
+        }
     }
 
     private static void performLifeSteal(LivingHurtEvent event) {//LIFE STEAL
@@ -372,6 +433,86 @@ public class ModServerEvents {
 
         }
     }
+
+    // No teu ModServerEvents.java
+
+    private static void performLightningAura(LivingHurtEvent event) {
+        // 1. Verificamos se o ATACANTE é um Player
+        if (event.getSource().getEntity() instanceof Player player) {
+            Level level = player.level();
+
+            // 2. Verificamos o nível do encantamento na mão principal
+            int enchantmentLevel = EnchantmentHelper.getItemEnchantmentLevel(
+                    ModEnchantments.LIGHTNING_SWORD_AURA_ART.get(), player.getMainHandItem());
+
+
+            if (enchantmentLevel > 0 && !level.isClientSide()) {
+                ServerLevel serverLevel = (ServerLevel) level;
+
+                float chance = enchantmentLevel * 0.05F;
+
+                if (player.getRandom().nextFloat() < chance) {
+                    LivingEntity mainTarget = event.getEntity();
+
+                    // --- 1. EFEITO ÚNICO PARA O PRIMEIRO ALVO ---
+                    // Um flash branco no centro do alvo para mostrar que ele é o "para-raios"
+                    serverLevel.sendParticles(ParticleTypes.FLASH,
+                            mainTarget.getX(), mainTarget.getEyeY(), mainTarget.getZ(),
+                            1, 0, 0, 0, 0.0);
+
+                    // Explosão de faíscas azuis ao redor dele
+                    serverLevel.sendParticles(ParticleTypes.ELECTRIC_SPARK,
+                            mainTarget.getX(), mainTarget.getY() + 1, mainTarget.getZ(),
+                            20, 0.5, 0.5, 0.5, 0.2);
+
+                    // 3. Procurar mobs próximos para o raio "saltar"
+                    // Raio de alcance aumenta com o nível (ex: 3 blocos + nível)
+                    double range = 3.0D + enchantmentLevel;
+                    List<LivingEntity> nearbyEntities = serverLevel.getEntitiesOfClass(LivingEntity.class,
+                            mainTarget.getBoundingBox().inflate(range),
+                            entity -> entity != player && entity != mainTarget);
+
+                    for (LivingEntity secondaryTarget : nearbyEntities) {
+                        // Desenha o raio entre o alvo principal e os secundários
+                        drawLightningLine(mainTarget, secondaryTarget, serverLevel);
+
+                        // Aplica dano secundário (ex: 2.0 de dano por nível)
+                        secondaryTarget.hurt(player.damageSources().lightningBolt(), 1.0F * enchantmentLevel);
+                   }
+                }
+            }
+        }
+    }
+
+    // O método que desenha a linha de partículas
+    private static void drawLightningLine(Entity start, Entity end, ServerLevel level) {
+        Vec3 startPos = start.position().add(0, start.getBbHeight() / 2, 0);
+        Vec3 endPos = end.position().add(0, end.getBbHeight() / 2, 0);
+
+        Vec3 direction = endPos.subtract(startPos);
+        double distance = direction.length();
+        int particleCount = (int) (distance * 10); // 4 partículas por bloco
+
+        for (int i = 0; i < particleCount; i++) {
+            double ratio = (double) i / particleCount;
+            Vec3 pos = startPos.add(direction.scale(ratio));
+
+            // Adiciona o efeito de "zig-zag" (jitter)
+            double jX = (level.random.nextDouble() - 0.5) * 0.25;
+            double jY = (level.random.nextDouble() - 0.5) * 0.25;
+            double jZ = (level.random.nextDouble() - 0.5) * 0.25;
+
+            level.sendParticles(ParticleTypes.ELECTRIC_SPARK,
+                    pos.x + jX, pos.y + jY, pos.z + jZ,
+                    1, 0, 0, 0, 0.0);
+        }
+
+        // Som de faísca elétrica
+        level.playSound(null, start.getX(), start.getY(), start.getZ(),
+                SoundEvents.BEE_STING, SoundSource.PLAYERS, 1.0f, 0.5f);
+    }
+
+
 
     //ANVILS RECIPES
     @SubscribeEvent

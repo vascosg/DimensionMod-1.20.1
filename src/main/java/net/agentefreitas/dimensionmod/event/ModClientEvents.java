@@ -1,20 +1,14 @@
 package net.agentefreitas.dimensionmod.event;
 
 import net.agentefreitas.dimensionmod.DimensionMod;
+import net.agentefreitas.dimensionmod.block.ModBlocks;
 import net.agentefreitas.dimensionmod.enchantments.ModEnchantments;
 import net.agentefreitas.dimensionmod.item.ModItems;
 import net.agentefreitas.dimensionmod.item.custom.RainbowNameItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.client.renderer.item.ItemProperties;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.network.chat.TextColor;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
@@ -33,38 +27,10 @@ public class ModClientEvents {
     private static boolean isSpacePressed = false;
     public static int currentClientFocus = 0;
 
-    /**
-    @SubscribeEvent
-    public static void onComputerFovModifierEvent(ComputeFovModifierEvent event) {
-        if(event.getPlayer().isUsingItem() && event.getPlayer().getUseItem().getItem() == ModItems.MOON_BOW.get()) {
-            float fovModifier = 1f;
-            int ticksUsingItem = event.getPlayer().getTicksUsingItem();
-            float deltaTicks = (float)ticksUsingItem / 20f;
-            if(deltaTicks > 1f) {
-                deltaTicks = 1f;
-            } else {
-                deltaTicks *= deltaTicks;
-            }
-            fovModifier *= 1f - deltaTicks * 0.15f;
-            event.setNewFovModifier(fovModifier);
-        }
-    }**/
-
     @SubscribeEvent
     public static void onClientTick(TickEvent.ClientTickEvent event) {
         performDoubleJumpOneThousandStepArt(event);
     }
-
-    /**
-    @SubscribeEvent
-    public static void onComputeFOV(ComputeFovModifierEvent event) {
-        if (currentClientFocus > 0) {
-            // 1.0f é o normal. 0.8f é zoom.
-            // Quanto maior o foco, mais baixamos o multiplicador (até 0.7f max zoom)
-            float zoom = 1.0f - (Math.min(currentClientFocus, 30) / 100f);
-            event.setNewFovModifier(event.getFovModifier() * zoom);
-        }
-    }**/
 
     @SubscribeEvent
     public static void onComputeFOV(ComputeFovModifierEvent event) {

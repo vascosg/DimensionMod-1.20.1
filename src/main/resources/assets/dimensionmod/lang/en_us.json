@@ -98,11 +98,17 @@
 
   "block.dimensionmod.orange_zord_factory_block": "Orange Zord Factory Block",
   "block.dimensionmod.array_center_block": "Array Center Block",
+  "block.dimensionmod.mob_figure_block": "Mob Figure",
 
   "enchantment.dimensionmod.life_steal": "Life Steal",
   "enchantment.dimensionmod.one_thousand_step_art": "One Thousand Step Art",
   "enchantment.dimensionmod.clear_vision_art": "Clear Vision Art",
   "enchantment.dimensionmod.endless_staring_eye_art": "Endless Staring Eye Art",
+  "enchantment.dimensionmod.blurry_fate_art": "Blurry Fate Art",
+  "enchantment.dimensionmod.lightning_sword_aura_art": "Lightning Sword Aura Art",
+  "enchantment.dimensionmod.body_enslavement_art": "Body Enslavement Art",
+  "enchantment.dimensionmod.ever_evolving_spirit_art": "Ever Evolving Spirit Art",
+
 
   "creativetab.dimension_tab": "Dimension Tab"
 }
