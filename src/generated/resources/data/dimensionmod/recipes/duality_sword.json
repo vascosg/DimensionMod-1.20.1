@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "dimensionmod:yang_blade"
+    },
+    "H": {
+      "item": "dimensionmod:union_hilt"
+    },
+    "I": {
+      "item": "dimensionmod:ying_blade"
+    }
+  },
+  "pattern": [
+    "   ",
+    "I A",
+    " H "
+  ],
+  "result": {
+    "item": "dimensionmod:duality_sword"
+  },
+  "show_notification": true
+}

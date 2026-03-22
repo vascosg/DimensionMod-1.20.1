@@ -1,0 +1,61 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dimensionmod:duality_sword"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_union_hilt": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dimensionmod:union_hilt"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_yang_blade": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dimensionmod:yang_blade"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ying_blade": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dimensionmod:ying_blade"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_ying_blade",
+      "has_yang_blade",
+      "has_union_hilt",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dimensionmod:duality_sword"
+    ]
+  },
+  "sends_telemetry_event": false
+}

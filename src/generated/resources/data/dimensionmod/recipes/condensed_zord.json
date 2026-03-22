@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "dimensionmod:oz_left_arm"
+    },
+    "B": {
+      "item": "dimensionmod:oz_right_arm"
+    },
+    "C": {
+      "item": "dimensionmod:oz_chest"
+    },
+    "D": {
+      "item": "dimensionmod:oz_left_leg"
+    },
+    "E": {
+      "item": "dimensionmod:oz_right_leg"
+    },
+    "H": {
+      "item": "dimensionmod:oz_head"
+    }
+  },
+  "pattern": [
+    " H ",
+    "ACB",
+    "D E"
+  ],
+  "result": {
+    "item": "dimensionmod:condensed_zord"
+  },
+  "show_notification": true
+}

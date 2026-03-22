@@ -1,0 +1,100 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_oz_chest": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dimensionmod:oz_chest"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_oz_head": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dimensionmod:oz_head"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_oz_left_arm": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dimensionmod:oz_left_arm"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_oz_left_leg": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dimensionmod:oz_left_leg"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_oz_right_arm": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dimensionmod:oz_right_arm"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_oz_right_leg": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "dimensionmod:oz_right_leg"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "dimensionmod:condensed_zord"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_oz_left_arm",
+      "has_oz_right_arm",
+      "has_oz_chest",
+      "has_oz_head",
+      "has_oz_left_leg",
+      "has_oz_right_leg",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "dimensionmod:condensed_zord"
+    ]
+  },
+  "sends_telemetry_event": false
+}
