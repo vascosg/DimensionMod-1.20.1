@@ -93,4 +93,16 @@ public class OrangePigAttackGoal extends MeleeAttackGoal {
         // Aumenta o alcance para 4 blocos em vez de 2 (padrão)
         return 3.0D * 3.0D; // (alcance desejado)²
     }
+
+    @Override
+    public boolean canUse() {
+        // Se a variante for RANGED, este goal de MELEE não deve ser usado
+        if (this.entity.getVariant() == OrangePigEntity.RANGED_VARIANT) {
+            return false;
+        }
+        if (this.entity.getVariant() == OrangePigEntity.DROPPER_VARIANT) {
+            return false; // Dropper nunca ataca!
+        }
+        return super.canUse();
+    }
 }

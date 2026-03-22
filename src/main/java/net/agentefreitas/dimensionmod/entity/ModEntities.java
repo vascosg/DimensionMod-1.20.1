@@ -114,6 +114,12 @@ public class ModEntities {
                     .sized(1.0f, 1.0f)
                     .build("glow_box"));
 
+    public static final RegistryObject<EntityType<OrangePigProjectileEntity>> ORANGE_PIG_PROJECTILE =
+            ENTITY_TYPES.register("orange_pig_projectile", () -> EntityType.Builder.<OrangePigProjectileEntity>of(OrangePigProjectileEntity::new, MobCategory.MISC)
+                    .sized(0.25F, 0.25F)
+                    .build("orange_pig_projectile")
+            );
+
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

@@ -39,79 +39,23 @@ public class BlackWordlessBook extends Item{
         if (!world.isClientSide) {
             double reachDistance = 20.0D;
 
+            // 1. Shift + Clique: Restaurar o último
             if (player.isCrouching()) {
-
                 removeLast(world, player, stack);
                 return InteractionResultHolder.success(stack);
             }
 
+            // 2. Tentar capturar Entidade (Raycast)
             Entity entity = getEntityLookingAt(player, reachDistance);
             if (entity != null) {
-                CompoundTag tag = stack.getOrCreateTag();
-
-                ListTag entityList = tag.getList("CapturedEntities", Tag.TAG_COMPOUND);
-                ListTag blockList = tag.getList("CapturedBlocks", Tag.TAG_COMPOUND);
-
-                if (entityList.size() >= maxListSize) {
-                    player.displayClientMessage(Component.literal("O item já contém o número máximo de 5 entidades capturadas!"), true);
-                    return InteractionResultHolder.fail(stack);
-                }
-
-                int index = entityList.size() + blockList.size();
-
-                CompoundTag entityData = new CompoundTag();
-                entityData.putString("Entity", EntityType.getKey(entity.getType()).toString());
-                entityData.putString("Name", entity.getName().getString());
-                entityData.putInt("Index", index);
-
-                player.displayClientMessage(Component.literal("Índice da entidade capturada: " + index), true);
-
-
-
-                entityList.add(entityData);
-                tag.put("CapturedEntities", entityList);
-
-                entity.remove(Entity.RemovalReason.DISCARDED);
-
-                //player.displayClientMessage(Component.literal("Capturado mob: " + entity.getName().getString()), true);
-
-                printContent(player, stack);
+                capturarEntidade(player, stack, entity);
                 return InteractionResultHolder.success(stack);
             }
 
-            // Se não encontrou entidade, verifica bloco normalmente:
+            // 3. Tentar capturar Bloco (Raycast)
             HitResult hitResult = player.pick(reachDistance, 1.0F, false);
             if (hitResult.getType() == HitResult.Type.BLOCK) {
-                BlockHitResult blockHit = (BlockHitResult) hitResult;
-                BlockPos pos = blockHit.getBlockPos();
-                BlockState state = world.getBlockState(pos);
-
-                CompoundTag tag = stack.getOrCreateTag();
-
-                ListTag entityList = tag.getList("CapturedEntities", Tag.TAG_COMPOUND);
-                ListTag blockList = tag.getList("CapturedBlocks", Tag.TAG_COMPOUND);
-
-                if (blockList.size() >= maxListSize) {
-                    player.displayClientMessage(Component.literal("O item já contém o número máximo de 5 blocos capturados!"), true);
-                    return InteractionResultHolder.fail(stack);
-                }
-
-                int index = entityList.size() + blockList.size();
-
-                CompoundTag blockData = new CompoundTag();
-                ResourceLocation id = BuiltInRegistries.BLOCK.getKey(state.getBlock());
-                blockData.putString("Block", id.toString());
-                blockData.putInt("Index", index);
-                player.displayClientMessage(Component.literal("Índice do bloco capturado: " + index), true);
-
-                blockList.add(blockData);
-                tag.put("CapturedBlocks", blockList);  // Atualiza no item
-
-                world.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
-
-                //player.displayClientMessage(Component.literal("Capturado bloco: " + state.getBlock().getName().getString()), true);
-
-                printContent(player, stack);
+                capturarBloco(world, player, stack, (BlockHitResult) hitResult);
                 return InteractionResultHolder.success(stack);
             }
 
@@ -221,46 +165,32 @@ public class BlackWordlessBook extends Item{
         CompoundTag tag = stack.getTag();
         if (tag != null && tag.contains("CapturedEntities")) {
             ListTag entityList = tag.getList("CapturedEntities", Tag.TAG_COMPOUND);
+            if (entityList.isEmpty()) return;
 
-            if (!entityList.isEmpty()) {
-                CompoundTag lastEntityData = (CompoundTag) entityList.get(entityList.size() - 1);
+            CompoundTag lastEntry = (CompoundTag) entityList.get(entityList.size() - 1);
 
-                String entityId = lastEntityData.getString("Entity");
-                EntityType<?> entityType = ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation(entityId));
+            // 1. Recuperar o ID e o NBT guardado
+            String entityId = lastEntry.getString("EntityID");
+            CompoundTag entityNBT = lastEntry.getCompound("EntityData");
 
-                if (entityType != null) {
-                    Entity entity = entityType.create(world);
-                    if (entity != null) {
-                        // Spawn em frente ao jogador, verificando posição livre
-                        Vec3 lookVec = player.getLookAngle().normalize();
-                        BlockPos.MutableBlockPos spawnPos = new BlockPos.MutableBlockPos(
-                                player.getX() + lookVec.x * 2,
-                                player.getY() + lookVec.y * 2 + 1, // subir 1 para não nascer no chão
-                                player.getZ() + lookVec.z * 2
-                        );
+            EntityType<?> type = ForgeRegistries.ENTITY_TYPES.getValue(new ResourceLocation(entityId));
+            if (type != null) {
+                Entity entity = type.create(world);
+                if (entity != null) {
+                    // 2. Aplicar o NBT de volta à entidade (isso restaura a textura, sela, etc.)
+                    entity.load(entityNBT);
 
-                        // Procura até 3 blocos acima do local para encontrar espaço livre
-                        for (int i = 0; i < 3; i++) {
-                            BlockState blockState = world.getBlockState(spawnPos);
-                            if (blockState.isAir() || !blockState.canOcclude()) {
-                                entity.setPos(spawnPos.getX() + 0.5, spawnPos.getY(), spawnPos.getZ() + 0.5);
-                                world.addFreshEntity(entity);
-                                player.displayClientMessage(Component.literal("Entidade restaurada: " + entityId), false);
+                    // 3. Definir posição (para não spawnar nas coordenadas antigas onde foi capturado!)
+                    Vec3 look = player.getLookAngle().normalize();
+                    entity.setPos(player.getX() + look.x * 2, player.getY() + 1, player.getZ() + look.z * 2);
 
-                                // Remover o último da lista
-                                entityList.remove(entityList.size() - 1);
-                                tag.put("CapturedEntities", entityList);
-                                return;
-                            }
-                            spawnPos.move(0, 1, 0);
-                        }
+                    world.addFreshEntity(entity);
 
-                        // Se não encontrou lugar, avisa
-                        player.displayClientMessage(Component.literal("Não encontrou espaço para spawnar a entidade!"), false);
-                    }
+                    // Remover da lista
+                    entityList.remove(entityList.size() - 1);
+                    tag.put("CapturedEntities", entityList);
+                    player.displayClientMessage(Component.literal("Entidade restaurada com sucesso!"), false);
                 }
-            } else {
-                player.displayClientMessage(Component.literal("Nenhuma entidade capturada para restaurar!"), false);
             }
         }
     }
@@ -299,6 +229,68 @@ public class BlackWordlessBook extends Item{
         } else {
             player.displayClientMessage(Component.literal("Nada para restaurar!"), false);
         }
+    }
+
+    public static void capturarEntidade(Player player, ItemStack stack, Entity entity) {
+        CompoundTag tag = stack.getOrCreateTag();
+        ListTag entityList = tag.getList("CapturedEntities", Tag.TAG_COMPOUND);
+        ListTag blockList = tag.getList("CapturedBlocks", Tag.TAG_COMPOUND);
+
+        if (entityList.size() >= maxListSize) {
+            player.displayClientMessage(Component.literal("O item já está cheio!"), true);
+            return;
+        }
+
+        int index = entityList.size() + blockList.size();
+        CompoundTag entityData = new CompoundTag();
+
+        // --- A MUDANÇA ESTÁ AQUI ---
+        // Criamos um novo CompoundTag para guardar TODOS os dados do mob (vida, cor, inventário, etc.)
+        CompoundTag entityNBT = new CompoundTag();
+        entity.saveWithoutId(entityNBT); // Guarda os dados específicos
+
+        // Guardamos o ID da entidade para sabermos o que spawnar depois
+        entityData.putString("EntityID", EntityType.getKey(entity.getType()).toString());
+        entityData.put("EntityData", entityNBT); // Colocamos o NBT completo lá dentro
+        entityData.putString("Name", entity.getName().getString());
+        entityData.putInt("Index", index);
+        // ---------------------------
+
+        entityList.add(entityData);
+        tag.put("CapturedEntities", entityList);
+
+        entity.remove(Entity.RemovalReason.DISCARDED);
+
+        player.displayClientMessage(Component.literal("Entidade capturada com dados: " + entity.getName().getString()), true);
+        printContent(player, stack);
+    }
+
+    public static void capturarBloco(Level world, Player player, ItemStack stack, BlockHitResult blockHit) {
+        BlockPos pos = blockHit.getBlockPos();
+        BlockState state = world.getBlockState(pos);
+
+        CompoundTag tag = stack.getOrCreateTag();
+        ListTag entityList = tag.getList("CapturedEntities", Tag.TAG_COMPOUND);
+        ListTag blockList = tag.getList("CapturedBlocks", Tag.TAG_COMPOUND);
+
+        if (blockList.size() >= maxListSize) {
+            player.displayClientMessage(Component.literal("O item já contém o número máximo de blocos!"), true);
+            return;
+        }
+
+        int index = entityList.size() + blockList.size();
+        CompoundTag blockData = new CompoundTag();
+        ResourceLocation id = BuiltInRegistries.BLOCK.getKey(state.getBlock());
+        blockData.putString("Block", id.toString());
+        blockData.putInt("Index", index);
+
+        blockList.add(blockData);
+        tag.put("CapturedBlocks", blockList);
+
+        world.setBlock(pos, Blocks.AIR.defaultBlockState(), 3);
+
+        player.displayClientMessage(Component.literal("Índice do bloco capturado: " + index), true);
+        printContent(player, stack);
     }
 
 }

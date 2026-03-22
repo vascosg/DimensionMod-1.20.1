@@ -96,6 +96,8 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.THREE_THOUSAND_COLORED_FLOWER.get());
 
                         pOutput.accept(ModItems.UNION_HILT.get());
+                        pOutput.accept(ModItems.YING_BLADE.get());
+                        pOutput.accept(ModItems.YANG_BLADE.get());
                         pOutput.accept(ModItems.DUALITY_SWORD.get());
 
 
@@ -142,6 +144,8 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModBlocks.MOB_FIGURE_BLOCK.get());
 
                         pOutput.accept(ModItems.ORANGE_RUINS_ZERO_COMPASS.get());
+
+                        pOutput.accept(ModItems.CURSED_PORKCHOP.get());
 
 
                     })

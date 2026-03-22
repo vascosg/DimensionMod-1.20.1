@@ -128,6 +128,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.UNION_HILT);
         handheldItem(ModItems.DUALITY_SWORD);
 
+        simpleItem(ModItems.CURSED_PORKCHOP);
+
         /** exemplo
         simpleItem(ModItems.SAPPHIRE);
         simpleItem(ModItems.RAW_SAPPHIRE);

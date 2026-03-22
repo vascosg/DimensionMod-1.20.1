@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "dimensionmod:mob_effect/pig_curse_effect"
+  }
+}

@@ -67,4 +67,6 @@ public class ModModelLayers {
 
     public static final ModelLayerLocation ORANGE_ZORD_FACTORY_LAYER = new ModelLayerLocation(
             new ResourceLocation(DimensionMod.MOD_ID, "orange_zord_factory"), "main");
+    public static final ModelLayerLocation ORANGE_PIG_PROJECTILE_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DimensionMod.MOD_ID, "orange_pig_projectile"), "main");
 }

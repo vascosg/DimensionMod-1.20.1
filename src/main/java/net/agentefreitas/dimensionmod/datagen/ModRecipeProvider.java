@@ -125,6 +125,37 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.STAR_ESSENCE.get()), has(ModItems.STAR_ESSENCE.get()))
                 .save(pWriter);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.DUALITY_SWORD.get())
+                .pattern("   ")
+                .pattern("I A")
+                .pattern(" H ")
+                .define('I', ModItems.YING_BLADE.get())
+                .define('A', ModItems.YANG_BLADE.get())
+                .define('H', ModItems.UNION_HILT.get())
+                .unlockedBy(getHasName(ModItems.YING_BLADE.get()), has(ModItems.YING_BLADE.get()))
+                .unlockedBy(getHasName(ModItems.YANG_BLADE.get()), has(ModItems.YANG_BLADE.get()))
+                .unlockedBy(getHasName(ModItems.UNION_HILT.get()), has(ModItems.UNION_HILT.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CONDENSED_ZORD.get())
+                .pattern(" H ")
+                .pattern("ACB")
+                .pattern("D E")
+                .define('A', ModItems.ZORD_LEFT_ARM.get())
+                .define('B', ModItems.ZORD_RIGHT_ARM.get())
+                .define('C', ModItems.ZORD_CHEST.get())
+                .define('H', ModItems.ZORD_HEAD.get())
+                .define('D', ModItems.ZORD_LEFT_LEG.get())
+                .define('E', ModItems.ZORD_RIGHT_LEG.get())
+                .unlockedBy(getHasName(ModItems.ZORD_LEFT_ARM.get()), has(ModItems.ZORD_LEFT_ARM.get()))
+                .unlockedBy(getHasName(ModItems.ZORD_RIGHT_ARM.get()), has(ModItems.ZORD_RIGHT_ARM.get()))
+                .unlockedBy(getHasName(ModItems.ZORD_CHEST.get()), has(ModItems.ZORD_CHEST.get()))
+                .unlockedBy(getHasName(ModItems.ZORD_HEAD.get()), has(ModItems.ZORD_HEAD.get()))
+                .unlockedBy(getHasName(ModItems.ZORD_LEFT_LEG.get()), has(ModItems.ZORD_LEFT_LEG.get()))
+                .unlockedBy(getHasName(ModItems.ZORD_RIGHT_LEG.get()), has(ModItems.ZORD_RIGHT_LEG.get()))
+                .save(pWriter);
+
+
         /** exemplo
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 9)
                 .requires(ModBlocks.SAPPHIRE_BLOCK.get())

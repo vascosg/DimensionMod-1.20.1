@@ -6,14 +6,14 @@ import net.minecraft.client.animation.Keyframe;
 import net.minecraft.client.animation.KeyframeAnimations;
 public class OrangePigAnimationDefenitions {
 
-    public static final AnimationDefinition ATTACK = AnimationDefinition.Builder.withLength(0.5834334f).looping()
+    public static final AnimationDefinition ATTACK = AnimationDefinition.Builder.withLength(0.58333f).looping()
             .addAnimation("left2",
                     new AnimationChannel(AnimationChannel.Targets.ROTATION,
                             new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
-                            new Keyframe(0.3433333f, KeyframeAnimations.degreeVec(-65f, 0f, 0f),
+                            new Keyframe(0.33333f, KeyframeAnimations.degreeVec(-65f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR),
-                            new Keyframe(0.5834334f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
+                            new Keyframe(0.58333f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.LINEAR))).build();
     public static final AnimationDefinition WALK = AnimationDefinition.Builder.withLength(1f).looping()
             .addAnimation("right",
@@ -93,4 +93,25 @@ public class OrangePigAnimationDefenitions {
                                     AnimationChannel.Interpolations.CATMULLROM),
                             new Keyframe(5f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
                                     AnimationChannel.Interpolations.CATMULLROM))).build();
+    public static final AnimationDefinition THROW = AnimationDefinition.Builder.withLength(1f)
+            .addAnimation("left2",
+                    new AnimationChannel(AnimationChannel.Targets.ROTATION,
+                            new Keyframe(0f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(0.4583433f, KeyframeAnimations.degreeVec(-190f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(0.7083434f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(0.875f, KeyframeAnimations.degreeVec(15.58f, 12.7f, -38.26f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(1f, KeyframeAnimations.degreeVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR)))
+            .addAnimation("sword",
+                    new AnimationChannel(AnimationChannel.Targets.SCALE,
+                            new Keyframe(0f, KeyframeAnimations.scaleVec(1f, 1f, 1f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(0.5416766f, KeyframeAnimations.scaleVec(1f, 1f, 1f),
+                                    AnimationChannel.Interpolations.LINEAR),
+                            new Keyframe(0.875f, KeyframeAnimations.scaleVec(0f, 0f, 0f),
+                                    AnimationChannel.Interpolations.LINEAR))).build();
 }

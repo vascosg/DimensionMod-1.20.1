@@ -113,6 +113,7 @@ public class OrangePigModel <T extends Entity> extends HierarchicalModel<T> {
         this.animateWalk(OrangePigAnimationDefenitions.WALK, limbSwing, limbSwingAmount, 2f, 2.5f);
         this.animate(((OrangePigEntity) entity).idleAnimationState, OrangePigAnimationDefenitions.IDLE, ageInTicks, 1f);
         this.animate(((OrangePigEntity) entity).attackAnimationState, OrangePigAnimationDefenitions.ATTACK, ageInTicks, 1f);
+        this.animate(((OrangePigEntity) entity).throwAnimationState, OrangePigAnimationDefenitions.THROW, ageInTicks, 1f);
     }
 
     private void applyHeadRotation(float pNetHeadYaw, float pHeadPitch, float pAgeInTicks) {

@@ -4,12 +4,18 @@ import net.agentefreitas.dimensionmod.DimensionMod;
 import net.agentefreitas.dimensionmod.block.ModBlocks;
 import net.agentefreitas.dimensionmod.entity.ModEntities;
 import net.agentefreitas.dimensionmod.item.custom.*;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 
 public class ModItems {
@@ -176,6 +182,21 @@ public class ModItems {
 
     public static final RegistryObject<Item> ORANGE_RUINS_ZERO_COMPASS = ITEMS.register("orange_ruins_zero_compass",
             () -> new OrangeRuinsZeroCompassItem(new Item.Properties()));
+
+
+    public static final RegistryObject<Item> CURSED_PORKCHOP = ITEMS.register("cursed_porkchop", () -> new Item(new Item.Properties()) {
+        @Override
+        public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> tooltip, TooltipFlag flag) {
+            // Adiciona a linha de texto
+            tooltip.add(Component.translatable("tooltip.dimensionmod.cursed_porkchop.description")
+                    .withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
+
+            // Exemplo de uma segunda linha com cor diferente
+            //tooltip.add(Component.literal("Raridade: Épica")
+            //        .withStyle(ChatFormatting.GOLD));
+        }
+    });
+
 
 
     /** exemplo

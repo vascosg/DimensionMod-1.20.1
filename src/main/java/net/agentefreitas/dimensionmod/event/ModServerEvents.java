@@ -4,6 +4,7 @@ import net.agentefreitas.dimensionmod.DimensionMod;
 import net.agentefreitas.dimensionmod.block.ModBlocks;
 import net.agentefreitas.dimensionmod.enchantments.ModEnchantments;
 import net.agentefreitas.dimensionmod.item.ModItems;
+import net.agentefreitas.dimensionmod.item.custom.BlackWordlessBook;
 import net.agentefreitas.dimensionmod.item.custom.RainbowNameItem;
 import net.agentefreitas.dimensionmod.packet.Messages;
 import net.agentefreitas.dimensionmod.packet.SyncFocusPacket;
@@ -24,6 +25,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -56,7 +58,9 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.server.ServerStartedEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -189,6 +193,74 @@ public class ModServerEvents {
             }
         }
     }
+
+    // 1. Para Cavalos e Mobs normais
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void onNormalInteract(PlayerInteractEvent.EntityInteract event) {
+        handleCapture(event);
+    }
+
+    // 2. Para o teu Mob customizado (interactAt)
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void onSpecificInteract(PlayerInteractEvent.EntityInteractSpecific event) {
+        handleCapture(event);
+    }
+
+    // 3. A Função que aceita QUALQUER interação com entidade
+    private static void handleCapture(PlayerInteractEvent event) {
+        // Nota: Usamos PlayerInteractEvent porque ambos os acima herdam dele
+        ItemStack stack = event.getItemStack();
+
+        if (stack.getItem() instanceof BlackWordlessBook) {
+            // Como PlayerInteractEvent é genérico, precisamos verificar se o alvo é uma entidade
+            // (No EntityInteract, o getTarget() está disponível diretamente)
+
+            Entity target = null;
+            if (event instanceof PlayerInteractEvent.EntityInteract entEvent) {
+                target = entEvent.getTarget();
+            } else if (event instanceof PlayerInteractEvent.EntityInteractSpecific specEvent) {
+                target = specEvent.getTarget();
+            }
+
+            if (target instanceof LivingEntity) {
+                // Cancelamos para a GUI não abrir
+                event.setCanceled(true);
+                event.setCancellationResult(InteractionResult.SUCCESS);
+
+                if (!event.getLevel().isClientSide) {
+                    Player player = event.getEntity();
+                    if (!player.isCrouching()) {
+                        System.out.println("DEBUG: CAPTURANDO " + target.getName().getString());
+                        BlackWordlessBook.capturarEntidade(player, stack, target);
+                    }
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void onBlockInteract(PlayerInteractEvent.RightClickBlock event) {
+        ItemStack stack = event.getItemStack();
+
+        if (stack.getItem() instanceof BlackWordlessBook) {
+            // Se o jogador estiver a agachar (Shift), ele quer devolver algo,
+            // então deixamos o 'use' do item tratar disso.
+            if (event.getEntity().isCrouching()) {
+                return;
+            }
+
+            // Bloqueia a abertura da interface (Baú, Fornalha, etc.)
+            event.setCanceled(true);
+            event.setCancellationResult(InteractionResult.SUCCESS);
+
+            if (!event.getLevel().isClientSide) {
+                // Chamamos a tua função de capturar bloco que já criaste no item
+                // Precisas de garantir que 'capturarBloco' é PUBLIC e STATIC no teu item
+                BlackWordlessBook.capturarBloco(event.getLevel(), event.getEntity(), stack, event.getHitVec());
+            }
+        }
+    }
+
 
     private static void performLifeSteal(LivingHurtEvent event) {//LIFE STEAL
         // Verifica se quem atacou foi um Player

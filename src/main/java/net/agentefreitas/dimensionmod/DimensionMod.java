@@ -3,11 +3,13 @@ package net.agentefreitas.dimensionmod;
 import com.mojang.logging.LogUtils;
 import net.agentefreitas.dimensionmod.block.ModBlockEntities;
 import net.agentefreitas.dimensionmod.block.ModBlocks;
+import net.agentefreitas.dimensionmod.effect.ModEffects;
 import net.agentefreitas.dimensionmod.enchantments.ModEnchantments;
 import net.agentefreitas.dimensionmod.entity.MobEntitySpawnPlacements;
 import net.agentefreitas.dimensionmod.entity.ModEntities;
 import net.agentefreitas.dimensionmod.entity.client.*;
 import net.agentefreitas.dimensionmod.event.*;
+import net.agentefreitas.dimensionmod.function.ModFunctions;
 import net.agentefreitas.dimensionmod.item.ModCreativeModTabs;
 import net.agentefreitas.dimensionmod.item.ModItems;
 import net.agentefreitas.dimensionmod.item.ModPaintings;
@@ -67,6 +69,8 @@ public class DimensionMod {
         ModPaintings.register(modEventBus);
         ModEnchantments.register(modEventBus);
         ModParticleTypes.register(modEventBus);
+        ModEffects.register(modEventBus);
+        ModFunctions.register(modEventBus);
         Messages.register();
 
         MinecraftForge.EVENT_BUS.register(ModDatapackLoader.class);
@@ -124,6 +128,7 @@ public class DimensionMod {
             EntityRenderers.register(ModEntities.ORANGE_ZORD.get(), OrangeZordRenderer::new);
             EntityRenderers.register(ModEntities.ORANGE_ZORD_FACTORY.get(), OrangeZordFactoryRenderer::new);
             EntityRenderers.register(ModEntities.GLOW_BOX.get(), GlowBoxRenderer::new);
+            EntityRenderers.register(ModEntities.ORANGE_PIG_PROJECTILE.get(), OrangePigProjectileRenderer::new);
             event.enqueueWork(ModItemProperties::addCustomItemProperties);
         }
     }

@@ -2,6 +2,7 @@ package net.agentefreitas.dimensionmod.event;
 
 import net.agentefreitas.dimensionmod.DimensionMod;
 import net.agentefreitas.dimensionmod.block.ModBlocks;
+import net.agentefreitas.dimensionmod.client.ClientPayloadHandler;
 import net.agentefreitas.dimensionmod.enchantments.ModEnchantments;
 import net.agentefreitas.dimensionmod.item.ModItems;
 import net.agentefreitas.dimensionmod.item.custom.RainbowNameItem;
@@ -13,6 +14,7 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ComputeFovModifierEvent;
+import net.minecraftforge.client.event.RenderGuiEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -53,6 +55,15 @@ public class ModClientEvents {
 
         // Aplicamos o modificador final ao evento
         event.setNewFovModifier(event.getFovModifier() * fovModifier);
+    }
+
+    @SubscribeEvent
+    public static void onRenderGuiPost(RenderGuiEvent.Post event) {
+            ClientPayloadHandler.onRenderGui(
+                event.getGuiGraphics(),
+                event.getWindow().getGuiScaledWidth(),
+                event.getWindow().getGuiScaledHeight()
+        );
     }
 
     private static void performDoubleJumpOneThousandStepArt(TickEvent.ClientTickEvent event) {

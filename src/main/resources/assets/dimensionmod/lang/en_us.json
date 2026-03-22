@@ -66,6 +66,9 @@
 
   "item.dimensionmod.orange_ruins_zero_compass": "Orange Ruins Compass",
 
+  "item.dimensionmod.cursed_porkchop": "Cursed Porkchop",
+  "tooltip.dimensionmod.cursed_porkchop.description": "If I were you I would drop this ...",
+
   "block.dimensionmod.dimension_door_block": "Dimension Door ",
   "block.dimensionmod.lectern_white": "Dimension Book Lectern",
   "block.dimensionmod.guardian_block": "Guardian Block",
@@ -108,6 +111,8 @@
   "enchantment.dimensionmod.lightning_sword_aura_art": "Lightning Sword Aura Art",
   "enchantment.dimensionmod.body_enslavement_art": "Body Enslavement Art",
   "enchantment.dimensionmod.ever_evolving_spirit_art": "Ever Evolving Spirit Art",
+
+  "effect.dimensionmod.pig_curse_effect": "Pig Curse",
 
 
   "creativetab.dimension_tab": "Dimension Tab"

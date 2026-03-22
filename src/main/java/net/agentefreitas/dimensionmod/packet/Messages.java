@@ -28,6 +28,13 @@ public class Messages {
                 .encoder(SyncFocusPacket::encode)
                 .consumerMainThread(SyncFocusPacket::handle)
                 .add();
+
+        // Registo do teu SustoPacket
+        net.messageBuilder(PigPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(PigPacket::decode)
+                .encoder(PigPacket::encode)
+                .consumerMainThread(PigPacket::handle)
+                .add();
     }
 
     public static <MSG> void sendToPlayer(MSG message, ServerPlayer player) {

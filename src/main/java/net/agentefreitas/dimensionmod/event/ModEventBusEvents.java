@@ -114,6 +114,7 @@ public class ModEventBusEvents {
         event.registerBlockEntityRenderer(ModBlockEntities.ARRAY_CENTER_BLOCK_ENTITY.get(), ArrayCenterBlockEntityRenderer::new);
         event.registerEntityRenderer(ModEntities.GLOW_BOX.get(), GlowBoxRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.MOB_FIGURE_BLOCK_ENTITY.get(), MobFigureBlockEntityRenderer::new);
+        event.registerEntityRenderer(ModEntities.ORANGE_PIG_PROJECTILE.get(), OrangePigProjectileRenderer::new);
     }
 
     @SubscribeEvent

@@ -13,6 +13,7 @@ public class SyncFocusPacket {
         this.progress = progress;
     }
 
+
     public static void encode(SyncFocusPacket msg, FriendlyByteBuf buffer) {
         buffer.writeInt(msg.progress);
     }
