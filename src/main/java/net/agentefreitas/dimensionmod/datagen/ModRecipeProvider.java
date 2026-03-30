@@ -91,7 +91,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.ICY_CRYSTAL.get()), has(ModItems.ICY_CRYSTAL.get()))
                 .save(pWriter);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.OverworldBailer.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.OVERWORLD_BAILER.get())
                 .pattern(" S ")
                 .pattern("S S")
                 .pattern(" S ")

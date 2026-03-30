@@ -6,6 +6,10 @@ import net.agentefreitas.dimensionmod.entity.ModEntities;
 import net.agentefreitas.dimensionmod.item.custom.*;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -107,7 +111,7 @@ public class ModItems {
     public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",
             () -> new Item(new Item.Properties().fireResistant()));
 
-    public static final RegistryObject<Item> OverworldBailer = ITEMS.register("overworld_bailer",
+    public static final RegistryObject<Item> OVERWORLD_BAILER = ITEMS.register("overworld_bailer",
             () -> new OverworldBailerItem(new Item.Properties().fireResistant()));
 
 
@@ -196,6 +200,7 @@ public class ModItems {
             //        .withStyle(ChatFormatting.GOLD));
         }
     });
+
 
 
 

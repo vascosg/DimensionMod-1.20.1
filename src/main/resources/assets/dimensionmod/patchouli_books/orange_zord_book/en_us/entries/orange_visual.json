@@ -1,0 +1,16 @@
+{
+  "name": "O Templo Roxo",
+  "category": "dimensionmod:templos",
+  "icon": "minecraft:stone_bricks",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "O Templo Roxo é uma estrutura rara."
+    },
+    {
+      "type": "patchouli:image",
+      "images": ["dimensionmod:textures/gui/orange_anvil_tuto.png"],
+      "title": "Foto do Templo"
+    }
+  ]
+}

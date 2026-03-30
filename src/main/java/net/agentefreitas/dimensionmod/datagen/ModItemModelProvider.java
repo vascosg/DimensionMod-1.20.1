@@ -84,7 +84,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.ICY_CRYSTAL);
 
         simpleItem(ModItems.SAPPHIRE);
-        simpleItem(ModItems.OverworldBailer);
+        simpleItem(ModItems.OVERWORLD_BAILER);
 
         saplingItem(ModBlocks.ORANGE_SAPLING);
 
