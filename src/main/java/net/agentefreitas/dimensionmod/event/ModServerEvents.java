@@ -25,6 +25,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -506,7 +507,6 @@ public class ModServerEvents {
         }
     }
 
-    // No teu ModServerEvents.java
 
     private static void performLightningAura(LivingHurtEvent event) {
         // 1. Verificamos se o ATACANTE é um Player
@@ -517,71 +517,91 @@ public class ModServerEvents {
             int enchantmentLevel = EnchantmentHelper.getItemEnchantmentLevel(
                     ModEnchantments.LIGHTNING_SWORD_AURA_ART.get(), player.getMainHandItem());
 
-
             if (enchantmentLevel > 0 && !level.isClientSide()) {
                 ServerLevel serverLevel = (ServerLevel) level;
 
+                // Chance baseada no nível (Ex: Nível 5 = 25% de chance)
                 float chance = enchantmentLevel * 0.05F;
 
                 if (player.getRandom().nextFloat() < chance) {
                     LivingEntity mainTarget = event.getEntity();
+                    RandomSource random = player.getRandom();
 
-                    // --- 1. EFEITO ÚNICO PARA O PRIMEIRO ALVO ---
-                    // Um flash branco no centro do alvo para mostrar que ele é o "para-raios"
+                    // --- 1. EFEITO SONORO (Trovão distante e choque) ---
+                    serverLevel.playSound(null, mainTarget.getX(), mainTarget.getY(), mainTarget.getZ(),
+                            SoundEvents.LIGHTNING_BOLT_IMPACT, SoundSource.PLAYERS, 1.0F, 1.2F);
+                    serverLevel.playSound(null, mainTarget.getX(), mainTarget.getY(), mainTarget.getZ(),
+                            SoundEvents.LIGHTNING_BOLT_THUNDER, SoundSource.PLAYERS, 0.5F, 1.5F);
+
+                    // --- 2. EXPLOSÃO VISUAL NO ALVO PRINCIPAL ---
+                    // Flash de luz branca
                     serverLevel.sendParticles(ParticleTypes.FLASH,
                             mainTarget.getX(), mainTarget.getEyeY(), mainTarget.getZ(),
-                            1, 0, 0, 0, 0.0);
+                            2 + (enchantmentLevel / 2), 0.1, 0.1, 0.1, 0.0);
 
-                    // Explosão de faíscas azuis ao redor dele
+                    // Nuvem massiva de faíscas elétricas (Escala com o nível)
+                    int sparkCount = 40 + (enchantmentLevel * 20); // Nível 5 = 140 partículas
                     serverLevel.sendParticles(ParticleTypes.ELECTRIC_SPARK,
                             mainTarget.getX(), mainTarget.getY() + 1, mainTarget.getZ(),
-                            20, 0.5, 0.5, 0.5, 0.2);
+                            sparkCount, 0.8, 1.2, 0.8, 0.4);
 
-                    // 3. Procurar mobs próximos para o raio "saltar"
-                    // Raio de alcance aumenta com o nível (ex: 3 blocos + nível)
-                    double range = 3.0D + enchantmentLevel;
+                    // Partículas de fumo azulado (Scrape) para dar corpo ao raio
+                    serverLevel.sendParticles(ParticleTypes.SCRAPE,
+                            mainTarget.getX(), mainTarget.getY() + 1, mainTarget.getZ(),
+                            10 + enchantmentLevel, 0.5, 0.5, 0.5, 0.1);
+
+                    // --- 3. LOGICA DE SALTO (ENCADEAMENTO) ---
+                    double range = 3.0D + (enchantmentLevel * 1.5); // Alcance aumenta com o nível
                     List<LivingEntity> nearbyEntities = serverLevel.getEntitiesOfClass(LivingEntity.class,
                             mainTarget.getBoundingBox().inflate(range),
-                            entity -> entity != player && entity != mainTarget);
+                            entity -> entity != player && entity != mainTarget && entity.isAlive());
 
                     for (LivingEntity secondaryTarget : nearbyEntities) {
-                        // Desenha o raio entre o alvo principal e os secundários
+                        // Desenha a linha de partículas em zig-zag entre mobs
                         drawLightningLine(mainTarget, secondaryTarget, serverLevel);
 
-                        // Aplica dano secundário (ex: 2.0 de dano por nível)
-                        secondaryTarget.hurt(player.damageSources().lightningBolt(), 1.0F * enchantmentLevel);
-                   }
+                        // Pequena explosão no alvo secundário
+                        serverLevel.sendParticles(ParticleTypes.ELECTRIC_SPARK,
+                                secondaryTarget.getX(), secondaryTarget.getY() + 1, secondaryTarget.getZ(),
+                                15, 0.2, 0.4, 0.2, 0.2);
+
+                        // Dano secundário (1.5 de dano por nível)
+                        secondaryTarget.hurt(player.damageSources().lightningBolt(), 1.5F * enchantmentLevel);
+                    }
                 }
             }
         }
     }
 
-    // O método que desenha a linha de partículas
-    private static void drawLightningLine(Entity start, Entity end, ServerLevel level) {
-        Vec3 startPos = start.position().add(0, start.getBbHeight() / 2, 0);
-        Vec3 endPos = end.position().add(0, end.getBbHeight() / 2, 0);
+    private static void drawLightningLine(LivingEntity start, LivingEntity end, ServerLevel level) {
+        // Definimos a altura do peito para o raio sair do corpo e não dos pés
+        Vec3 startVec = start.position().add(0, start.getBbHeight() * 0.6, 0);
+        Vec3 endVec = end.position().add(0, end.getBbHeight() * 0.6, 0);
 
-        Vec3 direction = endPos.subtract(startPos);
+        Vec3 direction = endVec.subtract(startVec);
         double distance = direction.length();
-        int particleCount = (int) (distance * 10); // 4 partículas por bloco
+        direction = direction.normalize();
 
-        for (int i = 0; i < particleCount; i++) {
-            double ratio = (double) i / particleCount;
-            Vec3 pos = startPos.add(direction.scale(ratio));
+        // Densidade da linha: partícula a cada 0.1 blocos para parecer contínuo
+        double step = 0.1;
 
-            // Adiciona o efeito de "zig-zag" (jitter)
-            double jX = (level.random.nextDouble() - 0.5) * 0.25;
-            double jY = (level.random.nextDouble() - 0.5) * 0.25;
-            double jZ = (level.random.nextDouble() - 0.5) * 0.25;
+        for (double d = 0; d < distance; d += step) {
+            // Adiciona um "jitter" (tremor) aleatório para o raio não ser reto
+            double jitterX = (level.random.nextDouble() - 0.5) * 0.25;
+            double jitterY = (level.random.nextDouble() - 0.5) * 0.25;
+            double jitterZ = (level.random.nextDouble() - 0.5) * 0.25;
+
+            Vec3 point = startVec.add(direction.scale(d));
 
             level.sendParticles(ParticleTypes.ELECTRIC_SPARK,
-                    pos.x + jX, pos.y + jY, pos.z + jZ,
+                    point.x + jitterX, point.y + jitterY, point.z + jitterZ,
                     1, 0, 0, 0, 0.0);
-        }
 
-        // Som de faísca elétrica
-        level.playSound(null, start.getX(), start.getY(), start.getZ(),
-                SoundEvents.BEE_STING, SoundSource.PLAYERS, 1.0f, 0.5f);
+            // A cada 5 passos, coloca uma partícula de brilho extra
+            if (d % 0.5 < 0.1) {
+                level.sendParticles(ParticleTypes.GLOW, point.x, point.y, point.z, 1, 0, 0, 0, 0.0);
+            }
+        }
     }
 
 

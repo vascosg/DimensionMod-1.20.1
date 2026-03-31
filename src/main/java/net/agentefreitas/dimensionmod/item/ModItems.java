@@ -187,6 +187,9 @@ public class ModItems {
     public static final RegistryObject<Item> ORANGE_RUINS_ZERO_COMPASS = ITEMS.register("orange_ruins_zero_compass",
             () -> new OrangeRuinsZeroCompassItem(new Item.Properties()));
 
+    public static final RegistryObject<Item> ZORD_RECIPES_BOOK = ITEMS.register("zord_recipes_book",
+            () -> new ZordRecipesBookItem(new Item.Properties()));
+
 
     public static final RegistryObject<Item> CURSED_PORKCHOP = ITEMS.register("cursed_porkchop", () -> new Item(new Item.Properties()) {
         @Override

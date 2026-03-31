@@ -147,6 +147,7 @@ public class ModCreativeModTabs {
 
                         pOutput.accept(ModItems.CURSED_PORKCHOP.get());
 
+                        pOutput.accept(ModItems.ZORD_RECIPES_BOOK.get());
 
 
                     })

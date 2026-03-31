@@ -130,6 +130,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.CURSED_PORKCHOP);
 
+        simpleItem(ModItems.ZORD_RECIPES_BOOK);
+
         /** exemplo
         simpleItem(ModItems.SAPPHIRE);
         simpleItem(ModItems.RAW_SAPPHIRE);

@@ -1,4 +1,4 @@
-// 1.20.1	2026-03-22T01:28:33.5047124	Item Models: dimensionmod
+// 1.20.1	2026-03-30T21:32:22.8111951	Item Models: dimensionmod
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dimensionmod/models/item/bai_yu_spawn_egg.json
 68f0aad47c4ad60c583a539ff04d3e50953821fd assets/dimensionmod/models/item/blue_book.json
 d2821d1386f5ca8c595593d5446860d0490ab2c0 assets/dimensionmod/models/item/broken_space_staff.json
@@ -106,3 +106,4 @@ a6e9c455e223ad64edad32b18dd2657bd1593d4e assets/dimensionmod/models/item/zord_bp
 62c1638688241668433025830892b2615f23c34c assets/dimensionmod/models/item/zord_bp_r_arm.json
 c50c5c222ff189424594d0fdf1e77b0076462103 assets/dimensionmod/models/item/zord_bp_r_leg.json
 c680451f0860a3bc1f5fe464b744f08ff70d1763 assets/dimensionmod/models/item/zord_map.json
+d44a99d0589110170cfc65b11e25f45f9d43033a assets/dimensionmod/models/item/zord_recipes_book.json

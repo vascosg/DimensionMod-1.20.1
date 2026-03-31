@@ -24,4 +24,9 @@ public class OneThousandStepArtEnchantment extends Enchantment {
     public boolean isTreasureOnly() {
         return true;
     }
+
+    @Override
+    public boolean isDiscoverable() {
+        return false;
+    }
 }

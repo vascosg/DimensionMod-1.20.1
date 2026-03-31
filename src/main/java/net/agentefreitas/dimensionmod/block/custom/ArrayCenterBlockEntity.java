@@ -5,6 +5,7 @@ import net.agentefreitas.dimensionmod.entity.ModEntities;
 import net.agentefreitas.dimensionmod.entity.custom.GlowBoxEntity;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.NbtUtils;
@@ -114,13 +115,40 @@ public class ArrayCenterBlockEntity extends BlockEntity {
         }
 
         // Bloqueio de Projéteis
-        AABB areaBuscaProjeteis = new AABB(pos).inflate(currentRadius + 1.5);
+        AABB areaBuscaProjeteis = new AABB(pos).inflate(currentRadius + 2.0); // Margem maior para detectar vindo de fora
         List<Projectile> projeteis = level.getEntitiesOfClass(Projectile.class, areaBuscaProjeteis);
+
         for (Projectile p : projeteis) {
-            double dx = Math.abs(p.getX() - (pos.getX() + 0.5));
-            double dz = Math.abs(p.getZ() - (pos.getZ() + 0.5));
-            if (Math.abs(dx - currentRadius) < 0.5 || Math.abs(dz - currentRadius) < 0.5) {
+            // Calculamos a distância real do projétil ao centro (X e Z)
+            double distSq = p.distanceToSqr(pos.getX() + 0.5, p.getY(), pos.getZ() + 0.5);
+            double rSq = currentRadius * currentRadius;
+
+            // Se o projétil estiver DENTRO do raio da barreira
+            if (distSq <= rSq) {
+                // Opcional: Verifica se o projétil veio de fora (para não deletar quem atira de dentro)
+                // Se queres bloqueio total, basta o discard:
                 p.discard();
+
+                // Efeito visual para o jogador ver que a barreira funcionou
+                if (level instanceof ServerLevel sl) {
+                    sl.sendParticles(ParticleTypes.ENCHANTED_HIT, p.getX(), p.getY(), p.getZ(), 10, 0.2, 0.2, 0.2, 0.1);
+                }
+            }
+        }
+
+        List<Entity> veiculos = level.getEntitiesOfClass(Entity.class, areaInteresse, e -> e instanceof net.minecraft.world.entity.vehicle.Boat || e instanceof net.minecraft.world.entity.vehicle.AbstractMinecart);
+
+        for (Entity v : veiculos) {
+            double dx = Math.abs(v.getX() - (pos.getX() + 0.5));
+            double dz = Math.abs(v.getZ() - (pos.getZ() + 0.5));
+
+            // Se o veículo tentar sair ou entrar no limite do raio
+            if (dx > currentRadius || dz > currentRadius) {
+                Vec3 centerPos = new Vec3(pos.getX() + 0.5, v.getY(), pos.getZ() + 0.5);
+                Vec3 pushDir = v.position().subtract(centerPos).normalize();
+
+                // Empurra o barco de volta com força
+                v.setDeltaMovement(pushDir.scale(0.8));
             }
         }
 
