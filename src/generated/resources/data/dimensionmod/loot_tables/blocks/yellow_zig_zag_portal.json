@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "dimensionmod:yellow_zig_zag_portal"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "dimensionmod:blocks/yellow_zig_zag_portal"
+}

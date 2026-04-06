@@ -71,6 +71,11 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         this.dropSelf(ModBlocks.MOB_FIGURE_BLOCK.get());
 
+        this.dropSelf(ModBlocks.PASSION_FRUIT_PORTAL.get());
+        this.dropSelf(ModBlocks.YELLOW_ZIG_ZAG_PORTAL.get());
+
+        this.dropSelf(ModBlocks.ORANGE_CACTUS_BLOCK.get());
+
         /** exemplo
         this.dropSelf(ModBlocks.RAW_SAPPHIRE_BLOCK.get());
         this.dropSelf(ModBlocks.SOUND_BLOCK.get());

@@ -33,37 +33,13 @@ import javax.swing.text.html.BlockView;
 
 public class CustomPortalBlock extends BaseEntityBlock {
 
-    /*
-    public enum PortalState implements StringRepresentable {
-        EMPTY("empty"), //WHITE DEFAULT
-        BLACK("black"),
-        BLUE("blue"),
-        GREEN("green"),
-        ORANGE("orange"), //to orange dimension
-        PURPLE("purple"),
-        RED("red"),
-        YELLOW("yellow");
-
-        private final String name;
-
-        PortalState(String name) {
-            this.name = name;
-        }
-
-        @Override
-        public String getSerializedName() {
-            return this.name;
-        }
-    }*/
-
-    //private static CustomPortalBlockEntity CustomPortalBlockEntity;
-    //public static final EnumProperty<CustomPortalBlock.PortalState> PORTAL_STATE = EnumProperty.create("portal_state", CustomPortalBlock.PortalState.class);
-
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
+    private final ResourceLocation targetDimension;
 
-    public CustomPortalBlock(Properties pProperties) {
+    public CustomPortalBlock(Properties pProperties, ResourceLocation targetDimension) {
+
         super(pProperties);
-        //this.registerDefaultState(this.stateDefinition.any().setValue(PORTAL_STATE, CustomPortalBlock.PortalState.ORANGE));
+        this.targetDimension = targetDimension;
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 
@@ -102,48 +78,38 @@ public class CustomPortalBlock extends BaseEntityBlock {
         return new CustomPortalBlockEntity(pos, state);
     }
 
-    /*
-    @Override
-    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
-        if (world.isClientSide) return;
-
-        boolean foundOrange = false;
-        for (Direction dir : Direction.values()) {
-            BlockState neighbor = world.getBlockState(pos.relative(dir));
-            if (neighbor.is(Blocks.ORANGE_TERRACOTTA)) {
-                foundOrange = true;
-                break;
-            }
-        }
-
-        if (foundOrange && state.getValue(PORTAL_STATE) != PortalState.ORANGE) {
-            // Aqui o bloco já existe, não dá mais erro
-            world.setBlock(pos, state.setValue(PORTAL_STATE, PortalState.ORANGE), 3);
-        }
-    }
-    */
-
     @Override
     public void entityInside(BlockState pState, Level pLevel, BlockPos pPos, Entity pEntity) {
         // 1. Verificamos se é um jogador e se estamos no servidor
         if (pEntity instanceof ServerPlayer serverPlayer && !pLevel.isClientSide) {
 
 
-            // 3. Obtemos a nossa dimensão customizada
-            ResourceKey<Level> destination = ResourceKey.create(Registries.DIMENSION,
-                    new ResourceLocation("dimensionmod", "passion_fruit_dimension"));
+            BlockEntity be = pLevel.getBlockEntity(pPos);
+            if (be instanceof CustomPortalBlockEntity portalBe) {
 
-            ServerLevel targetWorld = serverPlayer.server.getLevel(destination);
-            assert targetWorld != null;
+                // 1. Obtemos a dimensão guardada na BlockEntity
+                ResourceKey<Level> destination = ResourceKey.create(Registries.DIMENSION, portalBe.getDestinationDim());
+                ServerLevel targetWorld = serverPlayer.server.getLevel(destination);
 
-            // Escolhe X e Z fixos ou aleatórios
-            double x = pEntity.getX();  // Podes mudar para qualquer coordenada
-            double z = pEntity.getZ();
+                if (targetWorld != null) {
+                    double x = pEntity.getX();
+                    double z = pEntity.getZ();
+                    BlockPos safePos = findSafeSpawn(targetWorld, (int) x, (int) z);
 
-            BlockPos safePos = findSafeSpawn(targetWorld, (int) x, (int) z);
+                    serverPlayer.teleportTo(targetWorld, x, safePos.getY(), z, serverPlayer.getYRot(), serverPlayer.getXRot());
+                }
+            }
 
-            serverPlayer.teleportTo(targetWorld, x, safePos.getY(), z, serverPlayer.getYRot(), serverPlayer.getXRot());
+        }
+    }
 
+    @Override
+    public void setPlacedBy(Level pLevel, BlockPos pPos, BlockState pState, @Nullable LivingEntity pPlacer, ItemStack pStack) {
+        super.setPlacedBy(pLevel, pPos, pState, pPlacer, pStack);
+        BlockEntity be = pLevel.getBlockEntity(pPos);
+        if (be instanceof CustomPortalBlockEntity portalBe) {
+            // Passa os dados que o Bloco recebeu no construtor para a Entity
+            portalBe.setPortalData(this.targetDimension);
         }
     }
 

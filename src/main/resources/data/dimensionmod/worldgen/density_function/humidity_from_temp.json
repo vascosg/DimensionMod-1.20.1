@@ -1,0 +1,5 @@
+{
+  "type": "minecraft:mul",
+  "argument1": 1.1,
+  "argument2": "dimensionmod:stable_temp"
+}

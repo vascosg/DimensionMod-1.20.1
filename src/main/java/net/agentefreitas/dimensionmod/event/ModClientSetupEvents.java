@@ -21,6 +21,7 @@ public class ModClientSetupEvents {
         event.enqueueWork(() -> {
             // Define a transparência do bloco
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOB_FIGURE_BLOCK.get(), RenderType.translucent());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ORANGE_CACTUS_BLOCK.get(), RenderType.cutout());
         });
     }
 

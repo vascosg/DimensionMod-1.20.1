@@ -1,0 +1,38 @@
+{
+  "temperature": 2,
+  "downfall": 0,
+  "has_precipitation": false,
+  "temperature_modifier": "none",
+  "effects": {
+    "sky_color": 9641473,
+    "fog_color": 13715712,
+    "water_color": 16571139,
+    "water_fog_color": 15770624,
+    "grass_color": 13278040,
+    "foliage_color": 11574070,
+    "grass_color_modifier": "none",
+    "ambient_sound": "minecraft:ambient.nether_wastes.loop",
+    "particle": {
+      "options": {
+        "type": "minecraft:falling_dust",
+        "value": {
+          "Name": "minecraft:sand"
+        }
+      },
+      "probability": 0.0005
+    }
+  },
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    ["dimensionmod:drip_stone_pile", "dimensionmod:jungle_wood_pile"],
+    [],
+    [],
+    [],
+    ["dimensionmod:orange_cactus", "dimensionmod:dead_bush"],
+    []
+  ]
+}

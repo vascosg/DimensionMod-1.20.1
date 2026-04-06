@@ -97,13 +97,16 @@
   "block.dimensionmod.white_terracotta_stairs": "White Terracotta Stairs",
   "block.dimensionmod.white_terracotta_slab" : "White Terracotta Slab",
 
-  "block.dimensionmod.custom_portal_block": "Custom Portal Block",
+  "block.dimensionmod.passion_fruit_portal": "Passion Fruit Portal Block",
+  "block.dimensionmod.yellow_zig_zag_portal": "Yellow Zig Zag Portal Block",
   "block.dimensionmod.po_terracotta": "Purple Orange Conector",
   "block.dimensionmod.po_terracotta_lock": "Purple Orange Portal Lock",
 
   "block.dimensionmod.orange_zord_factory_block": "Orange Zord Factory Block",
   "block.dimensionmod.array_center_block": "Array Center Block",
   "block.dimensionmod.mob_figure_block": "Mob Figure",
+
+  "block.dimensionmod.orange_cactus_block": "Orange Cactus",
 
   "enchantment.dimensionmod.life_steal": "Life Steal",
   "enchantment.dimensionmod.one_thousand_step_art": "One Thousand Step Art",

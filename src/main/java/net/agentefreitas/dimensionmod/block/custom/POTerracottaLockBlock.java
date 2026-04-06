@@ -82,7 +82,7 @@ public class POTerracottaLockBlock extends HorizontalDirectionalBlock {
                     }
                 }
 
-                Block newBlock = ModBlocks.CUSTOM_PORTAL_BLOCK.get();
+                Block newBlock = ModBlocks.PASSION_FRUIT_PORTAL.get();
 
                 BlockState newState = newBlock.defaultBlockState();
                 if (newState.hasProperty(HorizontalDirectionalBlock.FACING)) {

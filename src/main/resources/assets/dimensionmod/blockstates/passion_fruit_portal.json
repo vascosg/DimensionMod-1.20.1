@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "dimensionmod:block/passion_fruit_portal", "y": 0 },
+    "facing=south": { "model": "dimensionmod:block/passion_fruit_portal", "y": 180 },
+    "facing=west":  { "model": "dimensionmod:block/passion_fruit_portal", "y": 270 },
+    "facing=east":  { "model": "dimensionmod:block/passion_fruit_portal", "y": 90 }
+  }
+}

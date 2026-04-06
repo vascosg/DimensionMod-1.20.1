@@ -4,6 +4,7 @@ import net.agentefreitas.dimensionmod.DimensionMod;
 import net.agentefreitas.dimensionmod.block.custom.*;
 import net.agentefreitas.dimensionmod.item.ModItems;
 import net.agentefreitas.dimensionmod.worldgen.tree.OrangeTreeGrower;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -137,8 +138,24 @@ public class ModBlocks {
     public static final RegistryObject<Block> WHITE_TERRACOTTA_SLAB = registerBlock("white_terracotta_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_TERRACOTTA).sound(SoundType.STONE)));
 
+    /**
     public static final RegistryObject<Block> CUSTOM_PORTAL_BLOCK = registerBlock("custom_portal_block",
             () -> new CustomPortalBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).sound(SoundType.GLASS).noLootTable()));
+     **/
+
+    // Exemplo 1: Portal para a Dimensão de Maracujá
+    public static final RegistryObject<Block> PASSION_FRUIT_PORTAL = registerBlock("passion_fruit_portal",
+            () -> new CustomPortalBlock(
+                    BlockBehaviour.Properties.copy(Blocks.GLASS).noOcclusion(),
+                    new ResourceLocation("dimensionmod", "passion_fruit_dimension")
+            ));
+
+    // Exemplo 2: Portal para o Nether (usando o teu sistema)
+    public static final RegistryObject<Block> YELLOW_ZIG_ZAG_PORTAL = registerBlock("yellow_zig_zag_portal",
+            () -> new CustomPortalBlock(
+                    BlockBehaviour.Properties.copy(Blocks.GLASS).noOcclusion(),
+                    new ResourceLocation("minecraft", "the_nether")
+            ));
 
     public static final RegistryObject<Block> PO_TERRACOTTA = registerBlock("po_terracotta",
             () -> new POTerracottaBlock(BlockBehaviour.Properties.copy(Blocks.TERRACOTTA)));
@@ -178,9 +195,14 @@ public class ModBlocks {
     public static final RegistryObject<Block> MOB_FIGURE_BLOCK = registerBlock("mob_figure_block",
             () -> new MobFigureBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).noOcclusion()));
 
+    public static final RegistryObject<Block> ORANGE_CACTUS_BLOCK = registerBlock("orange_cactus_block",
+            () -> new OrangeCactusBlock(BlockBehaviour.Properties.copy(Blocks.CACTUS).lightLevel((state) -> 4)));
+
     //public static final RegistryObject<Block> POTTED_CATMINT = BLOCKS.register("potted_catmint",
     //        () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.CATMINT,
     //                BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
+
+
 
     /** exemplo
     public static final RegistryObject<Block> RAW_SAPPHIRE_BLOCK = registerBlock("raw_sapphire_block",

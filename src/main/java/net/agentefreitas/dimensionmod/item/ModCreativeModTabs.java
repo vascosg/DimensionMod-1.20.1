@@ -127,7 +127,8 @@ public class ModCreativeModTabs {
 
                         pOutput.accept(ModItems.ZORD_BP_CHEST.get());
 
-                        pOutput.accept(ModBlocks.CUSTOM_PORTAL_BLOCK.get());
+                        pOutput.accept(ModBlocks.PASSION_FRUIT_PORTAL.get());
+                        pOutput.accept(ModBlocks.YELLOW_ZIG_ZAG_PORTAL.get());
                         pOutput.accept(ModBlocks.PO_TERRACOTTA.get());
                         pOutput.accept(ModBlocks.PO_TERRACOTTA_LOCK.get());
 
@@ -148,6 +149,8 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.CURSED_PORKCHOP.get());
 
                         pOutput.accept(ModItems.ZORD_RECIPES_BOOK.get());
+
+                        pOutput.accept(ModBlocks.ORANGE_CACTUS_BLOCK.get());
 
 
                     })

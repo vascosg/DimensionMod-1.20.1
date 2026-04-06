@@ -28,8 +28,11 @@ public class ModBlockEntities {
                     () -> BlockEntityType.Builder.of(GuardianDoorBlockEntity::new, ModBlocks.GUARDIAN_DOOR_BLOCK.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<CustomPortalBlockEntity>> CUSTOM_PORTAL_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("custom_portal_block_entity",
-                    () -> BlockEntityType.Builder.of(CustomPortalBlockEntity::new, ModBlocks.CUSTOM_PORTAL_BLOCK.get()).build(null));
+            BLOCK_ENTITIES.register("custom_portal_block_entity", // Apenas UM registo
+                    () -> BlockEntityType.Builder.of(CustomPortalBlockEntity::new,
+                            ModBlocks.PASSION_FRUIT_PORTAL.get(),    // Bloco 1
+                            ModBlocks.YELLOW_ZIG_ZAG_PORTAL.get()    // Bloco 2
+                    ).build(null));
 
     public static final RegistryObject<BlockEntityType<OrangeZordFactoryBlockEntity>> ORANGE_ZORDE_FACTORY_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("orange_zord_factory_block_entity",

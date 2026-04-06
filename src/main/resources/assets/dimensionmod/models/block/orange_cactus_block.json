@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cactus",
+  "textures": {
+    "particle": "dimensionmod:block/orange_cactus_side",
+    "top": "dimensionmod:block/orange_cactus_top",
+    "bottom": "dimensionmod:block/orange_cactus_bottom",
+    "side": "dimensionmod:block/orange_cactus_side"
+  }
+}
