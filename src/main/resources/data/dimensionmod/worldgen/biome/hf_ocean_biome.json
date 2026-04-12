@@ -22,5 +22,15 @@
   "spawners": {},
   "spawn_costs": {},
   "carvers": {},
-  "features": []
+  "features": [
+    [],
+    [],
+    ["dimensionmod:basalt_columns","dimensionmod:gilded_blackstone_pile"],
+    [],
+    [],
+    ["dimensionmod:basalt_delta"],
+    [],
+    [],
+    ["dimensionmod:hf_ocean_grass_patch"]
+  ]
 }

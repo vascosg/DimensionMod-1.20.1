@@ -198,6 +198,26 @@ public class ModBlocks {
     public static final RegistryObject<Block> ORANGE_CACTUS_BLOCK = registerBlock("orange_cactus_block",
             () -> new OrangeCactusBlock(BlockBehaviour.Properties.copy(Blocks.CACTUS).lightLevel((state) -> 4)));
 
+    public static final RegistryObject<Block> OCEAN_FLAME_GRASS = registerBlock("ocean_flame_grass",
+            () -> new OceanFlameGrassBlock(() -> MobEffects.FIRE_RESISTANCE, 5,
+                    BlockBehaviour.Properties.copy(Blocks.GRASS)
+                            .noOcclusion()
+                            .noCollission()
+                            .instabreak()
+                            .sound(SoundType.GRASS)
+                            .offsetType(BlockBehaviour.OffsetType.XYZ)
+            ));
+
+    public static final RegistryObject<Block> OCEAN_DARK_GRASS = registerBlock("ocean_dark_grass",
+            () -> new OceanDarkGrassBlock(() -> MobEffects.FIRE_RESISTANCE, 5,
+                    BlockBehaviour.Properties.copy(Blocks.GRASS)
+                            .noOcclusion()
+                            .noCollission()
+                            .instabreak()
+                            .sound(SoundType.GRASS)
+                            .offsetType(BlockBehaviour.OffsetType.XYZ)
+            ));
+
     //public static final RegistryObject<Block> POTTED_CATMINT = BLOCKS.register("potted_catmint",
     //        () -> new FlowerPotBlock(() -> ((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.CATMINT,
     //                BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));

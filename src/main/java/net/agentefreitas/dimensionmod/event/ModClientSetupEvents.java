@@ -19,9 +19,11 @@ public class ModClientSetupEvents {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            // Define a transparência do bloco
+
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.MOB_FIGURE_BLOCK.get(), RenderType.translucent());
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.ORANGE_CACTUS_BLOCK.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.OCEAN_FLAME_GRASS.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.OCEAN_DARK_GRASS.get(), RenderType.cutout());
         });
     }
 

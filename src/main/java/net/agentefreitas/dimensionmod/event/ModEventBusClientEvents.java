@@ -33,5 +33,11 @@ public class ModEventBusClientEvents {
         event.registerLayerDefinition(ModModelLayers.ORANGE_ZORD_LAYER, OrangeZordModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.ORANGE_ZORD_FACTORY_LAYER, OrangeZordFactoryModel::createBodyLayer);
         event.registerLayerDefinition(ModModelLayers.ORANGE_PIG_PROJECTILE_LAYER, OrangePigProjectileModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.FIRE_CHICKEN_LAYER, FireChickenModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.FIRE_COW_LAYER, FireCowModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.FIRE_FISH_LAYER, FireFishModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.FIRE_HORSE_LAYER, FireHorseModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.FIRE_PIG_LAYER, FirePigModel::createBodyLayer);
+        event.registerLayerDefinition(ModModelLayers.FIRE_RABBIT_LAYER, FireRabbitModel::createBodyLayer);
     }
 }

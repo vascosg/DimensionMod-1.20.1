@@ -129,6 +129,13 @@ public class DimensionMod {
             EntityRenderers.register(ModEntities.ORANGE_ZORD_FACTORY.get(), OrangeZordFactoryRenderer::new);
             EntityRenderers.register(ModEntities.GLOW_BOX.get(), GlowBoxRenderer::new);
             EntityRenderers.register(ModEntities.ORANGE_PIG_PROJECTILE.get(), OrangePigProjectileRenderer::new);
+            EntityRenderers.register(ModEntities.FIRE_CHICKEN.get(), FireChickenRenderer::new);
+            EntityRenderers.register(ModEntities.FIRE_COW.get(), FireCowRenderer::new);
+            EntityRenderers.register(ModEntities.FIRE_FISH.get(), FireFishRenderer::new);
+            EntityRenderers.register(ModEntities.FIRE_HORSE.get(), FireHorseRenderer::new);
+            EntityRenderers.register(ModEntities.FIRE_PIG.get(), FirePigRenderer::new);
+            EntityRenderers.register(ModEntities.FIRE_RABBIT.get(), FireRabbitRenderer::new);
+
             event.enqueueWork(ModItemProperties::addCustomItemProperties);
         }
     }

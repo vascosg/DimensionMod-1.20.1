@@ -9,6 +9,7 @@ import net.agentefreitas.dimensionmod.entity.custom.*;
 import net.agentefreitas.dimensionmod.entity.client.*;
 import net.agentefreitas.dimensionmod.particle.ModParticleTypes;
 import net.agentefreitas.dimensionmod.particle.custom.EyeStaringParticle;
+import net.agentefreitas.dimensionmod.particle.custom.FlameBubbleParticle;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.animal.Animal;
@@ -47,6 +48,12 @@ public class ModEventBusEvents {
         event.put(ModEntities.KUNZITE_SWORD.get(),KunziteSwordEntity.createAttributes().build());
         event.put(ModEntities.ORANGE_ZORD.get(),KunziteSwordEntity.createAttributes().build());
         event.put(ModEntities.GLOW_BOX.get(), GlowBoxEntity.createAttributes().build());
+        event.put(ModEntities.FIRE_CHICKEN.get(), FireChickenEntity.createAttributes().build());
+        event.put(ModEntities.FIRE_COW.get(), FireCowEntity.createAttributes().build());
+        event.put(ModEntities.FIRE_FISH.get(), FireFishEntity.createAttributes().build());
+        event.put(ModEntities.FIRE_HORSE.get(), FireHorseEntity.createAttributes().build());
+        event.put(ModEntities.FIRE_PIG.get(), FirePigEntity.createAttributes().build());
+        event.put(ModEntities.FIRE_RABBIT.get(), FireRabbitEntity.createAttributes().build());
     }
 
 
@@ -103,6 +110,24 @@ public class ModEventBusEvents {
         event.register(ModEntities.ORANGE_ZORD.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
 
+        event.register(ModEntities.FIRE_CHICKEN.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+
+        event.register(ModEntities.FIRE_COW.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+
+        event.register(ModEntities.FIRE_FISH.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+
+        event.register(ModEntities.FIRE_HORSE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+
+        event.register(ModEntities.FIRE_PIG.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+
+        event.register(ModEntities.FIRE_RABBIT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                MobEntitySpawnPlacements::checkLittlePrupleSpawnRules, SpawnPlacementRegisterEvent.Operation.REPLACE);
+
 
     }
 
@@ -120,6 +145,7 @@ public class ModEventBusEvents {
     @SubscribeEvent
     public static void registerParticleFactories(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(ModParticleTypes.EYE_STARING_PARTICLE.get(), EyeStaringParticle.Provider::new);
+        event.registerSpriteSet(ModParticleTypes.FLAME_BUBBLE_PARTICLE.get(), FlameBubbleParticle.Provider::new);
     }
 
 }

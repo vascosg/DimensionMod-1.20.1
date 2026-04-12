@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "": [
+      { "model": "dimensionmod:block/ocean_dark_grass_0", "weight": 6 },
+      { "model": "dimensionmod:block/ocean_dark_grass_1", "weight": 1 }
+    ]
+  }
+}

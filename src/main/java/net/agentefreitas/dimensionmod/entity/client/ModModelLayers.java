@@ -67,6 +67,25 @@ public class ModModelLayers {
 
     public static final ModelLayerLocation ORANGE_ZORD_FACTORY_LAYER = new ModelLayerLocation(
             new ResourceLocation(DimensionMod.MOD_ID, "orange_zord_factory"), "main");
+
     public static final ModelLayerLocation ORANGE_PIG_PROJECTILE_LAYER = new ModelLayerLocation(
             new ResourceLocation(DimensionMod.MOD_ID, "orange_pig_projectile"), "main");
+
+    public static final ModelLayerLocation FIRE_CHICKEN_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DimensionMod.MOD_ID, "fire_chicken_layer"), "main");
+
+    public static final ModelLayerLocation FIRE_COW_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DimensionMod.MOD_ID, "fire_cow_layer"), "main");
+
+    public static final ModelLayerLocation FIRE_FISH_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DimensionMod.MOD_ID, "fire_fish_layer"), "main");
+
+    public static final ModelLayerLocation FIRE_HORSE_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DimensionMod.MOD_ID, "fire_horse_layer"), "main");
+
+    public static final ModelLayerLocation FIRE_PIG_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DimensionMod.MOD_ID, "fire_pig_layer"), "main");
+
+    public static final ModelLayerLocation FIRE_RABBIT_LAYER = new ModelLayerLocation(
+            new ResourceLocation(DimensionMod.MOD_ID, "fire_rabbit_layer"), "main");
 }

@@ -35,9 +35,19 @@ public class Messages {
                 .encoder(PigPacket::encode)
                 .consumerMainThread(PigPacket::handle)
                 .add();
+
+        INSTANCE.messageBuilder(FlameBubblePacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
+                .decoder(FlameBubblePacket::new)
+                .encoder(FlameBubblePacket::toBytes)
+                .consumerMainThread(FlameBubblePacket::handle)
+                .add();
     }
 
     public static <MSG> void sendToPlayer(MSG message, ServerPlayer player) {
         INSTANCE.send(PacketDistributor.PLAYER.with(() -> player), message);
+    }
+
+    public static void sendToServer(Object message) {
+        INSTANCE.sendToServer(message);
     }
 }

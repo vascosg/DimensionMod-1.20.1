@@ -120,6 +120,31 @@ public class ModEntities {
                     .build("orange_pig_projectile")
             );
 
+    public static final RegistryObject<EntityType<FireChickenEntity>> FIRE_CHICKEN =
+            ENTITY_TYPES.register("fire_chicken", () -> EntityType.Builder.of(FireChickenEntity::new, MobCategory.AMBIENT)
+                    .sized(0.4f, 0.7f).build("fire_chicken"));
+
+    public static final RegistryObject<EntityType<FireCowEntity>> FIRE_COW =
+            ENTITY_TYPES.register("fire_cow", () -> EntityType.Builder.of(FireCowEntity::new, MobCategory.AMBIENT)
+                    .sized(0.9f, 1.4f).build("fire_cow"));
+
+    public static final RegistryObject<EntityType<FireFishEntity>> FIRE_FISH =
+            ENTITY_TYPES.register("fire_fish", () -> EntityType.Builder.of(FireFishEntity::new, MobCategory.AMBIENT)
+                    .clientTrackingRange(10)
+                    .sized(0.2f, 0.2f).build("fire_fish"));
+
+    public static final RegistryObject<EntityType<FireHorseEntity>> FIRE_HORSE =
+            ENTITY_TYPES.register("fire_horse", () -> EntityType.Builder.of(FireHorseEntity::new, MobCategory.AMBIENT)
+                    .sized(1.1f, 1.4f).build("fire_horse"));
+
+    public static final RegistryObject<EntityType<FirePigEntity>> FIRE_PIG =
+            ENTITY_TYPES.register("fire_pig", () -> EntityType.Builder.of(FirePigEntity::new, MobCategory.AMBIENT)
+                    .sized(0.9f, 0.9f).build("fire_pig"));
+
+    public static final RegistryObject<EntityType<FireRabbitEntity>> FIRE_RABBIT =
+            ENTITY_TYPES.register("fire_rabbit", () -> EntityType.Builder.of(FireRabbitEntity::new, MobCategory.AMBIENT)
+                    .sized(0.4f, 0.4f).build("fire_rabbit"));
+
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

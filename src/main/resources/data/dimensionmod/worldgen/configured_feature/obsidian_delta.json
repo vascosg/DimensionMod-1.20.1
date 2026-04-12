@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:delta_feature",
+  "config": {
+    "contents": {
+      "Name": "minecraft:obsidian"
+    },
+    "rim": {
+      "Name": "minecraft:obsidian"
+    },
+    "size": 6,
+    "rim_size": 16
+  }
+}

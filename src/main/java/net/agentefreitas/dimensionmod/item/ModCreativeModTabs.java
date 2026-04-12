@@ -151,6 +151,8 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.ZORD_RECIPES_BOOK.get());
 
                         pOutput.accept(ModBlocks.ORANGE_CACTUS_BLOCK.get());
+                        pOutput.accept(ModBlocks.OCEAN_FLAME_GRASS.get());
+                        pOutput.accept(ModBlocks.OCEAN_DARK_GRASS.get());
 
 
                     })
