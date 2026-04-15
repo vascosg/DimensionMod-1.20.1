@@ -132,6 +132,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.ZORD_RECIPES_BOOK);
 
+        simpleItem(ModItems.FIRE_EGG);
+        simpleItem(ModItems.FIRE_CORE);
+
         /** exemplo
         simpleItem(ModItems.SAPPHIRE);
         simpleItem(ModItems.RAW_SAPPHIRE);

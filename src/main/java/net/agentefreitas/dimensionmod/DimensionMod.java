@@ -71,7 +71,6 @@ public class DimensionMod {
         ModParticleTypes.register(modEventBus);
         ModEffects.register(modEventBus);
         ModFunctions.register(modEventBus);
-        Messages.register();
 
         MinecraftForge.EVENT_BUS.register(ModDatapackLoader.class);
         //ModDimensions.register();
@@ -85,9 +84,12 @@ public class DimensionMod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        // event.enqueueWork(() -> {
-        //            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.CATMINT.getId(), ModBlocks.POTTED_CATMINT);
-        //        });
+        event.enqueueWork(() -> {
+            // Move para aqui! É mais seguro.
+            Messages.register();
+
+            // Se tiveres outras configurações de blocos (como vasos de flores), ficam aqui também.
+        });
     }
 
     // Add the example block item to the building blocks tab

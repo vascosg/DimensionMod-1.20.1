@@ -10,6 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeSpawnEggItem;
@@ -190,6 +191,11 @@ public class ModItems {
     public static final RegistryObject<Item> ZORD_RECIPES_BOOK = ITEMS.register("zord_recipes_book",
             () -> new ZordRecipesBookItem(new Item.Properties()));
 
+    public static final RegistryObject<Item> FIRE_EGG = ITEMS.register("fire_egg",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> FIRE_CORE = ITEMS.register("fire_core",
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> CURSED_PORKCHOP = ITEMS.register("cursed_porkchop", () -> new Item(new Item.Properties()) {
         @Override

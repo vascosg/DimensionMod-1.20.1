@@ -66,23 +66,23 @@ public class ModEntities {
                     .sized(0.2f, 1.4f).build("garnet_sword"));
 
     public static final RegistryObject<EntityType<AquamarineSwordEntity>> AQUAMARINE_SWORD =
-            ENTITY_TYPES.register("aquamarine_sword", () -> EntityType.Builder.of(AquamarineSwordEntity::new, MobCategory.AMBIENT)
+            ENTITY_TYPES.register("aquamarine_sword", () -> EntityType.Builder.of(AquamarineSwordEntity::new, MobCategory.MONSTER)
                     .sized(0.3f, 1.9f).build("aquamarine_sword"));
 
     public static final RegistryObject<EntityType<PeridotSwordEntity>> PERIDOT_SWORD =
-            ENTITY_TYPES.register("peridot_sword", () -> EntityType.Builder.of(PeridotSwordEntity::new, MobCategory.AMBIENT)
+            ENTITY_TYPES.register("peridot_sword", () -> EntityType.Builder.of(PeridotSwordEntity::new, MobCategory.MONSTER)
                     .sized(0.6f, 1.9f).build("peridot_sword"));
 
     public static final RegistryObject<EntityType<CitrineSwordEntity>> CITRINE_SWORD =
-            ENTITY_TYPES.register("citrine_sword", () -> EntityType.Builder.of(CitrineSwordEntity::new, MobCategory.AMBIENT)
+            ENTITY_TYPES.register("citrine_sword", () -> EntityType.Builder.of(CitrineSwordEntity::new, MobCategory.MONSTER)
                     .sized(0.3f, 2.2f).build("citrine_sword"));
 
     public static final RegistryObject<EntityType<AmberSwordEntity>> AMBER_SWORD =
-            ENTITY_TYPES.register("amber_sword", () -> EntityType.Builder.of(AmberSwordEntity::new, MobCategory.AMBIENT)
+            ENTITY_TYPES.register("amber_sword", () -> EntityType.Builder.of(AmberSwordEntity::new, MobCategory.MONSTER)
                     .sized(0.5f, 0.7f).build("amber_sword"));
 
     public static final RegistryObject<EntityType<KunziteSwordEntity>> KUNZITE_SWORD =
-            ENTITY_TYPES.register("kunzite_sword", () -> EntityType.Builder.of(KunziteSwordEntity::new, MobCategory.AMBIENT)
+            ENTITY_TYPES.register("kunzite_sword", () -> EntityType.Builder.of(KunziteSwordEntity::new, MobCategory.MONSTER)
                     .sized(0.6f, 1.9f).build("kunzite_sword"));
 
     public static final RegistryObject<EntityType<AmberProjectileEntity>> AMBER_PROJECTILE =
@@ -121,29 +121,40 @@ public class ModEntities {
             );
 
     public static final RegistryObject<EntityType<FireChickenEntity>> FIRE_CHICKEN =
-            ENTITY_TYPES.register("fire_chicken", () -> EntityType.Builder.of(FireChickenEntity::new, MobCategory.AMBIENT)
+            ENTITY_TYPES.register("fire_chicken", () -> EntityType.Builder.of(FireChickenEntity::new, MobCategory.MONSTER)
                     .sized(0.4f, 0.7f).build("fire_chicken"));
 
     public static final RegistryObject<EntityType<FireCowEntity>> FIRE_COW =
-            ENTITY_TYPES.register("fire_cow", () -> EntityType.Builder.of(FireCowEntity::new, MobCategory.AMBIENT)
+            ENTITY_TYPES.register("fire_cow", () -> EntityType.Builder.of(FireCowEntity::new, MobCategory.MONSTER)
                     .sized(0.9f, 1.4f).build("fire_cow"));
 
     public static final RegistryObject<EntityType<FireFishEntity>> FIRE_FISH =
-            ENTITY_TYPES.register("fire_fish", () -> EntityType.Builder.of(FireFishEntity::new, MobCategory.AMBIENT)
+            ENTITY_TYPES.register("fire_fish", () -> EntityType.Builder.of(FireFishEntity::new, MobCategory.MONSTER)
                     .clientTrackingRange(10)
                     .sized(0.2f, 0.2f).build("fire_fish"));
 
     public static final RegistryObject<EntityType<FireHorseEntity>> FIRE_HORSE =
-            ENTITY_TYPES.register("fire_horse", () -> EntityType.Builder.of(FireHorseEntity::new, MobCategory.AMBIENT)
+            ENTITY_TYPES.register("fire_horse", () -> EntityType.Builder.of(FireHorseEntity::new, MobCategory.MONSTER)
                     .sized(1.1f, 1.4f).build("fire_horse"));
 
     public static final RegistryObject<EntityType<FirePigEntity>> FIRE_PIG =
-            ENTITY_TYPES.register("fire_pig", () -> EntityType.Builder.of(FirePigEntity::new, MobCategory.AMBIENT)
+            ENTITY_TYPES.register("fire_pig", () -> EntityType.Builder.of(FirePigEntity::new, MobCategory.MONSTER)
                     .sized(0.9f, 0.9f).build("fire_pig"));
 
     public static final RegistryObject<EntityType<FireRabbitEntity>> FIRE_RABBIT =
-            ENTITY_TYPES.register("fire_rabbit", () -> EntityType.Builder.of(FireRabbitEntity::new, MobCategory.AMBIENT)
+            ENTITY_TYPES.register("fire_rabbit", () -> EntityType.Builder.of(FireRabbitEntity::new, MobCategory.MONSTER)
                     .sized(0.4f, 0.4f).build("fire_rabbit"));
+
+    public static final RegistryObject<EntityType<FireEggProjectileEntity>> FIRE_EGG =
+            ENTITY_TYPES.register("fire_egg", () -> EntityType.Builder.<FireEggProjectileEntity>of(FireEggProjectileEntity::new, MobCategory.MISC)
+                    .sized(0.25F, 0.25F)
+                    .clientTrackingRange(4)
+                    .updateInterval(10)
+                    .build("fire_egg"));
+
+    public static final RegistryObject<EntityType<BlockProjectileEntity>> BLOCK_PROJECTILE =
+            ENTITY_TYPES.register("block_projectile", () -> EntityType.Builder.<BlockProjectileEntity>of(BlockProjectileEntity::new, MobCategory.MISC)
+                    .sized(0.5F, 0.5F).build("block_projectile"));
 
 
     public static void register(IEventBus eventBus) {

@@ -3,9 +3,11 @@ package net.agentefreitas.dimensionmod.entity.client;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.agentefreitas.dimensionmod.entity.animations.FireCowAnimationDefenitions;
+import net.agentefreitas.dimensionmod.entity.animations.FireFishAnimationDefenitions;
 import net.agentefreitas.dimensionmod.entity.animations.LittlePupleAnimationDefinitions;
 import net.agentefreitas.dimensionmod.entity.custom.FireChickenEntity;
 import net.agentefreitas.dimensionmod.entity.custom.FireCowEntity;
+import net.agentefreitas.dimensionmod.entity.custom.FireFishEntity;
 import net.agentefreitas.dimensionmod.entity.custom.LittlePurpleEntity;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
@@ -66,6 +68,7 @@ public class FireCowModel <T extends Entity> extends HierarchicalModel<T> {
 
         this.animateWalk(FireCowAnimationDefenitions.WALK, limbSwing, limbSwingAmount, 2f, 2.5f);
         this.animate(((FireCowEntity) entity).idleAnimationState, FireCowAnimationDefenitions.IDLE, ageInTicks, 1f);
+        this.animate(((FireCowEntity) entity).attackAnimationState, FireCowAnimationDefenitions.ATTACK, ageInTicks, 1f);
     }
 
     private void applyHeadRotation(float pNetHeadYaw, float pHeadPitch, float pAgeInTicks) {

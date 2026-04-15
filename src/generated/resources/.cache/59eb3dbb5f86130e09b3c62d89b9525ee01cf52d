@@ -1,4 +1,4 @@
-// 1.20.1	2026-04-05T20:08:26.7724192	Loot Tables
+// 1.20.1	2026-04-12T16:59:04.4342335	Loot Tables
 6c7c9e66fcf039bee1a6c62db6b6a3601f9d4f8e data/dimensionmod/loot_tables/blocks/amber_block.json
 e12464bef8816a3b808360928175c37e3179d0b1 data/dimensionmod/loot_tables/blocks/aquamarine_block.json
 dc751e1edd7557b17a511ace2b96f3ff5be2eafe data/dimensionmod/loot_tables/blocks/array_center_block.json
@@ -12,6 +12,8 @@ bbfb05886e61af2295afc102080c46bb673cd38b data/dimensionmod/loot_tables/blocks/ic
 9a9904b453b48cd81283803070f074e452ee3b21 data/dimensionmod/loot_tables/blocks/kunzite_block.json
 46e5be63167e4e2c3cd3fa41f792d1cc258c7269 data/dimensionmod/loot_tables/blocks/lectern_white.json
 961121f4af0ce99d3f7e0cd8779bc817e055c776 data/dimensionmod/loot_tables/blocks/mob_figure_block.json
+070538a8067cfe505abe19812f62bea692c9d66d data/dimensionmod/loot_tables/blocks/ocean_dark_grass.json
+a72638578093db874a697747a9d2620db56766ef data/dimensionmod/loot_tables/blocks/ocean_flame_grass.json
 4dbe0fd89587979f31c58e0bac7ecfb21867de02 data/dimensionmod/loot_tables/blocks/orange_berry_bush.json
 31454275ba1d3244179c6c6d44700f4a41c45c4b data/dimensionmod/loot_tables/blocks/orange_cactus_block.json
 977f312cf4f0327c41ab4ab318e5f0495acf534c data/dimensionmod/loot_tables/blocks/orange_fruit_leaf.json

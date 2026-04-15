@@ -37,9 +37,6 @@ public class BubbleAttackGoal extends Goal {
         LivingEntity target = this.entity.getTarget();
         boolean canUse = target instanceof Player && target.isAlive() && this.entity.distanceToSqr(target) < 100.0D;
 
-        // Descomenta a linha abaixo se quiseres ver o estado do target constantemente
-        // if (target != null) System.out.println("DEBUG: Distancia para o player: " + this.entity.distanceToSqr(target));
-
         return canUse;
     }
 

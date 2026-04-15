@@ -1,0 +1,36 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": ["dimensionmod:hf_desert_biome"],
+  "spawners": [
+    {
+      "type": "dimensionmod:fire_chicken",
+      "weight": 1,
+      "minCount": 1,
+      "maxCount": 2
+    },
+    {
+      "type": "dimensionmod:fire_rabbit",
+      "weight": 1,
+      "minCount": 1,
+      "maxCount": 2
+    },
+    {
+      "type": "dimensionmod:fire_pig",
+      "weight": 1,
+      "minCount": 1,
+      "maxCount": 2
+    },
+    {
+      "type": "dimensionmod:fire_horse",
+      "weight": 1,
+      "minCount": 1,
+      "maxCount": 2
+    },
+    {
+      "type": "dimensionmod:fire_cow",
+      "weight": 1,
+      "minCount": 1,
+      "maxCount": 2
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-// 1.20.1	2026-03-30T21:32:22.8111951	Item Models: dimensionmod
+// 1.20.1	2026-04-15T00:57:41.3102555	Item Models: dimensionmod
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dimensionmod/models/item/bai_yu_spawn_egg.json
 68f0aad47c4ad60c583a539ff04d3e50953821fd assets/dimensionmod/models/item/blue_book.json
 d2821d1386f5ca8c595593d5446860d0490ab2c0 assets/dimensionmod/models/item/broken_space_staff.json
@@ -57,6 +57,8 @@ a3ad780828e8b6e246ca573c9674bb9c83c62608 assets/dimensionmod/models/item/diary_o
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dimensionmod/models/item/disciple_spawn_egg.json
 8ab15e3635a9efce571d35ae707652062346e9ce assets/dimensionmod/models/item/duality_sword.json
 da814aa0217be7599322c4bb80cb510b3a002901 assets/dimensionmod/models/item/earth_treasure.json
+29b04929863c04e52ee2429558efec09ef5d2f0f assets/dimensionmod/models/item/fire_core.json
+d8689ca804472d9b16797a710b92f00bbd8c61a5 assets/dimensionmod/models/item/fire_egg.json
 e4b3361baee671c3473d0ab74986b145b4b17ff3 assets/dimensionmod/models/item/fire_treasure.json
 df4778cad5525a1a1b0ddc188b43ae398511b673 assets/dimensionmod/models/item/five_element_indestructible_sword.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/dimensionmod/models/item/gao_yu_spawn_egg.json

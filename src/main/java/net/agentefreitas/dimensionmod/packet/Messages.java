@@ -41,6 +41,12 @@ public class Messages {
                 .encoder(FlameBubblePacket::toBytes)
                 .consumerMainThread(FlameBubblePacket::handle)
                 .add();
+
+        net.messageBuilder(ClientboundSyncBlockMimicPacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(ClientboundSyncBlockMimicPacket::new)
+                .encoder(ClientboundSyncBlockMimicPacket::toBytes)
+                .consumerMainThread(ClientboundSyncBlockMimicPacket::handle)
+                .add();
     }
 
     public static <MSG> void sendToPlayer(MSG message, ServerPlayer player) {

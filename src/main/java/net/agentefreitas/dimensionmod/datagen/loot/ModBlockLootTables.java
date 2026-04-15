@@ -75,6 +75,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.YELLOW_ZIG_ZAG_PORTAL.get());
 
         this.dropSelf(ModBlocks.ORANGE_CACTUS_BLOCK.get());
+        this.dropSelf(ModBlocks.OCEAN_DARK_GRASS.get());
+        this.dropSelf(ModBlocks.OCEAN_FLAME_GRASS.get());
 
         /** exemplo
         this.dropSelf(ModBlocks.RAW_SAPPHIRE_BLOCK.get());

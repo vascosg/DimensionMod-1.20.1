@@ -14,6 +14,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.agentefreitas.dimensionmod.entity.MobEntitySpawnPlacements;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -140,6 +141,8 @@ public class ModEventBusEvents {
         event.registerEntityRenderer(ModEntities.GLOW_BOX.get(), GlowBoxRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.MOB_FIGURE_BLOCK_ENTITY.get(), MobFigureBlockEntityRenderer::new);
         event.registerEntityRenderer(ModEntities.ORANGE_PIG_PROJECTILE.get(), OrangePigProjectileRenderer::new);
+        event.registerEntityRenderer(ModEntities.FIRE_EGG.get(), ThrownItemRenderer::new);
+        event.registerEntityRenderer(ModEntities.BLOCK_PROJECTILE.get(), BlockProjectileRenderer::new);
     }
 
     @SubscribeEvent

@@ -1,6 +1,11 @@
 package net.agentefreitas.dimensionmod.entity.custom;
 
+import net.agentefreitas.dimensionmod.entity.goal.CowRamAttackGoal;
 import net.agentefreitas.dimensionmod.entity.goal.DiscipleAttackGoal;
+import net.agentefreitas.dimensionmod.entity.goal.ThrowFireEggGoal;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.world.entity.AnimationState;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.PathfinderMob;
@@ -20,6 +25,9 @@ public class FireChickenEntity extends PathfinderMob {
     public FireChickenEntity(EntityType<? extends PathfinderMob> p_21683_, Level p_21684_) {
         super(p_21683_, p_21684_);
     }
+
+    private static final EntityDataAccessor<Boolean> ATTACKING =
+            SynchedEntityData.defineId(FireChickenEntity.class, EntityDataSerializers.BOOLEAN);
 
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
@@ -46,6 +54,25 @@ public class FireChickenEntity extends PathfinderMob {
         return true;
     }
 
+    public void setAttacking(boolean attacking) {
+        this.entityData.set(ATTACKING, attacking);
+    }
+
+    public boolean isAttacking() {
+        return this.entityData.get(ATTACKING);
+    }
+
+    public void startAttack(int type) {
+        this.entityData.set(ATTACKING, true);
+    }
+
+
+    @Override
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.entityData.define(ATTACKING, false);
+    }
+
     @Override
     protected void updateWalkAnimation(float pPartialTick) {
         float f;
@@ -66,12 +93,25 @@ public class FireChickenEntity extends PathfinderMob {
             --this.idleAnimationTimeout;
         }
 
+        if(this.isAttacking() && attackAnimationTimeout <= 0) {
+            attackAnimationTimeout = 53; // Length in ticks of your animation
+            attackAnimationState.start(this.tickCount);
+        } else {
+            --this.attackAnimationTimeout;
+        }
+
+        if(!this.isAttacking()) {
+            attackAnimationState.stop();
+        }
+
     }
 
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
 
+        this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, Player.class, true));
+        this.goalSelector.addGoal(2, new ThrowFireEggGoal(this));
         this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 1.1D));
         this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 3f));
         this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));

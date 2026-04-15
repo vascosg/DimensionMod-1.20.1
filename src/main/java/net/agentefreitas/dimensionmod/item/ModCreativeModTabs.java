@@ -100,6 +100,8 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.YANG_BLADE.get());
                         pOutput.accept(ModItems.DUALITY_SWORD.get());
 
+                        pOutput.accept(ModItems.FIRE_CORE.get());
+
 
                         pOutput.accept(ModBlocks.ORANGE_LOG.get());
                         pOutput.accept(ModBlocks.ORANGE_WOOD.get());

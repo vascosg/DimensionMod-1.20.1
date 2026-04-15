@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": ["dimensionmod:hf_ocean_biome","dimensionmod:hf_ocean_floor_biome"],
+  "spawners": [
+    {
+      "type": "dimensionmod:fire_fish",
+      "weight": 10,
+      "minCount": 4,
+      "maxCount": 8
+    }
+  ]
+}

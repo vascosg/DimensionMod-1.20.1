@@ -109,7 +109,8 @@
               "if_true": {
                 "type": "minecraft:biome",
                 "biome_is": [
-                  "dimensionmod:hf_ocean_biome"
+                  "dimensionmod:hf_ocean_biome",
+                  "dimensionmod:hf_ocean_floor_biome"
                 ]
               },
               "then_run": {
