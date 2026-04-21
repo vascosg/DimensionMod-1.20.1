@@ -22,5 +22,17 @@
   "spawners": {},
   "spawn_costs": {},
   "carvers": {},
-  "features": []
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    ["dimensionmod:ancient_debris_ore"],
+    ["dimensionmod:crimson_fungus","dimensionmod:warped_fungus","dimensionmod:crimson_forest_vegetation", "dimensionmod:warped_forest_vegetation", "dimensionmod:nether_sprouts"],
+    [],
+    [],
+    [],
+    []
+  ]
 }
